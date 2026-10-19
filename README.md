@@ -38,3 +38,11 @@ Works offline too: download the folder and open `index.html` in Chrome or Edge.
 
 ## Credits
 Voice clips generated with the open-source Kokoro TTS model (Apache-2.0).
+
+---
+
+## Errol the Eagle · Lesson 10
+
+Interactive games for 5-year-olds (school things & colours): https://nazrin-teacher.github.io/my-family/errol/
+
+Self-contained page in [`errol/index.html`](errol/index.html) (images embedded, music generated in the browser).
