@@ -441,6 +441,12 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 .rv b{font:800 32px/1.1 var(--display)}
 .rv span{font:800 20px var(--body);color:var(--ink)}
 .hideTr .rv span{visibility:hidden}
+.ph .hs.hl ellipse{fill:rgba(255,213,74,.38)}
+.ph .hs[class*="re-"] ellipse{animation:phFlash .7s}
+@keyframes phFlash{0%{fill:rgba(255,213,74,0)}30%{fill:rgba(255,213,74,.6)}100%{fill:rgba(255,213,74,0)}}
+.ph .hs{animation:none!important;filter:none!important;transform:none!important}
+.ph .hs ellipse{transition:fill .2s}
+.tpb{align-items:flex-end;gap:10px}
 </style>
 
 </head><body><div id="stage"><div id="board">
@@ -464,7 +470,7 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 </div></div>
 
 <script>
-const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp"};
+const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp", "c_mum": "assets/c_mum.webp", "c_dad": "assets/c_dad.webp", "c_grandma": "assets/c_grandma.webp", "c_grandpa": "assets/c_grandpa.webp", "c_sister": "assets/c_sister.webp", "c_brother": "assets/c_brother.webp", "c_aunt": "assets/c_aunt.webp", "c_uncle": "assets/c_uncle.webp", "t_mum": "assets/t_mum.webp", "t_dad": "assets/t_dad.webp", "t_grandma": "assets/t_grandma.webp", "t_grandpa": "assets/t_grandpa.webp", "t_sister": "assets/t_sister.webp", "t_brother": "assets/t_brother.webp", "t_aunt": "assets/t_aunt.webp", "t_uncle": "assets/t_uncle.webp"};
 const ONE_CLASS=true; /* true: no class selection, one name list (version for any teacher) */
 const SKEY=ONE_CLASS?'myfamily-teacher':'myfamily';
 const DEFAULT_NAMES={};
@@ -647,14 +653,39 @@ function person(o={}){
 const svgURI=s=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '));
 const HEAD='38 18 224 200';
 
-/* ---- people used in the body screens ---- */
+/* ---- illustrated family (pictures made with ChatGPT): one picture per person ----
+   w,h: picture size; head: crop box for face close-ups (fractions); ey: eye line (fraction of height) */
+const CAST={
+ mum:{w:235,h:720,head:[.12,0,.88,.22],ey:.118},dad:{w:263,h:723,head:[.18,0,.82,.2],ey:.105},
+ grandma:{w:263,h:591,head:[.1,0,.9,.29],ey:.155},grandpa:{w:241,h:718,head:[.15,0,.85,.2],ey:.105},
+ sister:{w:226,h:559,head:[.06,0,.94,.29],ey:.165},brother:{w:263,h:646,head:[.1,0,.9,.27],ey:.165},
+ aunt:{w:263,h:721,head:[.15,0,.85,.21],ey:.108},uncle:{w:241,h:692,head:[.14,0,.86,.22],ey:.115}};
+/* tap areas on the two children (cx, cy, rx, ry as fractions of the picture) */
+const BODYMAP={
+ sister:{body:[.5,.45,.25,.16],arms:[[.14,.47,.11,.13],[.86,.47,.11,.13]],hair:[[.5,.06,.37,.065],[.16,.19,.09,.09],[.84,.19,.09,.09]],
+   face:[.5,.18,.24,.095],ears:[[.245,.19,.06,.035],[.755,.19,.06,.035]],eyes:[.49,.165,.18,.028],nose:[.5,.197,.05,.016],mouth:[.5,.226,.11,.02]},
+ brother:{body:[.5,.45,.33,.16],arms:[[.08,.5,.09,.13],[.92,.5,.09,.13]],hair:[[.5,.06,.36,.065],[.17,.15,.07,.06],[.83,.15,.07,.06]],
+   face:[.5,.18,.23,.09],ears:[[.245,.19,.055,.035],[.745,.19,.055,.035]],eyes:[.49,.165,.19,.028],nose:[.5,.192,.05,.016],mouth:[.5,.222,.11,.02]}};
+/* o: hl (part to highlight), head (face close-up), hgt (height in %, for short people next to tall ones) */
+function photo(role,o={}){const c=CAST[role],W=c.w,H=c.h,P=BODYMAP[role];
+  let vb=`0 0 ${W} ${H}`;if(o.head){const[a,b,x,y]=c.head;vb=`${(a*W).toFixed(1)} ${(b*H).toFixed(1)} ${((x-a)*W).toFixed(1)} ${((y-b)*H).toFixed(1)}`}
+  const el=r=>`<ellipse cx="${(r[0]*W).toFixed(1)}" cy="${(r[1]*H).toFixed(1)}" rx="${(r[2]*W).toFixed(1)}" ry="${(r[3]*H).toFixed(1)}"/>`;
+  const L=v=>Array.isArray(v[0])?v:[v];
+  const parts=P?['body','arms','hair','face','ears','eyes','nose','mouth'].map(p=>`<g data-part="${p}" class="pt hs" fill="rgba(0,0,0,0)">${L(P[p]).map(el).join('')}</g>`).join(''):'';
+  let rr=null;if(o.hl){if(P&&P[o.hl])rr=P[o.hl];else if(o.hl==='eyes')rr=[.5,c.ey,.21,.07*W/H];else if(o.hl==='hair'){const hb=c.head;rr=[.5,hb[3]*.32,.44,hb[3]*.36]}}
+  const vw=o.head?(c.head[2]-c.head[0])*W:W,sw=vw/(o.head?55:20);
+  const ring=rr?`<g class="ring" fill="none" stroke="#FFB300" style="stroke-width:${sw.toFixed(1)}px;stroke-dasharray:${(sw*2.4).toFixed(1)} ${(sw*1.5).toFixed(1)}">${L(rr).map(el).join('')}</g>`:'';
+  return `<svg class="pp ph" viewBox="${vb}" ${o.hgt?`style="height:${o.hgt}%"`:''} role="img" aria-label="${role}"><image href="${IMG['c_'+role]}" width="${W}" height="${H}"/>${parts}${ring}</svg>`}
+const photoThumb=role=>IMG['t_'+role];
+
+/* ---- people used in the body screens (attributes match the pictures) ---- */
 const PEOPLE={
  mum:{sex:'f',height:'tall',build:'thin',hair:'curly',hc:'brown',ec:'blue',skin:SKIN[1],shirt:'#FF5F92'},
  dad:{sex:'m',height:'tall',build:'fat',hair:'straight',hc:'black',ec:'brown',skin:SKIN[1],shirt:'#3FB2E6'},
  grandma:{sex:'f',height:'short',build:'fat',hair:'curly',hc:'grey',ec:'green',skin:SKIN[0],shirt:'#8C64DB',old:1},
  grandpa:{sex:'m',height:'tall',build:'thin',hair:'straight',hc:'grey',ec:'blue',skin:SKIN[0],shirt:'#4CC48E',old:1},
  sister:{sex:'f',height:'short',build:'thin',hair:'straight',hc:'yellow',ec:'blue',skin:SKIN[0],shirt:'#FF8A3D',kid:1},
- brother:{sex:'m',height:'tall',build:'mid',hair:'curly',hc:'red',ec:'green',skin:SKIN[0],shirt:'#4CC48E',kid:1},
+ brother:{sex:'m',height:'tall',build:'fat',hair:'curly',hc:'red',ec:'green',skin:SKIN[0],shirt:'#4CC48E',kid:1},
  aunt:{sex:'f',height:'tall',build:'fat',hair:'straight',hc:'red',ec:'brown',skin:SKIN[2],shirt:'#3FB2E6'},
  uncle:{sex:'m',height:'short',build:'thin',hair:'curly',hc:'yellow',ec:'brown',skin:SKIN[2],shirt:'#FF5F92'}
 };
@@ -668,19 +699,19 @@ function tapParts(root,onPart){root.addEventListener('click',e=>{const g=e.targe
 
 /* B1 hello */
 function bHello(area,ctx){
-  const p=h(`<div class="play"><div class="bh"><div class="bfig">${person({sex:'f',hair:'curly',hc:'brown',ec:'green',shirt:'#8C64DB',skin:SKIN[1]})}</div>
+  const p=h(`<div class="play"><div class="bh"><div class="bfig">${photo('sister')}</div>
     <div class="bside"><button class="yb bsay"><span class="spk">${ic('son')}</span>This is my body!</button><div class="prompt" style="text-align:left">Touch and listen!</div>
     <div class="bchips">${BW.map(w=>`<button class="bchip" data-w="${w}">${w}</button>`).join('')}</div><button class="bigbtn">Let's go! ${ic('right')}</button></div></div></div>`);
   const fig=p.querySelector('.bfig');tapParts(fig,()=>ctx.done());
-  p.querySelectorAll('.bchip').forEach(b=>b.onclick=()=>{const w=b.dataset.w;fig.innerHTML=person({sex:'f',hair:'curly',hc:'brown',ec:'green',shirt:'#8C64DB',skin:SKIN[1],hl:w});say(w)});
+  p.querySelectorAll('.bchip').forEach(b=>b.onclick=()=>{const w=b.dataset.w;fig.innerHTML=photo('sister',{hl:w});say(w)});
   p.querySelector('.bsay').onclick=()=>say('This is my body!');p.querySelector('.bigbtn').onclick=()=>{ctx.done();ctx.next()};
   area.append(p);later(()=>say('Hello! This is my body! Touch and listen!'),400)}
 
 /* B2 body words */
 function bWords(area,ctx){
   rounds(area,ctx,BW,(w,api)=>{
-    const look={sex:api.index%2?'m':'f',hair:api.index%3?'straight':'curly',hc:['brown','black','red','yellow'][api.index%4],ec:['blue','brown','green'][api.index%3],skin:SKIN[api.index%3],shirt:['#FF5F92','#3FB2E6','#8C64DB','#4CC48E'][api.index%4]};
-    const v=h(`<div class="ll"><div class="bfig big">${person({...look,hl:w})}</div><div class="txt">
+    const kid=api.index%2?'brother':'sister';
+    const v=h(`<div class="ll"><div class="bfig big">${photo(kid,{hl:w})}</div><div class="txt">
       <button class="word" style="color:${COLV[['pink','blue','purple','green'][api.index%4]]}">${cap(w)}</button>
       <button class="yb bs"><span class="spk">${ic('son')}</span><span>${bSent(w)}</span></button>
       <button class="bigbtn greenb tpr">${ic('hand')} ${bTpr(w)}</button>
@@ -688,53 +719,53 @@ function bWords(area,ctx){
     tapParts(v.querySelector('.bfig'));
     v.querySelector('.word').onclick=()=>say(w);v.querySelector('.bs').onclick=()=>say(bSent(w));
     v.querySelector('.tpr').onclick=()=>say(bTpr(w));
-    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;talk({svg:person({...look,hl:w,vb:['face','eyes','ears','nose','mouth','hair'].includes(w)?HEAD:undefined}),a:bSent(w),mode:'repeat'},()=>{api.solve(b);later(()=>say(bTpr(w)),300)})};
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;talk({svg:photo(kid,{hl:w,head:['face','eyes','ears','nose','mouth','hair'].includes(w)}),a:bSent(w),mode:'repeat'},()=>{api.solve(b);later(()=>say(bTpr(w)),300)})};
     api.play.append(v);later(()=>say(`${w}. ${bSent(w)}`),350)});
 }
 
 /* B3 tall/short, thin/fat */
 function bSize(area,ctx){
-  const R=[{sex:'f',k:'height',a:'tall',b:'short'},{sex:'m',k:'build',a:'thin',b:'fat'},{sex:'m',k:'height',a:'tall',b:'short'},{sex:'f',k:'build',a:'thin',b:'fat'}];
+  const R=[{sex:'f',k:'height',a:'tall',b:'short',ra:'mum',rb:'grandma'},{sex:'m',k:'build',a:'thin',b:'fat',ra:'grandpa',rb:'dad'},{sex:'m',k:'height',a:'tall',b:'short',ra:'grandpa',rb:'uncle'},{sex:'f',k:'build',a:'thin',b:'fat',ra:'mum',rb:'aunt'}];
   rounds(area,ctx,R,(r,api)=>{
-    const P=r.sex==='m'?'He':'She';const base={sex:r.sex,hair:r.sex==='m'?'straight':'curly',hc:r.sex==='m'?'black':'brown',ec:'brown',skin:SKIN[api.index%3]};
-    const mk=val=>({...base,[r.k]:val,shirt:val===r.a?'#FF8A3D':'#8C64DB'});
+    const P=r.sex==='m'?'He':'She';
+    const mk=val=>{const role=val===r.a?r.ra:r.rb;return photo(role,{hgt:r.k==='height'&&val==='short'?66:100})};
     const v=h(`<div class="bsz"><div class="bpair"></div><button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div>`);
     const pair=v.querySelector('.bpair');
-    shuffle([r.a,r.b]).forEach(val=>{const c=h(`<button class="bcard"><div class="bfig mid">${person(mk(val))}</div><div class="blab">${val}</div></button>`);
+    shuffle([r.a,r.b]).forEach(val=>{const c=h(`<button class="bcard"><div class="bfig mid">${mk(val)}</div><div class="blab">${val}</div></button>`);
       c.onclick=()=>{pair.querySelectorAll('.bcard').forEach(x=>x.classList.remove('sel'));c.classList.add('sel');say(`${P} is ${val}.`)};pair.append(c)});
     v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;const val=Math.random()<.5?r.a:r.b;
-      talk({svg:person(mk(val)),q:`Is ${P.toLowerCase()} ${r.a} or ${r.b}?`,a:`${P} is ${val}.`,mode:'ask'},()=>api.solve(b))};
+      talk({svg:mk(val).replace(/ style="height:\d+%"/,''),q:`Is ${P.toLowerCase()} ${r.a} or ${r.b}?`,a:`${P} is ${val}.`,mode:'ask'},()=>api.solve(b))};
     api.play.append(v);later(()=>say(`${P} is ${r.a}. ${P} is ${r.b}.`),350)});
 }
 
 /* B4 hair: curly/straight + colour */
 function bHair(area,ctx){
-  const R=[['f','curly','brown'],['m','straight','black'],['f','straight','yellow'],['m','curly','red'],['f','curly','black'],['m','straight','brown']];
-  rounds(area,ctx,R,([sx,hr,hc],api)=>{
-    const P=sx==='m'?'He':'She';const look={sex:sx,hair:hr,hc,ec:'brown',skin:SKIN[api.index%3],shirt:['#FF5F92','#3FB2E6','#8C64DB'][api.index%3]};
+  const R=['mum','dad','sister','brother','aunt','uncle'];
+  rounds(area,ctx,R,(role,api)=>{
+    const p=PEOPLE[role],hr=p.hair,hc=p.hc,P=pr(p);
     const l1=`${P} has got ${hr} hair.`,l2=`${P} has got ${hc} hair.`;
-    const v=h(`<div class="ll"><div class="bfig big">${person({...look,hl:'hair'})}</div><div class="txt">
+    const v=h(`<div class="ll"><div class="bfig big">${photo(role)}</div><div class="txt">
       <button class="yb bl1"><span class="spk">${ic('son')}</span><span>${l1}</span></button>
       <button class="yb bl2"><span class="spk">${ic('son')}</span><span>${P} has got <b class="sw" style="background:${HAIRC[hc]}"></b> ${hc} hair.</span></button>
       <button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div></div>`);
     tapParts(v.querySelector('.bfig'));
     v.querySelector('.bl1').onclick=()=>say(l1);v.querySelector('.bl2').onclick=()=>say(l2);
-    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;const s=person({...look,hl:'hair',vb:HEAD});
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;const s=photo(role,{head:1,hl:'hair'});
       talk({svg:s,a:l1,mode:'repeat'},()=>talk({svg:s,q:`What colour hair has ${P.toLowerCase()} got?`,a:l2,mode:'ask'},()=>api.solve(b)))};
     api.play.append(v);later(()=>say(`${l1} ${l2}`),350)});
 }
 
 /* B5 eyes */
 function bEyes(area,ctx){
-  const R=[['m','blue'],['f','brown'],['f','green'],['m','brown'],['f','blue'],['m','green']];
-  rounds(area,ctx,R,([sx,ec],api)=>{
-    const P=sx==='m'?'He':'She';const look={sex:sx,hair:api.index%2?'curly':'straight',hc:['black','brown','red'][api.index%3],ec,skin:SKIN[(api.index+1)%3]};
+  const R=['grandpa','aunt','grandma','dad','mum','brother'];
+  rounds(area,ctx,R,(role,api)=>{
+    const p=PEOPLE[role],ec=p.ec,P=pr(p);
     const l=`${P} has got ${ec} eyes.`;
-    const v=h(`<div class="ll"><div class="bfig head">${person({...look,hl:'eyes',vb:HEAD})}</div><div class="txt">
+    const v=h(`<div class="ll"><div class="bfig head">${photo(role,{head:1,hl:'eyes'})}</div><div class="txt">
       <button class="yb bl"><span class="spk">${ic('son')}</span><span>${P} has got <b class="sw" style="background:${EYEC[ec]}"></b> ${ec} eyes.</span></button>
       <button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div></div>`);
     v.querySelector('.bl').onclick=()=>say(l);tapParts(v.querySelector('.bfig'));
-    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;talk({svg:person({...look,hl:'eyes',vb:HEAD}),q:`What colour eyes has ${P.toLowerCase()} got?`,a:l,mode:'ask'},()=>api.solve(b))};
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;talk({svg:photo(role,{head:1,hl:'eyes'}),q:`What colour eyes has ${P.toLowerCase()} got?`,a:l,mode:'ask'},()=>api.solve(b))};
     api.play.append(v);later(()=>say(l),350)});
 }
 
@@ -745,11 +776,11 @@ function bWho(area,ctx){
     const p=PEOPLE[role],P=pr(p),pl=P.toLowerCase();
     const lines=[`Who is ${pl}?`,`${P}'s my ${role}.`,`${P} is ${p.height}.`,...(p.build!=='mid'?[`${P} is ${p.build}.`]:[]),`${P} has got ${p.hair} hair.`];
     if(p.hc!=='grey')lines.push(`${P} has got ${p.hc} hair.`);lines.push(`${P} has got ${p.ec} eyes.`);
-    const v=h(`<div class="ll"><div class="bfig big">${person(p)}</div><div class="txt bwho">
+    const v=h(`<div class="ll"><div class="bfig big">${photo(role)}</div><div class="txt bwho">
       ${lines.map((l,i)=>`<button class="${i?'bline':'prompt bq'}" data-i="${i}">${i?`<span class="spk">${ic('son')}</span>`:''}${l}</button>`).join('')}
       <button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div></div>`);
     v.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>say(lines[+b.dataset.i]));tapParts(v.querySelector('.bfig'));
-    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;const s=person(p);
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;const s=photo(role);
       const qs=[{q:`Is ${pl} tall or short?`,a:`${P} is ${p.height}.`},...(p.build!=='mid'?[{q:`Is ${pl} thin or fat?`,a:`${P} is ${p.build}.`}]:[]),{q:`What colour eyes has ${pl} got?`,a:`${P} has got ${p.ec} eyes.`}];
       if(p.hc!=='grey')qs.push({q:`What colour hair has ${pl} got?`,a:`${P} has got ${p.hc} hair.`});
       const two=pick(qs,2);
@@ -775,17 +806,17 @@ function bExcuse(area,ctx){
 
 const BTH=o=>svgURI(person({...o,vb:o.vb}));
 const ACTS_BODY=[
- {id:'b_hello',name:'Hello, body!',thumb:BTH({sex:'f',hair:'curly',hc:'brown',ec:'green',shirt:'#8C64DB',skin:SKIN[1]}),col:'pink',alt:false,run:bHello,
+ {id:'b_hello',name:'Hello, body!',thumb:photoThumb('sister'),col:'pink',alt:false,run:bHello,
   tip:['Tap any part of the picture (or a word) to hear it.','Children copy: touch their own nose, eyes, ears... while saying the word.']},
- {id:'b_words',name:'Body Words',thumb:BTH({sex:'m',hair:'straight',hc:'black',hl:'eyes'}),col:'blue',alt:true,run:bWords,
+ {id:'b_words',name:'Body Words',thumb:photoThumb('brother'),col:'blue',alt:true,run:bWords,
   tip:['8 words: face, eyes, ears, nose, mouth, hair, arms, body. The part glows.','The green button gives an action: "Touch your nose!" Everyone does it.','"Your turn!": the class says "This is my nose." / "These are my eyes."']},
- {id:'b_size',name:'Tall or Short?',thumb:BTH({sex:'f',height:'tall',build:'thin',hair:'straight',hc:'red'}),col:'green',alt:false,run:bSize,
+ {id:'b_size',name:'Tall or Short?',thumb:photoThumb('grandpa'),col:'green',alt:false,run:bSize,
   tip:['Two people: tap each to hear "She is tall." / "She is short.".','"Your turn!" asks "Is she tall or short?" about one of them; the class answers.','Act it out: stand tall, crouch short, make yourself thin or round.']},
- {id:'b_hair',name:'Hair',thumb:BTH({sex:'f',hair:'curly',hc:'red',vb:HEAD}),col:'purple',alt:true,run:bHair,
+ {id:'b_hair',name:'Hair',thumb:photoThumb('aunt'),col:'purple',alt:true,run:bHair,
   tip:['Curly or straight, and the hair colour: "She has got curly hair. She has got brown hair."','"Your turn!": repeat the first sentence, then answer "What colour hair has she got?".','Ask children about classmates: "What colour hair has Ali got?"']},
- {id:'b_eyes',name:'Eyes',thumb:BTH({sex:'m',hair:'curly',hc:'brown',ec:'blue',hl:'eyes',vb:HEAD}),col:'pink',alt:false,run:bEyes,
+ {id:'b_eyes',name:'Eyes',thumb:photoThumb('grandma'),col:'pink',alt:false,run:bEyes,
   tip:['Blue, brown or green eyes: "He has got blue eyes."','"Your turn!" asks "What colour eyes has he got?".','Pairs: children look at each other\'s eyes and say the colour.']},
- {id:'b_who',name:'Who is she?',thumb:BTH(PEOPLE.mum),col:'blue',alt:true,run:bWho,
+ {id:'b_who',name:'Who is she?',thumb:photoThumb('mum'),col:'blue',alt:true,run:bWho,
   tip:['A family member is described: "Who is she? She\'s my mum. She is tall. She has got curly hair..."','"Your turn!" asks "Who is she?" and two more questions about her.','Tap each sentence to hear it again.']},
  {id:'b_excuse',name:'Excuse me!',img:'dad',col:'green',alt:false,run:bExcuse,
   tip:['Social skill: "Excuse me? Who is he?" – "Oh, he is my dad."','Half the class (A) asks politely, the other half (B) answers. Then swap.','Practise saying "Excuse me?" before asking a question.']}
@@ -812,15 +843,15 @@ function bFunny(area,ctx){
     <div class="tr" style="color:var(--muted)">One child comes to the board. "Touch" turns: the child touches the part. "What is it?" turns: the child says the word, you press Correct.</div></div></div>`);
   play.append(v);
   const fig=v.querySelector('.fb'),q=v.querySelector('.fbt'),big=v.querySelector('.fbbig'),ok=v.querySelector('.fbok'),help=v.querySelector('.fbhelp'),go=v.querySelector('.fbgo'),turn=v.querySelector('.turn');
-  let look={...randLook(),kid:0},target=null,mode='touch',done=true,count=0,last=null;
-  const draw=hl=>{fig.innerHTML=person({...look,hl});};draw();
+  let kid='sister',target=null,mode='touch',done=true,count=0,last=null;
+  const draw=hl=>{fig.innerHTML=photo(kid,{hl});};draw();
   const react=p=>{fig.querySelectorAll(`[data-part="${p}"]`).forEach(g=>{g.classList.remove('re-'+p);void g.getBBox();g.classList.add('re-'+p)});
     tone({nose:[[880,.08,0],[440,.25,.1]],eyes:[[1200,.05,0],[1200,.05,.15]],ears:[[300,.12,0],[360,.12,.12]],mouth:[[523,.1,0],[784,.15,.1]],hair:[[660,.06,0],[990,.06,.07],[660,.06,.14]],arms:[[392,.1,0],[523,.1,.12],[659,.15,.24]],face:[[700,.2,0]],body:[[330,.1,0],[392,.1,.1],[494,.1,.2],[659,.2,.3]]}[p]||[[600,.1,0]])};
   const win=p=>{done=true;ding();react(p);big.hidden=false;big.textContent=p;addStar(1,fig);later(()=>say(p),500);ok.hidden=true;help.hidden=true;go.hidden=false;count++;if(count>=5)ctx.done()};
   fig.addEventListener('click',e=>{const g=e.target.closest('[data-part]');if(!g)return;const p=g.dataset.part;
     if(done||mode!=='touch'){react(p);say(p);return}
     if(p===target)win(p);else{react(p);buzz();later(()=>say(`No! Touch the ${target}!`),250)}});
-  go.onclick=()=>{go.hidden=true;big.hidden=true;done=false;look={...randLook(),kid:0};
+  go.onclick=()=>{go.hidden=true;big.hidden=true;done=false;kid=kid==='sister'?'brother':'sister';
     let t;do{t=pick(BW,1)[0]}while(t===last);target=t;last=t;mode=Math.random()<.6?'touch':'say';
     const nm=nextTurnName(turn);
     const start=()=>{if(mode==='touch'){draw();q.textContent=`Touch the ${t}!`;say(`Touch the ${t}!`)}
@@ -848,7 +879,7 @@ function bDoor(area,ctx){
     colour:'<svg viewBox="0 0 60 60"><circle cx="18" cy="20" r="10" fill="#D9542B"/><circle cx="40" cy="20" r="10" fill="#F2C94C"/><circle cx="18" cy="42" r="10" fill="#2B2321"/><circle cx="40" cy="42" r="10" fill="#7A4A25"/></svg>',
     eyes:'<svg viewBox="0 0 60 60"><ellipse cx="18" cy="30" rx="12" ry="13" fill="#fff" stroke="#2F2D52" stroke-width="3"/><ellipse cx="42" cy="30" rx="12" ry="13" fill="#fff" stroke="#2F2D52" stroke-width="3"/><circle cx="18" cy="31" r="6" fill="#3FA3E6"/><circle cx="42" cy="31" r="6" fill="#3FA3E6"/></svg>'};
   function setup(){role=queue.shift()||(queue=shuffle(ROLES_ORDER)).shift();const p=PEOPLE[role],P=pr(p),pl=P.toLowerCase();
-    pers.innerHTML=person(p);door.classList.remove('open');open=false;doneCards=0;
+    pers.innerHTML=photo(role,{hgt:p.height==='short'?82:100});door.classList.remove('open');open=false;doneCards=0;
     const C=[{k:'who',q:`Who is ${pl}?`,a:`${P}'s my ${role}.`},{k:'height',q:`Is ${pl} tall or short?`,a:`${P} is ${p.height}.`}];
     if(p.build&&p.build!=='mid')C.push({k:'build',q:`Is ${pl} thin or fat?`,a:`${P} is ${p.build}.`});
     C.push({k:'hair',q:'Curly or straight?',a:`${P} has got ${p.hair} hair.`});
@@ -1027,9 +1058,9 @@ function accSVG(t,cx=150,cy=112,s=1){const T=`transform="translate(${cx} ${cy}) 
     h:`<g ${T}><path d="M150 -30 L104 52 L196 52Z" fill="#3FB2E6"/><circle cx="150" cy="-30" r="10" fill="#FFD54A"/><circle cx="135" cy="20" r="6" fill="#fff"/><circle cx="160" cy="34" r="6" fill="#fff"/></g>`}[t]||''}
 
 ACTS_BODY.push(
- {id:'b_funny',name:'Funny Body',thumb:BTH({sex:'m',hair:'curly',hc:'red',ec:'green',hl:'nose',vb:HEAD}),col:'pink',alt:false,run:bFunny,
+ {id:'b_funny',name:'Funny Body',thumb:photoThumb('brother'),col:'pink',alt:false,run:bFunny,
   tip:['Target words. Press GO: the name picker calls a child (if names are added) and gives a task.','"Touch the nose!": the child touches the part on the board; it does something funny.','"What is it?": a part glows, the child says the word, you press Correct. The rest of the class can whisper "Help!"']},
- {id:'b_door',name:'Mystery Door',img:'grandma',col:'purple',alt:true,run:bDoor,
+ {id:'b_door',name:'Mystery Door',thumb:photoThumb('uncle'),col:'purple',alt:true,run:bDoor,
   tip:['Productive language. The child knocks; a family member is behind the door.','Each picture card asks one question; the child answers in a full sentence ("She is tall."). Press ✓.','All cards ✓ = 2 stars. "Next child" closes the door with a new person.']},
  {id:'b_paint',name:'Magic Paint',thumb:BTH({sex:'f',hair:'straight',hc:'mystery',ec:'mystery',vb:HEAD}),col:'green',alt:false,run:bPaint,
   tip:['Two levels (top right). EASY: the CHILD asks the class "What colour hair has she got?", paints the grey hair with the magic brush and the class answers; press ✓.','MEDIUM: the class asks the question; the child presses the microphone and says "She has got red hair." The colour the child says appears.','The microphone uses the browser\'s speech recognition (Chrome or Edge, internet needed). If it does not work, colour buttons appear: the child says the sentence and taps the colour.']},
@@ -1072,7 +1103,7 @@ function topicScreen(){clearTimers();hush();cur=-3;const a=$('#area');a.innerHTM
   ['bPrev','bNext','bAgain','bTip'].forEach(id=>$('#'+id).classList.add('off'));
   const v=h(`<div class="tpscreen"><h1>What shall we learn?</h1><div class="tprow">
     <button class="tpbtn" data-k="family" style="--c:var(--pink);--s:#D9467A"><div class="tpimg"><img src="${IMG.cover}" alt=""></div><b>Family members</b><small>mum, dad, grandma…</small></button>
-    <button class="tpbtn" data-k="body" style="--c:var(--purple);--s:#6E49B8"><div class="tpimg tpb">${person({sex:'f',hair:'curly',hc:'brown',ec:'green',shirt:'#FF8A3D',skin:SKIN[1],hl:'eyes'})}${person({sex:'m',hair:'straight',hc:'black',ec:'blue',build:'fat',height:'short',skin:SKIN[2]})}</div><b>Body parts</b><small>eyes, nose, hair, tall, short…</small></button>
+    <button class="tpbtn" data-k="body" style="--c:var(--purple);--s:#6E49B8"><div class="tpimg tpb">${photo('mum')}${photo('brother',{hgt:72})}</div><b>Body parts</b><small>eyes, nose, hair, tall, short…</small></button>
   </div></div>`);
   v.querySelectorAll('.tpbtn').forEach(b=>b.onclick=()=>{setTopic(b.dataset.k);go(-1);say(b.dataset.k==='body'?'Body parts!':'Family members!')});
   a.append(v)}
