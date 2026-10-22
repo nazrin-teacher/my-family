@@ -1,7 +1,11 @@
 # My Family for Teachers
 
-Interactive English games for young learners (ages 5–6) on the topic **family**:
-mum, dad, grandma, grandpa, sister, brother, baby brother, baby sister, uncle, aunt, cousin.
+Interactive English games for young learners (ages 5–6). The first screen lets the teacher choose a topic:
+
+- **Family members:** mum, dad, grandma, grandpa, sister, brother, baby brother, baby sister, uncle, aunt, cousin.
+- **Body parts:** face, eyes, ears, nose, mouth, hair, arms, body; tall, short, thin, fat, curly, straight.
+  Language: *Who is she? She's my mum. She is tall. She has got curly hair. What colour eyes has she got?*
+  Activities: Funny Body, Mystery Door, Magic Paint (Easy / Medium with microphone), Design your character.
 
 Made for classroom smart boards; also works on computers, tablets and phones.
 

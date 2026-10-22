@@ -228,6 +228,114 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 .gname{font:800 60px var(--display);color:var(--purple)}
 .namesbox{width:100%;height:220px;font:700 24px/1.4 var(--body);border:3px solid var(--purple);border-radius:16px;padding:10px 14px;resize:vertical;color:var(--ink);background:var(--white)}
 .clsin{font:800 24px var(--body);border:3px solid var(--purple);border-radius:14px;padding:6px 12px;width:420px;color:var(--ink);background:var(--white)}
+/* topic screen + body parts */
+.tpscreen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.tpscreen h1{margin:0;font:800 84px/1 var(--display);color:var(--pink)}
+.tprow{display:flex;gap:60px}
+.tpbtn{width:560px;height:560px;border:none;border-radius:44px;background:var(--c);box-shadow:0 12px 0 var(--s);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;padding:24px;font-family:var(--display)}
+.tpbtn:active{transform:translateY(8px);box-shadow:0 4px 0 var(--s)}
+.tpbtn b{font-size:64px;line-height:1}.tpbtn small{font:800 28px var(--body);opacity:.92}
+.tpimg{flex:1;width:100%;border-radius:30px;overflow:hidden;background:#fff;display:flex;align-items:flex-end;justify-content:center}
+.tpimg img{width:100%;height:100%;object-fit:cover}
+.tpb{background:var(--sky);gap:0}.tpb svg{height:96%;width:auto}
+.pp{display:block;overflow:hidden}
+.pp .pt{cursor:pointer}
+.pp .hl{filter:drop-shadow(0 0 5px #FFD54A) drop-shadow(0 0 12px #FFB300);animation:hlp .9s ease-in-out infinite alternate}
+.pp .ring{fill:none;stroke:#FFB300;stroke-width:6;stroke-dasharray:14 9;animation:hlp .9s ease-in-out infinite alternate;pointer-events:none}
+@keyframes hlp{from{opacity:.75}to{opacity:1}}
+.bfig{flex:none;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;background:var(--white);border-radius:30px;box-shadow:0 6px 0 rgba(47,45,82,.12)}
+.bfig.big{width:470px;height:640px;padding:16px}.bfig.big svg{height:100%;width:auto}
+.bfig.mid{width:330px;height:470px;padding:10px;box-shadow:none;background:transparent}.bfig.mid svg{height:100%;width:auto}
+.bfig.head{width:520px;height:470px;align-items:center}.bfig.head svg{width:92%;height:auto}
+.bh{display:flex;gap:60px;align-items:center}.bh .bfig{width:460px;height:660px;padding:14px}.bh .bfig svg{height:100%;width:auto}
+.bside{display:flex;flex-direction:column;gap:26px;align-items:flex-start;width:640px}
+.bchips{display:flex;flex-wrap:wrap;gap:14px}
+.bchip{border:none;border-radius:22px;background:var(--white);padding:12px 26px;font:800 36px var(--body);color:var(--ink);box-shadow:0 5px 0 rgba(47,45,82,.15)}
+.ll .txt .bigbtn{font-size:30px}
+.bsz{display:flex;flex-direction:column;align-items:center;gap:20px;width:100%}
+.bpair{display:flex;gap:80px;align-items:flex-end;border-bottom:8px solid #C9B98F;padding:0 40px}
+.bcard{border:none;background:none;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0;border-radius:24px}
+.bcard.sel .bfig{background:#FFF3C4;outline:6px solid var(--yellow)}
+.blab{font:800 46px var(--display);color:var(--ink);background:var(--white);border-radius:20px;padding:2px 26px;margin-bottom:10px}
+.sw{display:inline-block;width:36px;height:36px;border-radius:50%;vertical-align:-6px;border:3px solid rgba(0,0,0,.15)}
+.bwho{gap:12px!important}
+.bq{border:none;background:none;padding:0;font-size:56px}
+.bline{border:none;background:var(--white);border-radius:18px;padding:8px 20px 8px 10px;font:800 34px var(--body);color:var(--ink);display:flex;align-items:center;gap:14px;box-shadow:0 4px 0 rgba(47,45,82,.12)}
+.bline .spk{width:44px;height:44px}.bline .spk svg{width:26px;height:26px}
+.bex{display:flex;gap:50px;align-items:center}
+.bexpic{width:420px;height:430px;flex:none}.bexpic img{width:100%;height:100%;object-fit:cover}
+.bdlg{display:flex;flex-direction:column;gap:24px;width:780px;align-items:flex-start}
+.bub{border:none;border-radius:34px;padding:22px 30px;font:800 46px/1.2 var(--display);color:var(--ink);background:var(--white);display:flex;align-items:center;gap:18px;box-shadow:0 6px 0 rgba(47,45,82,.12)}
+.bub.r{align-self:flex-end;background:#E3F3FB}
+.bub .who{width:56px;height:56px;border-radius:50%;color:#fff;display:grid;place-items:center;font-size:30px;flex:none}
+.gsvg{overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--white)}.gsvg svg{max-height:100%;max-width:100%}
+/* body activities */
+.pp .pt{transform-box:fill-box;transform-origin:center}
+.re-nose{animation:reNose .7s}.re-eyes{animation:reEyes .6s}.re-ears{animation:reEars .7s}.re-mouth{animation:reMouth .7s}
+.re-hair{animation:reHair .7s}.re-arms{animation:reArms .8s}.re-face{animation:reFace .8s}.re-body{animation:reBody .9s}
+@keyframes reNose{30%{transform:scale(1.8)}60%{transform:scale(.8)}}
+@keyframes reEyes{20%,60%{transform:scaleY(.1)}40%,80%{transform:scaleY(1)}}
+@keyframes reEars{25%{transform:rotate(-14deg)}75%{transform:rotate(14deg)}}
+@keyframes reMouth{40%{transform:scale(1.6,1.9)}}
+@keyframes reHair{25%,75%{transform:translateY(-14px)}50%{transform:translateY(0)}}
+@keyframes reArms{25%{transform:rotate(-12deg)}75%{transform:rotate(12deg)}}
+@keyframes reFace{50%{filter:sepia(.6) saturate(3) hue-rotate(-20deg)}}
+@keyframes reBody{20%{transform:rotate(-4deg)}40%{transform:rotate(4deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(4deg)}}
+.turn{display:flex;align-items:center;gap:12px;background:var(--purple);color:#fff;border-radius:30px;padding:6px 24px 6px 12px;font:800 44px var(--display)}
+.turn svg{width:44px;height:44px}
+.fbside{gap:22px!important}
+.fbbig{font:800 110px/1 var(--display);color:var(--pink)}
+.row2{display:flex;gap:16px}
+.dr{display:flex;gap:50px;align-items:center;width:100%;justify-content:center}
+.drwrap{position:relative;width:440px;height:660px;flex:none;perspective:1400px;background:#F3E3C3;border:14px solid #8B5A2B;border-radius:24px 24px 6px 6px;overflow:hidden}
+.drperson{position:absolute;inset:16px 10px 0;display:flex;align-items:flex-end;justify-content:center}.drperson svg{height:100%;width:auto}
+.door{position:absolute;inset:0;border:none;background:linear-gradient(90deg,#B9773A,#A0612B);transform-origin:left center;transition:transform 1s cubic-bezier(.3,.7,.3,1);z-index:2;display:grid;place-items:center;box-shadow:inset 0 0 0 14px #8B5A2B}
+.door::before,.door::after{content:'';position:absolute;left:50px;right:50px;height:200px;border:8px solid #8B5A2B;border-radius:14px}.door::before{top:60px}.door::after{bottom:60px}
+.door .knob{position:absolute;right:40px;top:50%;width:34px;height:34px;border-radius:50%;background:#FFD54A;box-shadow:0 3px 0 #C99A00}
+.door .dq{font:800 180px var(--display);color:#FFE07A;text-shadow:0 6px 0 rgba(0,0,0,.2)}
+.door.open{transform:rotateY(-105deg)}
+.drside{display:flex;flex-direction:column;gap:22px;align-items:flex-start;width:760px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%}
+.cards.locked{opacity:.35;pointer-events:none}
+.qcard2{position:relative;background:var(--white);border-radius:24px;padding:10px;display:flex;gap:8px;align-items:center;box-shadow:0 5px 0 rgba(47,45,82,.12);border:5px solid transparent}
+.qcard2.on{border-color:var(--yellow)}.qcard2.done{background:#E3F8EE;border-color:var(--green)}
+.qi{width:120px;height:110px;border:none;background:var(--sky);border-radius:18px;padding:6px;overflow:hidden;flex:none}.qi svg,.qi img{width:100%;height:100%;object-fit:cover}
+.qok,.qh{width:62px;height:62px;border-radius:50%;border:none;display:grid;place-items:center;color:#fff}.qok{background:var(--green)}.qh{background:var(--blue)}.qok svg,.qh svg{width:34px;height:34px}
+.qcard2.done .qok{background:var(--yellow)}
+.mpside{gap:18px!important}
+.steps{display:flex;flex-direction:column;gap:16px}
+.step{display:flex;align-items:center;gap:16px;opacity:.35;transition:opacity .3s}.step.on{opacity:1}.step.done{opacity:.6}
+.sn{width:56px;height:56px;border-radius:50%;background:var(--purple);color:#fff;display:grid;place-items:center;font:800 32px var(--display);flex:none}
+.brushhint{display:flex;align-items:center;gap:10px;background:var(--white);border-radius:24px;padding:10px 20px}.brushhint svg{width:60px;height:60px}
+.step.on .brushhint{animation:pulse .7s infinite alternate}
+.dsg{display:grid;grid-template-columns:440px 1fr;grid-template-rows:1fr auto;gap:14px 30px;width:100%;height:100%;position:relative}
+.dsg .dsfig{grid-row:1/3;width:440px;height:100%}
+.dsopts{display:flex;gap:26px;min-height:0;align-items:flex-start}.dscol{display:flex;flex-direction:column;gap:14px}
+.dsrow{display:flex;gap:12px;flex-wrap:wrap;max-width:640px}
+.dso{width:112px;height:104px;border-radius:22px;border:5px solid transparent;background:var(--white);padding:2px;display:grid;place-items:center;box-shadow:0 3px 0 rgba(47,45,82,.12);overflow:hidden}
+.dso svg{height:100%;width:auto}.dso.on{border-color:var(--orange);background:#FFF3C4}
+.dot{width:70px;height:70px;border-radius:50%;display:block;border:3px solid rgba(0,0,0,.12)}.dot.eye{box-shadow:inset 0 0 0 18px #fff}
+.dsbar{display:flex;gap:16px;align-items:center}
+.dsturn{position:absolute;top:0;right:0;z-index:3}
+.dspbox{gap:30px}.dspbox .bfig.big{width:380px;height:600px}
+.dsroles{display:flex;gap:10px}.dsrole{width:96px;height:96px;border-radius:18px;border:5px solid transparent;padding:0;overflow:hidden;background:#fff}.dsrole img{width:100%;height:100%;object-fit:cover}.dsrole.on{border-color:var(--orange)}
+.dslines{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.galbox{flex-direction:column;align-items:stretch;width:1400px;max-height:820px}
+.galgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;overflow:auto;max-height:560px}
+.galitem{border:none;background:var(--sky);border-radius:20px;height:260px;padding:8px;display:flex;flex-direction:column;align-items:center}.galitem svg{height:210px;width:auto}.galitem span{font:800 22px var(--body);color:var(--ink)}
+/* magic paint levels */
+.lvl{position:absolute;top:10px;right:20px;display:flex;gap:10px;z-index:4}
+.lvb{border:4px solid var(--purple);background:var(--white);border-radius:24px;padding:6px 16px;display:flex;align-items:center;gap:8px;font:800 26px var(--body);color:var(--purple)}
+.lvb.on{background:var(--purple);color:#fff}
+.lvbox{width:100%;height:100%;display:flex;align-items:center}
+.microw{display:flex;align-items:center;gap:24px}
+.mic{width:150px;height:150px;border-radius:50%;border:none;background:var(--pink);color:#fff;display:grid;place-items:center;box-shadow:0 8px 0 #D9467A}
+.mic.on{background:var(--red);animation:pulse .6s infinite alternate}
+.said{font:800 34px var(--body);color:var(--muted);max-width:420px}
+.swatches{display:flex;gap:18px}
+.swb{width:100px;height:100px;border-radius:50%;border:6px solid #fff;box-shadow:0 5px 0 rgba(47,45,82,.2)}
+.bfig.magic svg{animation:magicGlow 1.2s}
+@keyframes magicGlow{0%{filter:brightness(1)}30%{filter:brightness(1.6) drop-shadow(0 0 30px #FFD54A)}100%{filter:brightness(1)}}
 /* settings tile + modal */
 .tile.set{background:var(--purple);color:var(--white);align-items:center;justify-content:center;gap:10px}
 .tile.set .gear{width:110px;height:110px;color:var(--white)}
@@ -362,7 +470,7 @@ const SKEY=ONE_CLASS?'myfamily-teacher':'myfamily';
 const DEFAULT_NAMES={};
 /* Recorded natural voice: every fixed sentence is a short clip. A line is split into sentences; if every sentence
    has a clip the clips play one after another, otherwise the device voice is used (e.g. for children's names). */
-const AUD={"hello": "assets/audio/hello.mp3", "this is my family": "assets/audio/this_is_my_family.mp3", "meet everyone": "assets/audio/meet_everyone.mp3", "well done": "assets/audio/well_done.mp3", "who is she": "assets/audio/who_is_she.mp3", "who is he": "assets/audio/who_is_he.mp3", "listen": "assets/audio/listen.mp3", "now choose": "assets/audio/now_choose.mp3", "listen again": "assets/audio/listen_again.mp3", "spin the wheel": "assets/audio/spin_the_wheel.mp3", "look and remember": "assets/audio/look_and_remember.mp3", "close your eyes": "assets/audio/close_your_eyes.mp3", "open your eyes": "assets/audio/open_your_eyes.mp3", "what's missing": "assets/audio/what_s_missing.mp3", "goodbye family": "assets/audio/goodbye_family.mp3", "see you": "assets/audio/see_you.mp3", "your turn": "assets/audio/your_turn.mp3", "super star": "assets/audio/super_star.mp3", "yes": "assets/audio/yes.mp3", "no": "assets/audio/no.mp3", "she": "assets/audio/she.mp3", "he": "assets/audio/he.mp3", "she is my cousin": "assets/audio/she_is_my_cousin.mp3", "he is my cousin": "assets/audio/he_is_my_cousin.mp3", "mum": "assets/audio/mum.mp3", "touch the mum": "assets/audio/touch_the_mum.mp3", "find the mum": "assets/audio/find_the_mum.mp3", "that's my mum": "assets/audio/that_s_my_mum.mp3", "it's my mum": "assets/audio/it_s_my_mum.mp3", "she is my mum": "assets/audio/she_is_my_mum.mp3", "wave like mum": "assets/audio/wave_like_mum.mp3", "dad": "assets/audio/dad.mp3", "touch the dad": "assets/audio/touch_the_dad.mp3", "find the dad": "assets/audio/find_the_dad.mp3", "that's my dad": "assets/audio/that_s_my_dad.mp3", "it's my dad": "assets/audio/it_s_my_dad.mp3", "he is my dad": "assets/audio/he_is_my_dad.mp3", "jump like dad": "assets/audio/jump_like_dad.mp3", "grandma": "assets/audio/grandma.mp3", "touch the grandma": "assets/audio/touch_the_grandma.mp3", "find the grandma": "assets/audio/find_the_grandma.mp3", "that's my grandma": "assets/audio/that_s_my_grandma.mp3", "it's my grandma": "assets/audio/it_s_my_grandma.mp3", "she is my grandma": "assets/audio/she_is_my_grandma.mp3", "dance like grandma": "assets/audio/dance_like_grandma.mp3", "grandpa": "assets/audio/grandpa.mp3", "touch the grandpa": "assets/audio/touch_the_grandpa.mp3", "find the grandpa": "assets/audio/find_the_grandpa.mp3", "that's my grandpa": "assets/audio/that_s_my_grandpa.mp3", "it's my grandpa": "assets/audio/it_s_my_grandpa.mp3", "he is my grandpa": "assets/audio/he_is_my_grandpa.mp3", "walk like grandpa": "assets/audio/walk_like_grandpa.mp3", "sister": "assets/audio/sister.mp3", "touch the sister": "assets/audio/touch_the_sister.mp3", "find the sister": "assets/audio/find_the_sister.mp3", "that's my sister": "assets/audio/that_s_my_sister.mp3", "it's my sister": "assets/audio/it_s_my_sister.mp3", "she is my sister": "assets/audio/she_is_my_sister.mp3", "hop like your sister": "assets/audio/hop_like_your_sister.mp3", "brother": "assets/audio/brother.mp3", "touch the brother": "assets/audio/touch_the_brother.mp3", "find the brother": "assets/audio/find_the_brother.mp3", "that's my brother": "assets/audio/that_s_my_brother.mp3", "it's my brother": "assets/audio/it_s_my_brother.mp3", "he is my brother": "assets/audio/he_is_my_brother.mp3", "run like your brother": "assets/audio/run_like_your_brother.mp3", "baby brother": "assets/audio/baby_brother.mp3", "touch the baby brother": "assets/audio/touch_the_baby_brother.mp3", "find the baby brother": "assets/audio/find_the_baby_brother.mp3", "that's my baby brother": "assets/audio/that_s_my_baby_brother.mp3", "it's my baby brother": "assets/audio/it_s_my_baby_brother.mp3", "he is my baby brother": "assets/audio/he_is_my_baby_brother.mp3", "cry like a baby": "assets/audio/cry_like_a_baby.mp3", "waaah": "assets/audio/waaah.mp3", "baby sister": "assets/audio/baby_sister.mp3", "touch the baby sister": "assets/audio/touch_the_baby_sister.mp3", "find the baby sister": "assets/audio/find_the_baby_sister.mp3", "that's my baby sister": "assets/audio/that_s_my_baby_sister.mp3", "it's my baby sister": "assets/audio/it_s_my_baby_sister.mp3", "she is my baby sister": "assets/audio/she_is_my_baby_sister.mp3", "clap like a baby": "assets/audio/clap_like_a_baby.mp3", "uncle": "assets/audio/uncle.mp3", "touch the uncle": "assets/audio/touch_the_uncle.mp3", "find the uncle": "assets/audio/find_the_uncle.mp3", "that's my uncle": "assets/audio/that_s_my_uncle.mp3", "it's my uncle": "assets/audio/it_s_my_uncle.mp3", "he is my uncle": "assets/audio/he_is_my_uncle.mp3", "wave to your uncle": "assets/audio/wave_to_your_uncle.mp3", "aunt": "assets/audio/aunt.mp3", "touch the aunt": "assets/audio/touch_the_aunt.mp3", "find the aunt": "assets/audio/find_the_aunt.mp3", "that's my aunt": "assets/audio/that_s_my_aunt.mp3", "it's my aunt": "assets/audio/it_s_my_aunt.mp3", "she is my aunt": "assets/audio/she_is_my_aunt.mp3", "spin like your aunt": "assets/audio/spin_like_your_aunt.mp3", "cousin": "assets/audio/cousin.mp3", "touch the cousin": "assets/audio/touch_the_cousin.mp3", "find the cousin": "assets/audio/find_the_cousin.mp3", "that's my cousin": "assets/audio/that_s_my_cousin.mp3", "it's my cousin": "assets/audio/it_s_my_cousin.mp3", "high five cousin": "assets/audio/high_five_cousin.mp3"};
+const AUD={"hello": "assets/audio/hello.mp3", "this is my family": "assets/audio/this_is_my_family.mp3", "meet everyone": "assets/audio/meet_everyone.mp3", "well done": "assets/audio/well_done.mp3", "who is she": "assets/audio/who_is_she.mp3", "who is he": "assets/audio/who_is_he.mp3", "listen": "assets/audio/listen.mp3", "now choose": "assets/audio/now_choose.mp3", "listen again": "assets/audio/listen_again.mp3", "spin the wheel": "assets/audio/spin_the_wheel.mp3", "look and remember": "assets/audio/look_and_remember.mp3", "close your eyes": "assets/audio/close_your_eyes.mp3", "open your eyes": "assets/audio/open_your_eyes.mp3", "what's missing": "assets/audio/what_s_missing.mp3", "goodbye family": "assets/audio/goodbye_family.mp3", "see you": "assets/audio/see_you.mp3", "your turn": "assets/audio/your_turn.mp3", "super star": "assets/audio/super_star.mp3", "yes": "assets/audio/yes.mp3", "no": "assets/audio/no.mp3", "she": "assets/audio/she.mp3", "he": "assets/audio/he.mp3", "she is my cousin": "assets/audio/she_is_my_cousin.mp3", "he is my cousin": "assets/audio/he_is_my_cousin.mp3", "mum": "assets/audio/mum.mp3", "touch the mum": "assets/audio/touch_the_mum.mp3", "find the mum": "assets/audio/find_the_mum.mp3", "that's my mum": "assets/audio/that_s_my_mum.mp3", "it's my mum": "assets/audio/it_s_my_mum.mp3", "she is my mum": "assets/audio/she_is_my_mum.mp3", "wave like mum": "assets/audio/wave_like_mum.mp3", "dad": "assets/audio/dad.mp3", "touch the dad": "assets/audio/touch_the_dad.mp3", "find the dad": "assets/audio/find_the_dad.mp3", "that's my dad": "assets/audio/that_s_my_dad.mp3", "it's my dad": "assets/audio/it_s_my_dad.mp3", "he is my dad": "assets/audio/he_is_my_dad.mp3", "jump like dad": "assets/audio/jump_like_dad.mp3", "grandma": "assets/audio/grandma.mp3", "touch the grandma": "assets/audio/touch_the_grandma.mp3", "find the grandma": "assets/audio/find_the_grandma.mp3", "that's my grandma": "assets/audio/that_s_my_grandma.mp3", "it's my grandma": "assets/audio/it_s_my_grandma.mp3", "she is my grandma": "assets/audio/she_is_my_grandma.mp3", "dance like grandma": "assets/audio/dance_like_grandma.mp3", "grandpa": "assets/audio/grandpa.mp3", "touch the grandpa": "assets/audio/touch_the_grandpa.mp3", "find the grandpa": "assets/audio/find_the_grandpa.mp3", "that's my grandpa": "assets/audio/that_s_my_grandpa.mp3", "it's my grandpa": "assets/audio/it_s_my_grandpa.mp3", "he is my grandpa": "assets/audio/he_is_my_grandpa.mp3", "walk like grandpa": "assets/audio/walk_like_grandpa.mp3", "sister": "assets/audio/sister.mp3", "touch the sister": "assets/audio/touch_the_sister.mp3", "find the sister": "assets/audio/find_the_sister.mp3", "that's my sister": "assets/audio/that_s_my_sister.mp3", "it's my sister": "assets/audio/it_s_my_sister.mp3", "she is my sister": "assets/audio/she_is_my_sister.mp3", "hop like your sister": "assets/audio/hop_like_your_sister.mp3", "brother": "assets/audio/brother.mp3", "touch the brother": "assets/audio/touch_the_brother.mp3", "find the brother": "assets/audio/find_the_brother.mp3", "that's my brother": "assets/audio/that_s_my_brother.mp3", "it's my brother": "assets/audio/it_s_my_brother.mp3", "he is my brother": "assets/audio/he_is_my_brother.mp3", "run like your brother": "assets/audio/run_like_your_brother.mp3", "baby brother": "assets/audio/baby_brother.mp3", "touch the baby brother": "assets/audio/touch_the_baby_brother.mp3", "find the baby brother": "assets/audio/find_the_baby_brother.mp3", "that's my baby brother": "assets/audio/that_s_my_baby_brother.mp3", "it's my baby brother": "assets/audio/it_s_my_baby_brother.mp3", "he is my baby brother": "assets/audio/he_is_my_baby_brother.mp3", "cry like a baby": "assets/audio/cry_like_a_baby.mp3", "waaah": "assets/audio/waaah.mp3", "baby sister": "assets/audio/baby_sister.mp3", "touch the baby sister": "assets/audio/touch_the_baby_sister.mp3", "find the baby sister": "assets/audio/find_the_baby_sister.mp3", "that's my baby sister": "assets/audio/that_s_my_baby_sister.mp3", "it's my baby sister": "assets/audio/it_s_my_baby_sister.mp3", "she is my baby sister": "assets/audio/she_is_my_baby_sister.mp3", "clap like a baby": "assets/audio/clap_like_a_baby.mp3", "uncle": "assets/audio/uncle.mp3", "touch the uncle": "assets/audio/touch_the_uncle.mp3", "find the uncle": "assets/audio/find_the_uncle.mp3", "that's my uncle": "assets/audio/that_s_my_uncle.mp3", "it's my uncle": "assets/audio/it_s_my_uncle.mp3", "he is my uncle": "assets/audio/he_is_my_uncle.mp3", "wave to your uncle": "assets/audio/wave_to_your_uncle.mp3", "aunt": "assets/audio/aunt.mp3", "touch the aunt": "assets/audio/touch_the_aunt.mp3", "find the aunt": "assets/audio/find_the_aunt.mp3", "that's my aunt": "assets/audio/that_s_my_aunt.mp3", "it's my aunt": "assets/audio/it_s_my_aunt.mp3", "she is my aunt": "assets/audio/she_is_my_aunt.mp3", "spin like your aunt": "assets/audio/spin_like_your_aunt.mp3", "cousin": "assets/audio/cousin.mp3", "touch the cousin": "assets/audio/touch_the_cousin.mp3", "find the cousin": "assets/audio/find_the_cousin.mp3", "that's my cousin": "assets/audio/that_s_my_cousin.mp3", "it's my cousin": "assets/audio/it_s_my_cousin.mp3", "high five cousin": "assets/audio/high_five_cousin.mp3", "this is my body": "assets/audio/this_is_my_body.mp3", "touch and listen": "assets/audio/touch_and_listen.mp3", "body parts": "assets/audio/body_parts.mp3", "family members": "assets/audio/family_members.mp3", "excuse me": "assets/audio/excuse_me.mp3", "face": "assets/audio/face.mp3", "this is my face": "assets/audio/this_is_my_face.mp3", "touch your face": "assets/audio/touch_your_face.mp3", "eyes": "assets/audio/eyes.mp3", "these are my eyes": "assets/audio/these_are_my_eyes.mp3", "touch your eyes": "assets/audio/touch_your_eyes.mp3", "ears": "assets/audio/ears.mp3", "these are my ears": "assets/audio/these_are_my_ears.mp3", "touch your ears": "assets/audio/touch_your_ears.mp3", "nose": "assets/audio/nose.mp3", "this is my nose": "assets/audio/this_is_my_nose.mp3", "touch your nose": "assets/audio/touch_your_nose.mp3", "mouth": "assets/audio/mouth.mp3", "this is my mouth": "assets/audio/this_is_my_mouth.mp3", "touch your mouth": "assets/audio/touch_your_mouth.mp3", "hair": "assets/audio/hair.mp3", "this is my hair": "assets/audio/this_is_my_hair.mp3", "touch your hair": "assets/audio/touch_your_hair.mp3", "arms": "assets/audio/arms.mp3", "these are my arms": "assets/audio/these_are_my_arms.mp3", "wave your arms": "assets/audio/wave_your_arms.mp3", "body": "assets/audio/body.mp3", "shake your body": "assets/audio/shake_your_body.mp3", "she is tall": "assets/audio/she_is_tall.mp3", "she is short": "assets/audio/she_is_short.mp3", "she is thin": "assets/audio/she_is_thin.mp3", "she is fat": "assets/audio/she_is_fat.mp3", "is she tall or short": "assets/audio/is_she_tall_or_short.mp3", "is she thin or fat": "assets/audio/is_she_thin_or_fat.mp3", "what colour hair has she got": "assets/audio/what_colour_hair_has_she_got.mp3", "what colour eyes has she got": "assets/audio/what_colour_eyes_has_she_got.mp3", "she has got curly hair": "assets/audio/she_has_got_curly_hair.mp3", "she has got straight hair": "assets/audio/she_has_got_straight_hair.mp3", "she has got brown hair": "assets/audio/she_has_got_brown_hair.mp3", "she has got black hair": "assets/audio/she_has_got_black_hair.mp3", "she has got yellow hair": "assets/audio/she_has_got_yellow_hair.mp3", "she has got red hair": "assets/audio/she_has_got_red_hair.mp3", "she has got blue eyes": "assets/audio/she_has_got_blue_eyes.mp3", "she has got brown eyes": "assets/audio/she_has_got_brown_eyes.mp3", "she has got green eyes": "assets/audio/she_has_got_green_eyes.mp3", "he is tall": "assets/audio/he_is_tall.mp3", "he is short": "assets/audio/he_is_short.mp3", "he is thin": "assets/audio/he_is_thin.mp3", "he is fat": "assets/audio/he_is_fat.mp3", "is he tall or short": "assets/audio/is_he_tall_or_short.mp3", "is he thin or fat": "assets/audio/is_he_thin_or_fat.mp3", "what colour hair has he got": "assets/audio/what_colour_hair_has_he_got.mp3", "what colour eyes has he got": "assets/audio/what_colour_eyes_has_he_got.mp3", "he has got curly hair": "assets/audio/he_has_got_curly_hair.mp3", "he has got straight hair": "assets/audio/he_has_got_straight_hair.mp3", "he has got brown hair": "assets/audio/he_has_got_brown_hair.mp3", "he has got black hair": "assets/audio/he_has_got_black_hair.mp3", "he has got yellow hair": "assets/audio/he_has_got_yellow_hair.mp3", "he has got red hair": "assets/audio/he_has_got_red_hair.mp3", "he has got blue eyes": "assets/audio/he_has_got_blue_eyes.mp3", "he has got brown eyes": "assets/audio/he_has_got_brown_eyes.mp3", "he has got green eyes": "assets/audio/he_has_got_green_eyes.mp3", "she's my mum": "assets/audio/she_s_my_mum.mp3", "oh she is my mum": "assets/audio/oh_she_is_my_mum.mp3", "she's my sister": "assets/audio/she_s_my_sister.mp3", "oh she is my sister": "assets/audio/oh_she_is_my_sister.mp3", "she's my grandma": "assets/audio/she_s_my_grandma.mp3", "oh she is my grandma": "assets/audio/oh_she_is_my_grandma.mp3", "she's my aunt": "assets/audio/she_s_my_aunt.mp3", "oh she is my aunt": "assets/audio/oh_she_is_my_aunt.mp3", "she's my baby sister": "assets/audio/she_s_my_baby_sister.mp3", "oh she is my baby sister": "assets/audio/oh_she_is_my_baby_sister.mp3", "he's my dad": "assets/audio/he_s_my_dad.mp3", "oh he is my dad": "assets/audio/oh_he_is_my_dad.mp3", "he's my brother": "assets/audio/he_s_my_brother.mp3", "oh he is my brother": "assets/audio/oh_he_is_my_brother.mp3", "he's my grandpa": "assets/audio/he_s_my_grandpa.mp3", "oh he is my grandpa": "assets/audio/oh_he_is_my_grandpa.mp3", "he's my uncle": "assets/audio/he_s_my_uncle.mp3", "oh he is my uncle": "assets/audio/oh_he_is_my_uncle.mp3", "he's my baby brother": "assets/audio/he_s_my_baby_brother.mp3", "oh he is my baby brother": "assets/audio/oh_he_is_my_baby_brother.mp3", "knock knock": "assets/audio/knock_knock.mp3", "what is it": "assets/audio/what_is_it.mp3", "curly or straight": "assets/audio/curly_or_straight.mp3", "design your character": "assets/audio/design_your_character.mp3", "touch the face": "assets/audio/touch_the_face.mp3", "touch the eyes": "assets/audio/touch_the_eyes.mp3", "touch the ears": "assets/audio/touch_the_ears.mp3", "touch the nose": "assets/audio/touch_the_nose.mp3", "touch the mouth": "assets/audio/touch_the_mouth.mp3", "touch the hair": "assets/audio/touch_the_hair.mp3", "touch the arms": "assets/audio/touch_the_arms.mp3", "touch the body": "assets/audio/touch_the_body.mp3", "try again": "assets/audio/try_again.mp3"};
 const akey=s=>s.toLowerCase().replace(/[^a-z0-9' ]+/g,' ').replace(/\s+/g,' ').trim();
 const sents=t=>(String(t).match(/[^.!?]+[.!?]*/g)||[]).map(s=>s.trim()).filter(Boolean);
 const recOn=()=>Object.keys(AUD).length>0&&(!S.voiceName||S.voiceName==='__rec');
@@ -487,8 +595,451 @@ function burst(el){const b=$('#burst');const br=$('#board').getBoundingClientRec
   let x=800,y=450;if(el){const r=el.getBoundingClientRect();x=(r.left+r.width/2-br.left)/k;y=(r.top+r.height/2-br.top)/k}
   for(let i=0;i<10;i++){const a=Math.PI*2*i/10,d=140+Math.random()*80;const s=h(`<div class="bstar" style="left:${x-30}px;top:${y-30}px;--dx:${Math.cos(a)*d}px;--dy:${Math.sin(a)*d}px">${ic('star')}</div>`);b.append(s);setTimeout(()=>s.remove(),1100)}}
 
+/* =====================================================================
+   BODY PARTS topic
+   Words: face, eyes, ears, nose, mouth, hair, arms, body
+   Language: (S)he is tall/short/thin/fat. (S)he has got curly/straight hair.
+             (S)he has got (brown) hair / (blue) eyes. What colour hair/eyes has (s)he got?
+             Who is (s)he? (S)he's my mum.   Excuse me? Who is he? Oh, he is my dad.
+   Characters are drawn in SVG so height, build, hair and eye colour can be changed exactly.
+   ===================================================================== */
+const SKIN=['#F6D2B5','#E8B48F','#C98E64','#8D5A3B'];
+const HAIRC={brown:'#7A4A25',black:'#2B2321',yellow:'#F2C94C',red:'#D9542B',grey:'#B8B8C2',mystery:'#D3D0DE'};
+const EYEC={blue:'#3FA3E6',brown:'#7A4A25',green:'#3BAA6B',mystery:'#B5B2C6'};
+const PL={eyes:1,ears:1,arms:1};
+/* o: sex f/m, height tall|short, build thin|mid|fat, hair curly|straight, hc, ec, skin, shirt, hl (part), kid, old, vb (viewBox), w/h */
+function person(o={}){
+  const sk=o.skin||SKIN[0],skd='#C98E64',hc=HAIRC[o.hc||'brown'],ec=EYEC[o.ec||'brown'],sh=o.shirt||(o.sex==='m'?'#3FB2E6':'#FF5F92');
+  const f=o.sex!=='m',bw={thin:72,mid:100,fat:150}[o.build||'mid'],L=150-bw/2,Rt=150+bw/2;
+  const s=(o.height==='short'?.68:1)*(o.kid?.78:1);
+  const on=p=>o.hl===p||o.hl==='body';
+  const g=(p,inner)=>`<g data-part="${p}" class="pt${on(p)?' hl':''}">${inner}</g>`;
+  /* hair */
+  let hb='',hf='';
+  if(o.hair==='curly'){
+    for(let i=0;i<=10;i++){const a=Math.PI+i*Math.PI/10;hb+=`<circle cx="${150+66*Math.cos(a)}" cy="${104+70*Math.sin(a)}" r="${f?22:19}" fill="${hc}"/>`}
+    if(f)for(let y=118;y<=206;y+=22){hb+=`<circle cx="84" cy="${y}" r="19" fill="${hc}"/><circle cx="216" cy="${y}" r="19" fill="${hc}"/>`}
+    for(let i=0;i<5;i++)hf+=`<circle cx="${108+i*21}" cy="${56+(i%2)*6}" r="16" fill="${hc}"/>`;
+  }else{
+    if(f)hb=`<path d="M86 110 Q86 36 150 36 Q214 36 214 110 L220 214 Q150 228 80 214 Z" fill="${hc}"/>`;
+    hf=f?`<path d="M90 104 Q96 42 150 42 Q204 42 210 104 Q184 74 150 76 Q116 74 90 104Z" fill="${hc}"/>`
+        :`<path d="M88 112 Q88 38 150 38 Q212 38 212 112 Q200 74 150 72 Q100 74 88 112Z" fill="${hc}"/>`;
+  }
+  /* body: female dress, male shirt + trousers */
+  const legTop=f?350:322,legs=`<rect x="124" y="${legTop}" width="22" height="${505-legTop}" rx="10" fill="${f?sk:'#3F5BA9'}"/><rect x="154" y="${legTop}" width="22" height="${505-legTop}" rx="10" fill="${f?sk:'#3F5BA9'}"/><ellipse cx="132" cy="508" rx="22" ry="11" fill="#2F2D52"/><ellipse cx="168" cy="508" rx="22" ry="11" fill="#2F2D52"/>`;
+  const torso=f?`<path d="M${L} 196 Q150 184 ${Rt} 196 L${Rt+26} 360 Q150 372 ${L-26} 360 Z" fill="${sh}"/>`
+               :`<rect x="${L}" y="190" width="${bw}" height="${150}" rx="${bw>120?50:30}" fill="${sh}"/>`;
+  const arm=(x,dir)=>`<path d="M${x} 206 Q${x+dir*30} 260 ${x+dir*24} 322" stroke="${sh}" stroke-width="26" fill="none" stroke-linecap="round"/><path d="M${x+dir*14} 252 Q${x+dir*30} 290 ${x+dir*24} 322" stroke="${sk}" stroke-width="20" fill="none" stroke-linecap="round"/><circle cx="${x+dir*24}" cy="330" r="14" fill="${sk}"/>`;
+  const ears=`<ellipse cx="90" cy="118" rx="13" ry="18" fill="${sk}"/><ellipse cx="210" cy="118" rx="13" ry="18" fill="${sk}"/>`;
+  const face=`<rect x="138" y="160" width="24" height="36" fill="${sk}"/><ellipse cx="150" cy="112" rx="60" ry="66" fill="${sk}"/><circle cx="114" cy="140" r="11" fill="#FF8FAB" opacity=".35"/><circle cx="186" cy="140" r="11" fill="#FF8FAB" opacity=".35"/>`;
+  const eye=x=>`<ellipse cx="${x}" cy="112" rx="13" ry="14" fill="#fff"/><circle cx="${x}" cy="113" r="8.5" fill="${ec}"/><circle cx="${x}" cy="113" r="3.8" fill="#1d1a2e"/><circle cx="${x+3}" cy="109" r="2.4" fill="#fff"/>`;
+  const glasses=o.old?`<g fill="none" stroke="#5B3FA8" stroke-width="4"><circle cx="127" cy="112" r="19"/><circle cx="173" cy="112" r="19"/><path d="M146 112h8"/></g>`:'';
+  const nose=`<path d="M150 118 Q141 138 153 141" stroke="${skd}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
+  const mouth=`<path d="M130 152 Q150 172 170 152 Q150 162 130 152Z" fill="#C2425A"/>`;
+  /* rings make small highlighted parts easy to see */
+  const ring={face:'<ellipse cx="150" cy="112" rx="78" ry="84"/>',eyes:'<ellipse cx="150" cy="112" rx="58" ry="26"/>',ears:'<circle cx="90" cy="118" r="28"/><circle cx="210" cy="118" r="28"/>',
+    nose:'<circle cx="149" cy="131" r="22"/>',mouth:'<ellipse cx="150" cy="158" rx="32" ry="20"/>'}[o.hl]||'';
+  const vb=o.vb||(o.acc&&o.acc!=='none'?'0 -48 300 578':'0 0 300 530');
+  return `<svg class="pp" viewBox="${vb}" ${o.w?`width="${o.w}"`:''} ${o.h?`height="${o.h}"`:''} role="img" aria-label="person"><g transform="translate(150 520) scale(${s}) translate(-150 -520)">
+    ${g('hair',hb)}${g('body',legs+torso)}${g('arms',arm(L+6,-1)+arm(Rt-6,1))}${g('ears',ears)}${g('face',face)}${g('hair',hf)}
+    ${g('eyes',eye(127)+eye(173))}${glasses}${g('nose',nose)}${g('mouth',mouth)}${o.acc&&o.acc!=='none'&&typeof accSVG==='function'?accSVG(ACC[o.acc]):''}
+    ${ring?`<g class="ring" fill="none" stroke="#FFB300" stroke-width="6" stroke-dasharray="14 9">${ring}</g>`:''}</g></svg>`}
+const svgURI=s=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s.replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" '));
+const HEAD='38 18 224 200';
+
+/* ---- people used in the body screens ---- */
+const PEOPLE={
+ mum:{sex:'f',height:'tall',build:'thin',hair:'curly',hc:'brown',ec:'blue',skin:SKIN[1],shirt:'#FF5F92'},
+ dad:{sex:'m',height:'tall',build:'fat',hair:'straight',hc:'black',ec:'brown',skin:SKIN[1],shirt:'#3FB2E6'},
+ grandma:{sex:'f',height:'short',build:'fat',hair:'curly',hc:'grey',ec:'green',skin:SKIN[0],shirt:'#8C64DB',old:1},
+ grandpa:{sex:'m',height:'tall',build:'thin',hair:'straight',hc:'grey',ec:'blue',skin:SKIN[0],shirt:'#4CC48E',old:1},
+ sister:{sex:'f',height:'short',build:'thin',hair:'straight',hc:'yellow',ec:'blue',skin:SKIN[0],shirt:'#FF8A3D',kid:1},
+ brother:{sex:'m',height:'tall',build:'mid',hair:'curly',hc:'red',ec:'green',skin:SKIN[0],shirt:'#4CC48E',kid:1},
+ aunt:{sex:'f',height:'tall',build:'fat',hair:'straight',hc:'red',ec:'brown',skin:SKIN[2],shirt:'#3FB2E6'},
+ uncle:{sex:'m',height:'short',build:'thin',hair:'curly',hc:'yellow',ec:'brown',skin:SKIN[2],shirt:'#FF5F92'}
+};
+const pr=p=>p.sex==='m'?'He':'She';
+const BW=['face','eyes','ears','nose','mouth','hair','arms','body'];
+const bSent=w=>PL[w]?`These are my ${w}.`:`This is my ${w}.`;
+const bTpr=w=>w==='arms'?'Wave your arms!':w==='body'?'Shake your body!':`Touch your ${w}!`;
+/* tap any part of a drawn person to hear its name */
+function tapParts(root,onPart){root.addEventListener('click',e=>{const g=e.target.closest('[data-part]');if(!g||!root.contains(g))return;const p=g.dataset.part;
+  root.querySelectorAll('.hl').forEach(x=>x.classList.remove('hl'));root.querySelectorAll(`[data-part="${p}"]`).forEach(x=>{x.classList.remove('hl');void x.getBBox;x.classList.add('hl')});say(p);if(onPart)onPart(p)})}
+
+/* B1 hello */
+function bHello(area,ctx){
+  const p=h(`<div class="play"><div class="bh"><div class="bfig">${person({sex:'f',hair:'curly',hc:'brown',ec:'green',shirt:'#8C64DB',skin:SKIN[1]})}</div>
+    <div class="bside"><button class="yb bsay"><span class="spk">${ic('son')}</span>This is my body!</button><div class="prompt" style="text-align:left">Touch and listen!</div>
+    <div class="bchips">${BW.map(w=>`<button class="bchip" data-w="${w}">${w}</button>`).join('')}</div><button class="bigbtn">Let's go! ${ic('right')}</button></div></div></div>`);
+  const fig=p.querySelector('.bfig');tapParts(fig,()=>ctx.done());
+  p.querySelectorAll('.bchip').forEach(b=>b.onclick=()=>{const w=b.dataset.w;fig.innerHTML=person({sex:'f',hair:'curly',hc:'brown',ec:'green',shirt:'#8C64DB',skin:SKIN[1],hl:w});say(w)});
+  p.querySelector('.bsay').onclick=()=>say('This is my body!');p.querySelector('.bigbtn').onclick=()=>{ctx.done();ctx.next()};
+  area.append(p);later(()=>say('Hello! This is my body! Touch and listen!'),400)}
+
+/* B2 body words */
+function bWords(area,ctx){
+  rounds(area,ctx,BW,(w,api)=>{
+    const look={sex:api.index%2?'m':'f',hair:api.index%3?'straight':'curly',hc:['brown','black','red','yellow'][api.index%4],ec:['blue','brown','green'][api.index%3],skin:SKIN[api.index%3],shirt:['#FF5F92','#3FB2E6','#8C64DB','#4CC48E'][api.index%4]};
+    const v=h(`<div class="ll"><div class="bfig big">${person({...look,hl:w})}</div><div class="txt">
+      <button class="word" style="color:${COLV[['pink','blue','purple','green'][api.index%4]]}">${cap(w)}</button>
+      <button class="yb bs"><span class="spk">${ic('son')}</span><span>${bSent(w)}</span></button>
+      <button class="bigbtn greenb tpr">${ic('hand')} ${bTpr(w)}</button>
+      <button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div></div>`);
+    tapParts(v.querySelector('.bfig'));
+    v.querySelector('.word').onclick=()=>say(w);v.querySelector('.bs').onclick=()=>say(bSent(w));
+    v.querySelector('.tpr').onclick=()=>say(bTpr(w));
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;talk({svg:person({...look,hl:w,vb:['face','eyes','ears','nose','mouth','hair'].includes(w)?HEAD:undefined}),a:bSent(w),mode:'repeat'},()=>{api.solve(b);later(()=>say(bTpr(w)),300)})};
+    api.play.append(v);later(()=>say(`${w}. ${bSent(w)}`),350)});
+}
+
+/* B3 tall/short, thin/fat */
+function bSize(area,ctx){
+  const R=[{sex:'f',k:'height',a:'tall',b:'short'},{sex:'m',k:'build',a:'thin',b:'fat'},{sex:'m',k:'height',a:'tall',b:'short'},{sex:'f',k:'build',a:'thin',b:'fat'}];
+  rounds(area,ctx,R,(r,api)=>{
+    const P=r.sex==='m'?'He':'She';const base={sex:r.sex,hair:r.sex==='m'?'straight':'curly',hc:r.sex==='m'?'black':'brown',ec:'brown',skin:SKIN[api.index%3]};
+    const mk=val=>({...base,[r.k]:val,shirt:val===r.a?'#FF8A3D':'#8C64DB'});
+    const v=h(`<div class="bsz"><div class="bpair"></div><button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div>`);
+    const pair=v.querySelector('.bpair');
+    shuffle([r.a,r.b]).forEach(val=>{const c=h(`<button class="bcard"><div class="bfig mid">${person(mk(val))}</div><div class="blab">${val}</div></button>`);
+      c.onclick=()=>{pair.querySelectorAll('.bcard').forEach(x=>x.classList.remove('sel'));c.classList.add('sel');say(`${P} is ${val}.`)};pair.append(c)});
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;const val=Math.random()<.5?r.a:r.b;
+      talk({svg:person(mk(val)),q:`Is ${P.toLowerCase()} ${r.a} or ${r.b}?`,a:`${P} is ${val}.`,mode:'ask'},()=>api.solve(b))};
+    api.play.append(v);later(()=>say(`${P} is ${r.a}. ${P} is ${r.b}.`),350)});
+}
+
+/* B4 hair: curly/straight + colour */
+function bHair(area,ctx){
+  const R=[['f','curly','brown'],['m','straight','black'],['f','straight','yellow'],['m','curly','red'],['f','curly','black'],['m','straight','brown']];
+  rounds(area,ctx,R,([sx,hr,hc],api)=>{
+    const P=sx==='m'?'He':'She';const look={sex:sx,hair:hr,hc,ec:'brown',skin:SKIN[api.index%3],shirt:['#FF5F92','#3FB2E6','#8C64DB'][api.index%3]};
+    const l1=`${P} has got ${hr} hair.`,l2=`${P} has got ${hc} hair.`;
+    const v=h(`<div class="ll"><div class="bfig big">${person({...look,hl:'hair'})}</div><div class="txt">
+      <button class="yb bl1"><span class="spk">${ic('son')}</span><span>${l1}</span></button>
+      <button class="yb bl2"><span class="spk">${ic('son')}</span><span>${P} has got <b class="sw" style="background:${HAIRC[hc]}"></b> ${hc} hair.</span></button>
+      <button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div></div>`);
+    tapParts(v.querySelector('.bfig'));
+    v.querySelector('.bl1').onclick=()=>say(l1);v.querySelector('.bl2').onclick=()=>say(l2);
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;const s=person({...look,hl:'hair',vb:HEAD});
+      talk({svg:s,a:l1,mode:'repeat'},()=>talk({svg:s,q:`What colour hair has ${P.toLowerCase()} got?`,a:l2,mode:'ask'},()=>api.solve(b)))};
+    api.play.append(v);later(()=>say(`${l1} ${l2}`),350)});
+}
+
+/* B5 eyes */
+function bEyes(area,ctx){
+  const R=[['m','blue'],['f','brown'],['f','green'],['m','brown'],['f','blue'],['m','green']];
+  rounds(area,ctx,R,([sx,ec],api)=>{
+    const P=sx==='m'?'He':'She';const look={sex:sx,hair:api.index%2?'curly':'straight',hc:['black','brown','red'][api.index%3],ec,skin:SKIN[(api.index+1)%3]};
+    const l=`${P} has got ${ec} eyes.`;
+    const v=h(`<div class="ll"><div class="bfig head">${person({...look,hl:'eyes',vb:HEAD})}</div><div class="txt">
+      <button class="yb bl"><span class="spk">${ic('son')}</span><span>${P} has got <b class="sw" style="background:${EYEC[ec]}"></b> ${ec} eyes.</span></button>
+      <button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div></div>`);
+    v.querySelector('.bl').onclick=()=>say(l);tapParts(v.querySelector('.bfig'));
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;talk({svg:person({...look,hl:'eyes',vb:HEAD}),q:`What colour eyes has ${P.toLowerCase()} got?`,a:l,mode:'ask'},()=>api.solve(b))};
+    api.play.append(v);later(()=>say(l),350)});
+}
+
+/* B6 who is she? my family described */
+function bWho(area,ctx){
+  const order=['mum','dad','sister','brother','grandma','grandpa','aunt','uncle'];
+  rounds(area,ctx,order,(role,api)=>{
+    const p=PEOPLE[role],P=pr(p),pl=P.toLowerCase();
+    const lines=[`Who is ${pl}?`,`${P}'s my ${role}.`,`${P} is ${p.height}.`,...(p.build!=='mid'?[`${P} is ${p.build}.`]:[]),`${P} has got ${p.hair} hair.`];
+    if(p.hc!=='grey')lines.push(`${P} has got ${p.hc} hair.`);lines.push(`${P} has got ${p.ec} eyes.`);
+    const v=h(`<div class="ll"><div class="bfig big">${person(p)}</div><div class="txt bwho">
+      ${lines.map((l,i)=>`<button class="${i?'bline':'prompt bq'}" data-i="${i}">${i?`<span class="spk">${ic('son')}</span>`:''}${l}</button>`).join('')}
+      <button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div></div>`);
+    v.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>say(lines[+b.dataset.i]));tapParts(v.querySelector('.bfig'));
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;const s=person(p);
+      const qs=[{q:`Is ${pl} tall or short?`,a:`${P} is ${p.height}.`},...(p.build!=='mid'?[{q:`Is ${pl} thin or fat?`,a:`${P} is ${p.build}.`}]:[]),{q:`What colour eyes has ${pl} got?`,a:`${P} has got ${p.ec} eyes.`}];
+      if(p.hc!=='grey')qs.push({q:`What colour hair has ${pl} got?`,a:`${P} has got ${p.hc} hair.`});
+      const two=pick(qs,2);
+      talk({svg:s,q:`Who is ${pl}?`,a:`${P}'s my ${role}.`,mode:'ask'},()=>talk({svg:s,...two[0],mode:'ask'},()=>talk({svg:s,...two[1],mode:'ask'},()=>api.solve(b))))};
+    api.play.append(v);later(()=>say(lines.join(' ')),350)});
+}
+
+/* B7 Excuse me? (social skill dialogue, with the family pictures) */
+function bExcuse(area,ctx){
+  const roles=pick(ONE,6);
+  rounds(area,ctx,roles,(x,api)=>{
+    const P=x.g==='she'?'She':'He',pl=P.toLowerCase();
+    const q=`Excuse me? Who is ${pl}?`,a=`Oh, ${pl} is my ${x.w}.`;
+    const v=h(`<div class="bex"><div class="card bexpic"><img src="${IMG[x.id]}" alt=""></div><div class="bdlg">
+      <button class="bub l"><span class="who" style="background:var(--pink)">A</span><span>${q}</span></button>
+      <button class="bub r"><span class="who" style="background:var(--blue)">B</span><span>${a}</span></button>
+      <div class="tr" style="color:var(--muted)">A asks, B answers. Then swap!</div>
+      <button class="bigbtn pinkb yt">${ic('mouth')} Your turn!</button></div></div>`);
+    v.querySelector('.bub.l').onclick=()=>say(q);v.querySelector('.bub.r').onclick=()=>say(a);
+    v.querySelector('.yt').onclick=e=>{const b=e.currentTarget;talk({img:x.id,q,a,mode:'ask'},()=>api.solve(b))};
+    api.play.append(v);later(()=>say(`${q} ${a}`),350)});
+}
+
+const BTH=o=>svgURI(person({...o,vb:o.vb}));
+const ACTS_BODY=[
+ {id:'b_hello',name:'Hello, body!',thumb:BTH({sex:'f',hair:'curly',hc:'brown',ec:'green',shirt:'#8C64DB',skin:SKIN[1]}),col:'pink',alt:false,run:bHello,
+  tip:['Tap any part of the picture (or a word) to hear it.','Children copy: touch their own nose, eyes, ears... while saying the word.']},
+ {id:'b_words',name:'Body Words',thumb:BTH({sex:'m',hair:'straight',hc:'black',hl:'eyes'}),col:'blue',alt:true,run:bWords,
+  tip:['8 words: face, eyes, ears, nose, mouth, hair, arms, body. The part glows.','The green button gives an action: "Touch your nose!" Everyone does it.','"Your turn!": the class says "This is my nose." / "These are my eyes."']},
+ {id:'b_size',name:'Tall or Short?',thumb:BTH({sex:'f',height:'tall',build:'thin',hair:'straight',hc:'red'}),col:'green',alt:false,run:bSize,
+  tip:['Two people: tap each to hear "She is tall." / "She is short.".','"Your turn!" asks "Is she tall or short?" about one of them; the class answers.','Act it out: stand tall, crouch short, make yourself thin or round.']},
+ {id:'b_hair',name:'Hair',thumb:BTH({sex:'f',hair:'curly',hc:'red',vb:HEAD}),col:'purple',alt:true,run:bHair,
+  tip:['Curly or straight, and the hair colour: "She has got curly hair. She has got brown hair."','"Your turn!": repeat the first sentence, then answer "What colour hair has she got?".','Ask children about classmates: "What colour hair has Ali got?"']},
+ {id:'b_eyes',name:'Eyes',thumb:BTH({sex:'m',hair:'curly',hc:'brown',ec:'blue',hl:'eyes',vb:HEAD}),col:'pink',alt:false,run:bEyes,
+  tip:['Blue, brown or green eyes: "He has got blue eyes."','"Your turn!" asks "What colour eyes has he got?".','Pairs: children look at each other\'s eyes and say the colour.']},
+ {id:'b_who',name:'Who is she?',thumb:BTH(PEOPLE.mum),col:'blue',alt:true,run:bWho,
+  tip:['A family member is described: "Who is she? She\'s my mum. She is tall. She has got curly hair..."','"Your turn!" asks "Who is she?" and two more questions about her.','Tap each sentence to hear it again.']},
+ {id:'b_excuse',name:'Excuse me!',img:'dad',col:'green',alt:false,run:bExcuse,
+  tip:['Social skill: "Excuse me? Who is he?" – "Oh, he is my dad."','Half the class (A) asks politely, the other half (B) answers. Then swap.','Practise saying "Excuse me?" before asking a question.']}
+];
+/* =====================================================================
+   BODY PARTS – class activities (one child at a time, 20 children)
+   Everything a child uses is a picture + sound; the small text is for the teacher.
+   ===================================================================== */
+/* whose turn: picks the next child from the name picker (if names exist) and says the name */
+function nextTurnName(el){if(!namesOn()){if(el)el.hidden=true;return null}const r=pickName();if(!r.name)return null;
+  if(el){el.hidden=false;el.innerHTML=`${ic('pick')}<span>${esc(r.name)}</span>`}sayName(r.name,'Your turn!');return r.name}
+const iconBtn=(cls,inner,label)=>`<button class="ib ${cls}" aria-label="${label}">${inner}</button>`;
+const randLook=()=>({sex:Math.random()<.5?'f':'m',hair:Math.random()<.5?'curly':'straight',hc:pick(['brown','black','yellow','red'],1)[0],ec:pick(['blue','brown','green'],1)[0],skin:pick(SKIN.slice(0,3),1)[0],shirt:pick(['#FF5F92','#3FB2E6','#8C64DB','#4CC48E','#FF8A3D'],1)[0],kid:1});
+
+/* ---------- A1 Funny Body: touch the part / say the word ---------- */
+function bFunny(area,ctx){
+  const play=h('<div class="play"></div>');area.append(play);
+  const v=h(`<div class="ll"><div class="bfig big fb"></div><div class="txt fbside">
+    <div class="turn" hidden></div>
+    <button class="yb fbq"><span class="spk">${ic('son')}</span><span class="fbt">Press GO!</span></button>
+    <div class="fbbig" hidden></div>
+    <div class="row2"><button class="bigbtn greenb fbok" hidden>${ic('check')} Correct!</button><button class="bigbtn blueb fbhelp" hidden>${ic('ear')} Help</button></div>
+    <button class="bigbtn fbgo">GO! ${ic('right')}</button>
+    <div class="tr" style="color:var(--muted)">One child comes to the board. "Touch" turns: the child touches the part. "What is it?" turns: the child says the word, you press Correct.</div></div></div>`);
+  play.append(v);
+  const fig=v.querySelector('.fb'),q=v.querySelector('.fbt'),big=v.querySelector('.fbbig'),ok=v.querySelector('.fbok'),help=v.querySelector('.fbhelp'),go=v.querySelector('.fbgo'),turn=v.querySelector('.turn');
+  let look={...randLook(),kid:0},target=null,mode='touch',done=true,count=0,last=null;
+  const draw=hl=>{fig.innerHTML=person({...look,hl});};draw();
+  const react=p=>{fig.querySelectorAll(`[data-part="${p}"]`).forEach(g=>{g.classList.remove('re-'+p);void g.getBBox();g.classList.add('re-'+p)});
+    tone({nose:[[880,.08,0],[440,.25,.1]],eyes:[[1200,.05,0],[1200,.05,.15]],ears:[[300,.12,0],[360,.12,.12]],mouth:[[523,.1,0],[784,.15,.1]],hair:[[660,.06,0],[990,.06,.07],[660,.06,.14]],arms:[[392,.1,0],[523,.1,.12],[659,.15,.24]],face:[[700,.2,0]],body:[[330,.1,0],[392,.1,.1],[494,.1,.2],[659,.2,.3]]}[p]||[[600,.1,0]])};
+  const win=p=>{done=true;ding();react(p);big.hidden=false;big.textContent=p;addStar(1,fig);later(()=>say(p),500);ok.hidden=true;help.hidden=true;go.hidden=false;count++;if(count>=5)ctx.done()};
+  fig.addEventListener('click',e=>{const g=e.target.closest('[data-part]');if(!g)return;const p=g.dataset.part;
+    if(done||mode!=='touch'){react(p);say(p);return}
+    if(p===target)win(p);else{react(p);buzz();later(()=>say(`No! Touch the ${target}!`),250)}});
+  go.onclick=()=>{go.hidden=true;big.hidden=true;done=false;look={...randLook(),kid:0};
+    let t;do{t=pick(BW,1)[0]}while(t===last);target=t;last=t;mode=Math.random()<.6?'touch':'say';
+    const nm=nextTurnName(turn);
+    const start=()=>{if(mode==='touch'){draw();q.textContent=`Touch the ${t}!`;say(`Touch the ${t}!`)}
+      else{draw(t);q.textContent='What is it?';say('What is it?');ok.hidden=false;help.hidden=false}};
+    later(start,nm?1900:200)};
+  v.querySelector('.fbq').onclick=()=>{if(target&&!done)say(mode==='touch'?`Touch the ${target}!`:'What is it?')};
+  help.onclick=()=>{if(target)say(target)};ok.onclick=()=>{if(target&&!done)win(target)};
+  later(()=>say('Touch and listen!'),300);
+}
+
+/* ---------- A2 Mystery Door: productive language ---------- */
+const ROLES_ORDER=['mum','dad','sister','brother','grandma','grandpa','aunt','uncle'];
+function bDoor(area,ctx){
+  const play=h('<div class="play"></div>');area.append(play);
+  const v=h(`<div class="dr"><div class="drwrap"><div class="drperson"></div><button class="door" aria-label="Knock on the door"><span class="knob"></span><span class="dq">?</span></button></div>
+    <div class="drside"><div class="turn" hidden></div><div class="cards"></div>
+    <button class="bigbtn drnext">${ic('pick')} Next child ${ic('right')}</button>
+    <div class="tr" style="color:var(--muted)">The child knocks, the door opens. Tap a picture card: it asks a question. The child answers with a full sentence; press ✓. "Help" says the answer.</div></div></div>`);
+  play.append(v);
+  const door=v.querySelector('.door'),pers=v.querySelector('.drperson'),cards=v.querySelector('.cards'),turn=v.querySelector('.turn');
+  let queue=shuffle(ROLES_ORDER),role=null,open=false,doneCards=0,total=0,started=false;
+  const ICON={who:`<img src="${IMG.cover}" alt="">`,height:'<svg viewBox="0 0 60 60"><rect x="8" y="10" width="16" height="44" rx="6" fill="#FF8A3D"/><rect x="34" y="28" width="16" height="26" rx="6" fill="#8C64DB"/></svg>',
+    build:'<svg viewBox="0 0 60 60"><rect x="10" y="12" width="12" height="42" rx="6" fill="#3FB2E6"/><rect x="30" y="12" width="24" height="42" rx="12" fill="#FF5F92"/></svg>',
+    hair:'<svg viewBox="0 0 60 60"><circle cx="30" cy="34" r="16" fill="#F6D2B5"/><g fill="#7A4A25"><circle cx="16" cy="22" r="8"/><circle cx="24" cy="15" r="8"/><circle cx="34" cy="14" r="8"/><circle cx="43" cy="20" r="8"/></g></svg>',
+    colour:'<svg viewBox="0 0 60 60"><circle cx="18" cy="20" r="10" fill="#D9542B"/><circle cx="40" cy="20" r="10" fill="#F2C94C"/><circle cx="18" cy="42" r="10" fill="#2B2321"/><circle cx="40" cy="42" r="10" fill="#7A4A25"/></svg>',
+    eyes:'<svg viewBox="0 0 60 60"><ellipse cx="18" cy="30" rx="12" ry="13" fill="#fff" stroke="#2F2D52" stroke-width="3"/><ellipse cx="42" cy="30" rx="12" ry="13" fill="#fff" stroke="#2F2D52" stroke-width="3"/><circle cx="18" cy="31" r="6" fill="#3FA3E6"/><circle cx="42" cy="31" r="6" fill="#3FA3E6"/></svg>'};
+  function setup(){role=queue.shift()||(queue=shuffle(ROLES_ORDER)).shift();const p=PEOPLE[role],P=pr(p),pl=P.toLowerCase();
+    pers.innerHTML=person(p);door.classList.remove('open');open=false;doneCards=0;
+    const C=[{k:'who',q:`Who is ${pl}?`,a:`${P}'s my ${role}.`},{k:'height',q:`Is ${pl} tall or short?`,a:`${P} is ${p.height}.`}];
+    if(p.build&&p.build!=='mid')C.push({k:'build',q:`Is ${pl} thin or fat?`,a:`${P} is ${p.build}.`});
+    C.push({k:'hair',q:'Curly or straight?',a:`${P} has got ${p.hair} hair.`});
+    if(p.hc!=='grey')C.push({k:'colour',q:`What colour hair has ${pl} got?`,a:`${P} has got ${p.hc} hair.`});
+    C.push({k:'eyes',q:`What colour eyes has ${pl} got?`,a:`${P} has got ${p.ec} eyes.`});
+    total=C.length;cards.innerHTML='';
+    C.forEach(c=>{const el=h(`<div class="qcard2"><button class="qi" aria-label="${c.q}">${ICON[c.k]}</button><button class="qok" aria-label="Correct">${ic('check')}</button><button class="qh" aria-label="Help">${ic('ear')}</button></div>`);
+      el.querySelector('.qi').onclick=()=>{if(!open)return;cards.querySelectorAll('.qcard2').forEach(x=>x.classList.remove('on'));el.classList.add('on');say(c.q)};
+      el.querySelector('.qh').onclick=()=>{if(open)say(c.a)};
+      el.querySelector('.qok').onclick=()=>{if(!open||el.classList.contains('done'))return;el.classList.add('done');ding();burst(el);doneCards++;
+        if(doneCards===total){addStar(2,pers);later(()=>say('Well done!'),400);ctx.done()}};
+      cards.append(el)});
+    cards.classList.add('locked')}
+  door.onclick=()=>{if(open)return;tone([[200,.08,0],[200,.08,.22],[200,.08,.44]]);say('Knock knock!');
+    later(()=>{door.classList.add('open');open=true;cards.classList.remove('locked');tone([[523,.1,0],[659,.1,.1],[784,.2,.2]]);later(()=>{cards.querySelector('.qi').click()},700)},1200)};
+  v.querySelector('.drnext').onclick=()=>{setup();nextTurnName(turn)};
+  setup();if(!started){started=true;later(()=>say('Knock knock!'),400)}
+}
+
+/* ---------- A3 Magic Paint ---------- */
+/* Magic Paint has two levels.
+   Easy: the child asks the question, taps the grey hair/eyes with the brush, the hidden colour appears.
+   Medium: the class asks the question, the child presses the microphone and says "She has got red hair!";
+   the colour the child SAYS spreads over the hair. If speech recognition is not available (or does not
+   understand twice), big colour buttons appear so the turn can still finish. */
+const SRec=window.SpeechRecognition||window.webkitSpeechRecognition;
+/* forgiving colour matching: young learners' pronunciation is often recognised as a similar word */
+const SOUNDS={red:['red','read','rad','rid','bread','wed','rate','ret'],blue:['blue','blew','glue','boo','blu','flu'],green:['green','grin','clean','queen','grain','greene'],
+  brown:['brown','bran','round','crown','brawn','browne','brow'],black:['black','block','blank','plaque','back','blacks','flack'],yellow:['yellow','hello','jello','yello','fellow','mellow']};
+function heardColour(alts,allowed){for(const a of alts){const w=(' '+a.toLowerCase().replace(/[^a-z ]/g,' ')+' ');
+  for(const c of allowed){if(SOUNDS[c].some(s=>w.includes(' '+s+' ')))return c}}return null}
+function bPaint(area,ctx){
+  if(!S.paintLevel)S.paintLevel='easy';
+  const play=h('<div class="play"></div>');area.append(play);
+  const lv=h(`<div class="lvl"><button class="lvb" data-l="easy">${'<svg viewBox="0 0 60 60" width="44" height="44"><path d="M8 52 L30 30" stroke="#7A4A25" stroke-width="7" stroke-linecap="round"/><path d="M30 30 Q44 10 54 6 Q50 20 34 34Z" fill="#FF5F92"/></svg>'}<span>Easy</span></button><button class="lvb" data-l="medium">${micSVG(44)}<span>Medium</span></button></div>`);
+  play.append(lv);
+  const box=h('<div class="lvbox"></div>');play.append(box);
+  const paint=()=>{lv.querySelectorAll('.lvb').forEach(b=>b.classList.toggle('on',b.dataset.l===S.paintLevel));box.innerHTML='';clearTimers();hush();
+    (S.paintLevel==='medium'?paintMedium:paintEasy)(box,ctx)};
+  lv.querySelectorAll('.lvb').forEach(b=>b.onclick=()=>{S.paintLevel=b.dataset.l;store();paint()});
+  paint()}
+function micSVG(s){return `<svg viewBox="0 0 60 60" width="${s}" height="${s}"><rect x="21" y="6" width="18" height="32" rx="9" fill="currentColor"/><path d="M13 28a17 17 0 0 0 34 0M30 45v9M20 54h20" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"/></svg>`}
+function paintEasy(play,ctx){
+  const v=h(`<div class="ll"><div class="bfig big mp2"></div><div class="txt mpside">
+    <div class="turn" hidden></div>
+    <div class="steps">
+      <div class="step s1"><span class="sn">1</span><button class="bub l mq"><span class="who" style="background:var(--pink)">${ic('mouth')}</span><span class="mqt"></span></button></div>
+      <div class="step s2"><span class="sn">2</span><div class="brushhint">${ic('hand')}<svg viewBox="0 0 60 60" width="60" height="60"><path d="M8 52 L30 30" stroke="#7A4A25" stroke-width="7" stroke-linecap="round"/><path d="M30 30 Q44 10 54 6 Q50 20 34 34Z" fill="#FF5F92"/></svg></div></div>
+      <div class="step s3"><span class="sn">3</span><button class="bub r ma"><span class="who" style="background:var(--blue)">${ic('mouth')}</span><span class="mat">?</span></button><button class="bigbtn greenb mok">${ic('check')}</button></div>
+    </div>
+    <button class="bigbtn mnext">${ic('pick')} Next child ${ic('right')}</button>
+    <div class="tr" style="color:var(--muted)">1 The child ASKS the class the question (tap the bubble to hear it). 2 The child taps the grey hair/eyes with the magic brush. 3 The class answers; press ✓. Then the eyes.</div></div></div>`);
+  play.append(v);
+  const fig=v.querySelector('.mp2'),turn=v.querySelector('.turn'),mq=v.querySelector('.mqt'),ma=v.querySelector('.mat');
+  let look,stage,phase='hair';
+  const P=()=>look.sex==='m'?'He':'She',pl=()=>P().toLowerCase();
+  const qOf=()=>phase==='hair'?`What colour hair has ${pl()} got?`:`What colour eyes has ${pl()} got?`;
+  const aOf=()=>phase==='hair'?`${P()} has got ${look.hc} hair.`:`${P()} has got ${look.ec} eyes.`;
+  const draw=()=>{fig.innerHTML=person({...look,hc:stage.hair?look.hc:'mystery',ec:stage.eyes?look.ec:'mystery',hl:stage.step===2?phase:null,vb:phase==='eyes'?HEAD:undefined})};
+  const setStep=n=>{stage.step=n;v.querySelectorAll('.step').forEach((s,i)=>{s.classList.toggle('on',i+1===n);s.classList.toggle('done',i+1<n)});draw()};
+  function newTurn(){look={...randLook(),kid:0};stage={hair:false,eyes:false,step:1};phase='hair';mq.textContent=qOf();ma.textContent='?';setStep(1)}
+  v.querySelector('.mq').onclick=()=>{say(qOf());if(stage.step===1)later(()=>setStep(2),1600)};
+  fig.addEventListener('click',e=>{const g=e.target.closest('[data-part]');if(!g||stage.step!==2)return;
+    if(g.dataset.part!==phase){buzz();return}
+    stage[phase]=true;fig.classList.remove('magic');void fig.offsetWidth;fig.classList.add('magic');burst(fig);tone([[523,.08,0],[784,.08,.08],[1046,.2,.16]]);setStep(3);ma.textContent='?'});
+  v.querySelector('.ma').onclick=()=>{if(stage.step===3){ma.textContent=aOf();say(aOf())}};
+  v.querySelector('.mok').onclick=()=>{if(stage.step!==3)return;ma.textContent=aOf();ding();
+    if(phase==='hair'){phase='eyes';mq.textContent=qOf();ma.textContent='?';setStep(1)}
+    else{addStar(2,fig);setStep(4);later(()=>say('Well done!'),300);ctx.done()}};
+  v.querySelector('.mnext').onclick=()=>{newTurn();nextTurnName(turn)};
+  newTurn();later(()=>say(qOf()),400);
+}
+function paintMedium(play,ctx){
+  const v=h(`<div class="ll"><div class="bfig big mp2"></div><div class="txt mpside">
+    <div class="turn" hidden></div>
+    <button class="bub l mq"><span class="who" style="background:var(--pink)">${ic('mouth')}</span><span class="mqt"></span></button>
+    <div class="microw"><button class="mic" aria-label="Press and speak">${micSVG(96)}</button><div class="said"></div></div>
+    <div class="swatches" hidden></div>
+    <button class="bigbtn mnext">${ic('pick')} Next child ${ic('right')}</button>
+    <div class="tr" style="color:var(--muted)">The class asks the question (tap the pink bubble to hear it). The child presses the microphone and says the answer: "She has got red hair." The colour the child says appears. If the microphone does not work, the child says it and taps the colour.</div></div></div>`);
+  play.append(v);
+  const fig=v.querySelector('.mp2'),turn=v.querySelector('.turn'),mq=v.querySelector('.mqt'),mic=v.querySelector('.mic'),said=v.querySelector('.said'),sw=v.querySelector('.swatches');
+  let look,phase,col={},fails=0,rec=null,busy=false;
+  const P=()=>look.sex==='m'?'He':'She',pl=()=>P().toLowerCase();
+  const allowed=()=>phase==='hair'?['brown','black','yellow','red']:['blue','brown','green'];
+  const qOf=()=>phase==='hair'?`What colour hair has ${pl()} got?`:`What colour eyes has ${pl()} got?`;
+  const aOf=c=>phase==='hair'?`${P()} has got ${c} hair.`:`${P()} has got ${c} eyes.`;
+  const draw=()=>{fig.innerHTML=person({...look,hc:col.hair||'mystery',ec:col.eyes||'mystery',hl:phase&&!col[phase]?phase:null,vb:phase==='eyes'?HEAD:undefined})};
+  function showSwatches(){sw.hidden=false;sw.innerHTML='';allowed().forEach(c=>{const b=h(`<button class="swb" aria-label="${c}" style="background:${phase==='hair'?HAIRC[c]:EYEC[c]}"></button>`);b.onclick=()=>apply(c);sw.append(b)})}
+  function apply(c){col[phase]=c;sw.hidden=true;said.textContent='';fig.classList.remove('magic');void fig.offsetWidth;fig.classList.add('magic');draw();burst(fig);
+    tone([[523,.08,0],[659,.08,.08],[784,.08,.16],[1046,.25,.24]]);later(()=>say(`Yes! ${aOf(c)}`),500);
+    later(()=>{if(phase==='hair'){phase='eyes';fails=0;mq.textContent=qOf();draw();later(()=>say(qOf()),300)}else{phase=null;draw();addStar(2,fig);later(()=>say('Well done!'),300);ctx.done()}},2600)}
+  function listen(){if(busy||!phase)return;
+    if(!SRec){said.textContent='';showSwatches();return}
+    try{hush();rec=new SRec();rec.lang='en-US';rec.interimResults=false;rec.maxAlternatives=5}catch(e){showSwatches();return}
+    busy=true;mic.classList.add('on');said.textContent='…';
+    let wd=later(()=>{if(busy){try{rec.abort()}catch(_){}stop();said.textContent='';fails++;say('Try again!');if(fails>=2)showSwatches()}},8000);const stop=()=>{busy=false;mic.classList.remove('on')};
+    rec.onresult=e=>{const alts=[...e.results[0]].map(r=>r.transcript);stop();const c=heardColour(alts,allowed());said.textContent=alts[0]||'';
+      if(c)apply(c);else{fails++;buzz();say('Try again!');if(fails>=2)showSwatches()}};
+    rec.onerror=e=>{stop();said.textContent='';if(e.error==='no-speech'){fails++;say('Try again!');if(fails>=2)showSwatches()}else showSwatches()};
+    rec.onend=()=>{if(busy){stop();if(said.textContent==='…'){said.textContent='';fails++;if(fails>=2)showSwatches()}}};
+    try{rec.start()}catch(e){stop();showSwatches()}}
+  mic.onclick=listen;
+  v.querySelector('.mq').onclick=()=>{if(phase)say(qOf())};
+  function newTurn(){look={...randLook(),kid:0};col={};phase='hair';fails=0;sw.hidden=true;said.textContent='';mq.textContent=qOf();draw()}
+  v.querySelector('.mnext').onclick=()=>{newTurn();nextTurnName(turn);later(()=>say(qOf()),namesOn()?2000:300)};
+  newTurn();later(()=>say(qOf()),400);
+}
+
+
+/* ---------- A4 Design Your Character ---------- */
+const ACC={none:'',glasses:'g',bow:'b',crown:'c',hat:'h'};
+function bDesign(area,ctx){
+  const play=h('<div class="play"></div>');area.append(play);
+  const st=S.design=S.design||{sex:'f',height:'tall',build:'thin',hair:'curly',hc:'brown',ec:'blue',shirt:'#FF5F92',acc:'none',skin:SKIN[0],role:'sister'};
+  const v=h(`<div class="dsg"><div class="bfig big dsfig"></div><div class="dsopts"></div>
+    <div class="dsbar"><button class="bigbtn pinkb dspresent">${ic('mouth')} Present!</button><button class="bigbtn purpleb dsgal">${ic('star')} Our characters</button></div></div>`);
+  play.append(v);
+  const fig=v.querySelector('.dsfig'),opts=v.querySelector('.dsopts');
+  const P=()=>st.sex==='m'?'He':'She';
+  const draw=()=>{fig.innerHTML=person({...st,kid:0})};
+  const mini=o=>person({sex:st.sex,hair:st.hair,hc:st.hc,ec:st.ec,skin:st.skin,shirt:st.shirt,...o,vb:o.vb||'0 0 300 530'});
+  const rows=[
+    {k:'sex',opts:[['f',mini({sex:'f',vb:HEAD})],['m',mini({sex:'m',vb:HEAD})]],say:v=>v==='f'?'She':'He'},
+    {k:'height',opts:[['tall',mini({height:'tall'})],['short',mini({height:'short'})]],say:v=>`${P()} is ${v}.`},
+    {k:'build',opts:[['thin',mini({build:'thin'})],['fat',mini({build:'fat'})]],say:v=>`${P()} is ${v}.`},
+    {k:'hair',opts:[['curly',mini({hair:'curly',vb:HEAD})],['straight',mini({hair:'straight',vb:HEAD})]],say:v=>`${P()} has got ${v} hair.`},
+    {k:'hc',opts:['brown','black','yellow','red'].map(c=>[c,`<span class="dot" style="background:${HAIRC[c]}"></span>`]),say:v=>`${P()} has got ${v} hair.`},
+    {k:'ec',opts:['blue','brown','green'].map(c=>[c,`<span class="dot eye" style="background:${EYEC[c]}"></span>`]),say:v=>`${P()} has got ${v} eyes.`},
+    {k:'skin',opts:SKIN.map(c=>[c,`<span class="dot" style="background:${c}"></span>`])},
+    {k:'shirt',opts:['#FF5F92','#3FB2E6','#8C64DB','#4CC48E','#FF8A3D','#F2C94C'].map(c=>[c,`<span class="dot" style="background:${c}"></span>`])},
+    {k:'acc',opts:[['none','<span class="dot" style="background:#fff;border:3px dashed #bbb"></span>'],['glasses',accIcon('g')],['bow',accIcon('b')],['crown',accIcon('c')],['hat',accIcon('h')]]}
+  ];
+  function render(){draw();opts.innerHTML='';const colA=h('<div class="dscol"></div>'),colB=h('<div class="dscol"></div>');opts.append(colA,colB);
+    rows.forEach((r,ri)=>{const row=h(`<div class="dsrow"></div>`);r.opts.forEach(([val,inner])=>{const b=h(`<button class="dso ${st[r.k]===val?'on':''}" aria-label="${r.k} ${val}">${inner}</button>`);
+      b.onclick=()=>{st[r.k]=val;store();render();if(r.say)say(r.say(val));else tone([[700,.08,0]])};row.append(b)});(['sex','height','build','hair','acc'].includes(r.k)?colA:colB).append(row)})}
+  render();
+  const lines=()=>{const p=P();const L=[`${p} is ${st.height}.`,`${p} is ${st.build}.`,`${p} has got ${st.hair} hair.`,`${p} has got ${st.hc} hair.`,`${p} has got ${st.ec} eyes.`];return L};
+  v.querySelector('.dspresent').onclick=()=>present({...st},null);
+  v.querySelector('.dsgal').onclick=gallery;
+  function present(c,savedName){const p=c.sex==='m'?'He':'She';const pl=p.toLowerCase();
+    const roles=ONE.filter(x=>x.g===(c.sex==='m'?'he':'she'));if(!roles.some(x=>x.w===c.role))c.role=roles[0].w;
+    const L=()=>[`Who is ${pl}?`,`${p}'s my ${c.role}.`,`${p} is ${c.height}.`,`${p} is ${c.build}.`,`${p} has got ${c.hair} hair.`,`${p} has got ${c.hc} hair.`,`${p} has got ${c.ec} eyes.`];
+    const g=h(`<div class="gate"><div class="gbox dspbox"><div class="bfig big">${person({...c,kid:0})}</div><div class="gcol">
+      <div class="gt">${ic('mouth')}<span>Present!</span></div>
+      <div class="dsroles">${roles.map(x=>`<button class="dsrole ${x.w===c.role?'on':''}" data-w="${x.w}"><img src="${IMG[x.id]}" alt="${x.w}"></button>`).join('')}</div>
+      <div class="dslines"></div>
+      <div class="grow"><button class="bigbtn greenb dsok">${ic('star')} Super!</button><button class="bigbtn blueb dsx">${ic('left')} Back</button></div></div></div></div>`);
+    const paint=()=>{const box=g.querySelector('.dslines');box.innerHTML='';L().forEach((l,i)=>{const b=h(`<button class="bline">${i?`<span class="spk">${ic('son')}</span>`:''}${l}</button>`);if(!i)b.classList.add('bq');b.onclick=()=>say(l);box.append(b)})};
+    g.querySelectorAll('.dsrole').forEach(b=>b.onclick=()=>{c.role=b.dataset.w;st.role=c.role;store();g.querySelectorAll('.dsrole').forEach(x=>x.classList.toggle('on',x===b));paint();say(`${p}'s my ${c.role}.`)});
+    paint();
+    g.querySelector('.dsx').onclick=()=>g.remove();
+    g.querySelector('.dsok').onclick=()=>{addStar(2,g.querySelector('.bfig'));ding();ctx.done();
+      if(!savedName){const key=S.cls||'_';const gal=(S.gallery=S.gallery||{})[key]=(S.gallery[key]||[]);const nm=(namesOn()&&(S.picked[S.cls]||[]).slice(-1)[0])||'';gal.push({...c,name:nm});if(gal.length>40)gal.shift();store()}
+      g.remove();later(()=>say('Super star!'),300)};
+    $('#area').append(g);later(()=>say(L().join(' ')),400)}
+  function gallery(){const key=S.cls||'_';const gal=(S.gallery||{})[key]||[];
+    const g=h(`<div class="gate"><div class="gbox galbox"><div class="gt">${ic('star')}<span>Our characters</span></div><div class="galgrid"></div>
+      <div class="grow"><button class="bigbtn blueb gx">${ic('left')} Back</button><button class="pill gclr">Clear</button></div></div></div>`);
+    const grid=g.querySelector('.galgrid');
+    if(!gal.length)grid.innerHTML='<div class="tr" style="color:var(--muted)">No characters yet. Design one and press "Super!" after the presentation.</div>';
+    gal.slice().reverse().forEach(c=>{const b=h(`<button class="galitem">${person({...c,kid:0})}${c.name?`<span>${esc(c.name)}</span>`:''}</button>`);b.onclick=()=>{g.remove();present({...c},c.name||'-')};grid.append(b)});
+    g.querySelector('.gx').onclick=()=>g.remove();
+    g.querySelector('.gclr').onclick=()=>{const c=g.querySelector('.gclr');if(c.dataset.sure){S.gallery[key]=[];store();g.remove();gallery()}else{c.dataset.sure=1;c.textContent='Tap again to clear'}};
+    $('#area').append(g)}
+  const turn=h('<div class="turn dsturn" hidden></div>');v.prepend(turn);
+  const nb=h(`<button class="bigbtn dsnextc">${ic('pick')}</button>`);nb.onclick=()=>nextTurnName(turn);if(namesOn())v.querySelector('.dsbar').prepend(nb);
+  later(()=>say('Design your character!'),300);
+}
+function accIcon(t){return `<svg viewBox="0 0 60 60" width="84" height="84">${accSVG(t,30,t==='h'?38:32,t==='g'?.55:.42)}</svg>`}
+/* accessories drawn on the head (head centre 150,112) */
+function accSVG(t,cx=150,cy=112,s=1){const T=`transform="translate(${cx} ${cy}) scale(${s}) translate(-150 -112)"`;
+  return {g:`<g ${T} fill="none" stroke="#2F2D52" stroke-width="5"><circle cx="127" cy="112" r="20"/><circle cx="173" cy="112" r="20"/><path d="M147 112h6"/></g>`,
+    b:`<g ${T}><path d="M150 52 L112 32 L116 72Z M150 52 L188 32 L184 72Z" fill="#FF5F92"/><circle cx="150" cy="52" r="10" fill="#D9467A"/></g>`,
+    c:`<g ${T}><path d="M100 50 L112 8 L132 36 L150 2 L168 36 L188 8 L200 50Z" fill="#FFD54A" stroke="#F2B51C" stroke-width="4"/><circle cx="150" cy="30" r="6" fill="#FF5F92"/></g>`,
+    h:`<g ${T}><path d="M150 -30 L104 52 L196 52Z" fill="#3FB2E6"/><circle cx="150" cy="-30" r="10" fill="#FFD54A"/><circle cx="135" cy="20" r="6" fill="#fff"/><circle cx="160" cy="34" r="6" fill="#fff"/></g>`}[t]||''}
+
+ACTS_BODY.push(
+ {id:'b_funny',name:'Funny Body',thumb:BTH({sex:'m',hair:'curly',hc:'red',ec:'green',hl:'nose',vb:HEAD}),col:'pink',alt:false,run:bFunny,
+  tip:['Target words. Press GO: the name picker calls a child (if names are added) and gives a task.','"Touch the nose!": the child touches the part on the board; it does something funny.','"What is it?": a part glows, the child says the word, you press Correct. The rest of the class can whisper "Help!"']},
+ {id:'b_door',name:'Mystery Door',img:'grandma',col:'purple',alt:true,run:bDoor,
+  tip:['Productive language. The child knocks; a family member is behind the door.','Each picture card asks one question; the child answers in a full sentence ("She is tall."). Press ✓.','All cards ✓ = 2 stars. "Next child" closes the door with a new person.']},
+ {id:'b_paint',name:'Magic Paint',thumb:BTH({sex:'f',hair:'straight',hc:'mystery',ec:'mystery',vb:HEAD}),col:'green',alt:false,run:bPaint,
+  tip:['Two levels (top right). EASY: the CHILD asks the class "What colour hair has she got?", paints the grey hair with the magic brush and the class answers; press ✓.','MEDIUM: the class asks the question; the child presses the microphone and says "She has got red hair." The colour the child says appears.','The microphone uses the browser\'s speech recognition (Chrome or Edge, internet needed). If it does not work, colour buttons appear: the child says the sentence and taps the colour.']},
+ {id:'b_design',name:'Design Your Character',thumb:BTH({sex:'f',hair:'curly',hc:'red',ec:'green',shirt:'#4CC48E',acc:'crown'}),col:'blue',alt:true,run:bDesign,
+  tip:['Each picture button changes the character and says the sentence ("She has got curly hair.").','"Present!": choose who it is with the family pictures, the child presents; tap a sentence to hear it.','"Super!" gives 2 stars and saves the character in "Our characters".']}
+);
+
+
 /* ---------- activities registry ---------- */
-const ACTS=[
+const ACTS_FAMILY=[
  {id:'hello',name:'Hello, family!',img:'cover',col:'pink',alt:false,run:actHello,
   tip:["The cover picture: tap it to hear \"This is my family. Meet everyone!\"", "Point at people in the picture and ask \"Who is he?\". Children guess; they learn the words in the next game."]},
  {id:'look',name:'Look & Listen',img:'mum',col:'blue',alt:true,run:actLook,
@@ -513,7 +1064,18 @@ const ACTS=[
   tip:["The Family Review slide. Tap a card to hear the word.", "Finish with quick commands like \"Point to your grandma!\", then \"Goodbye!\"."]}
 ];
 
-let cur=-1;
+let ACTS=ACTS_FAMILY,cur=-1;
+const TOPICS={family:{name:'My Family',sub:'Family members',col:'pink',acts:()=>ACTS_FAMILY},body:{name:'My Body',sub:'Body parts',col:'purple',acts:()=>ACTS_BODY}};
+function setTopic(k){S.topic=TOPICS[k]?k:'family';ACTS=TOPICS[S.topic].acts();store()}
+/* first screen: choose what to learn today */
+function topicScreen(){clearTimers();hush();cur=-3;const a=$('#area');a.innerHTML='';setTitle('My Family','pink');$('#board').classList.remove('alt');paintStars();paintBar();
+  ['bPrev','bNext','bAgain','bTip'].forEach(id=>$('#'+id).classList.add('off'));
+  const v=h(`<div class="tpscreen"><h1>What shall we learn?</h1><div class="tprow">
+    <button class="tpbtn" data-k="family" style="--c:var(--pink);--s:#D9467A"><div class="tpimg"><img src="${IMG.cover}" alt=""></div><b>Family members</b><small>mum, dad, grandma…</small></button>
+    <button class="tpbtn" data-k="body" style="--c:var(--purple);--s:#6E49B8"><div class="tpimg tpb">${person({sex:'f',hair:'curly',hc:'brown',ec:'green',shirt:'#FF8A3D',skin:SKIN[1],hl:'eyes'})}${person({sex:'m',hair:'straight',hc:'black',ec:'blue',build:'fat',height:'short',skin:SKIN[2]})}</div><b>Body parts</b><small>eyes, nose, hair, tall, short…</small></button>
+  </div></div>`);
+  v.querySelectorAll('.tpbtn').forEach(b=>b.onclick=()=>{setTopic(b.dataset.k);go(-1);say(b.dataset.k==='body'?'Body parts!':'Family members!')});
+  a.append(v)}
 function setTitle(t,col){const e=$('#title');e.textContent=t;e.style.color=col?COLV[col]:'var(--pink)'}
 function decor(){const cols=['var(--pink)','var(--blue)','var(--purple)','var(--green)','var(--yellow)'];const a=$('#area');
   [[60,30,14],[640,30,22],[250,90,20],[1200,40,14],[440,140,13],[1020,150,20]].forEach(([x,y,s],i)=>a.append(h(`<div class="dots-bg" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px;background:${cols[(i+cur+5)%5]}"></div>`)))}
@@ -554,7 +1116,7 @@ function talk(o,done){
   if(!S.talk){later(()=>say(o.q?`${o.q} ${o.a}`:o.a),300);if(done)done();return}
   const ask=o.mode==='ask';
   const g=h(`<div class="gate" role="dialog" aria-label="Your turn"><div class="gbox">
-    ${o.img?`<div class="card gimg"><img src="${IMG[o.img]}" alt=""></div>`:''}
+    ${o.svg?`<div class="card gimg gsvg">${o.svg}</div>`:o.img?`<div class="card gimg"><img src="${IMG[o.img]}" alt=""></div>`:''}
     <div class="gcol"><div class="gt">${ic('mouth')}<span class="gtt">Your turn!</span>${teamsOn()?`<span class="gteam" style="background:${S.team?'var(--blue)':'var(--pink)'}">${S.team?'Blue':'Pink'} team</span>`:''}</div>
       <button class="gq"><span class="spk">${ic('son')}</span><span>${ask?o.q:o.a}</span></button>
       <div class="gtr">${S.mode==='home'?(ask?`Your child answers out loud: <b>${o.a}</b><br>Stuck? "Help" says the answer; say it together.`:'Listen first, then your child says it out loud.'):(ask?`The class answers out loud: <b>${o.a}</b><br>Stuck? "Help" says the answer.`:'Listen first, then everyone says it out loud.')}</div>
@@ -578,8 +1140,8 @@ function classScreen(){clearTimers();cur=-2;const a=$('#area');a.innerHTML='';se
   const cols=[['var(--pink)','#D9467A'],['var(--blue)','#2A8FBD'],['var(--green)','#33A072'],['var(--purple)','#6E49B8'],['var(--orange)','#D96A24']];
   const v=h(`<div class="clsscreen"><h1>Which class?</h1><div class="clsrow"></div><button class="homelink">Playing at home</button></div>`);
   S.classes.forEach((c,i)=>{const n=(S.names[c]||[]).length;const b=h(`<button class="clsbtn" style="--c:${cols[i%5][0]};--s:${cols[i%5][1]}">${esc(c)}<small>${n?n+' children':'No names yet'}</small></button>`);
-    b.onclick=()=>{useCtx('class',c);go(-1)};v.querySelector('.clsrow').append(b)});
-  v.querySelector('.homelink').onclick=()=>{useCtx('home');go(-1)};
+    b.onclick=()=>{useCtx('class',c);topicScreen()};v.querySelector('.clsrow').append(b)});
+  v.querySelector('.homelink').onclick=()=>{useCtx('home');topicScreen()};
   a.append(v);paintStars()}
 
 function pickName(){const all=clsNames(),abs=absentNow();let done=S.picked[S.cls]||[];
@@ -685,14 +1247,15 @@ function award(n){const r=S.rewards[S.cls]||(S.rewards[S.cls]={});r[n]=(r[n]||0)
 function toggleAbsent(n,force){const a=absentNow().slice();const i=a.indexOf(n);if(i>=0&&!force)a.splice(i,1);else if(i<0)a.push(n);S.absent[S.cls]={date:today(),list:a};store()}
 
 /* ---------- menu ---------- */
-function menu(){setTitle('My Family','pink');const a=$('#area');
-  const m=h(`<div class="menu"><div class="mhead"><h1>My Family</h1><p>Meet everyone! Choose a game.</p></div><div class="mgrid"></div>
-    <div class="mfoot"><button class="bigbtn">Start ${ic('right')}</button><span class="sp"></span><span class="mstat"></span></div></div>`);
+function menu(){const T=TOPICS[S.topic]||TOPICS.family;setTitle(T.name,T.col);const a=$('#area');
+  const m=h(`<div class="menu"><div class="mhead"><h1 style="color:${COLV[T.col]}">${T.name}</h1><p>${T.sub}! Choose a game.</p></div><div class="mgrid" style="grid-template-columns:repeat(${ACTS.length+1<=8?4:6},1fr)"></div>
+    <div class="mfoot"><button class="bigbtn">Start ${ic('right')}</button><button class="pill tpback">◀ Topics</button><span class="sp"></span><span class="mstat"></span></div></div>`);
+  m.querySelector('.tpback').onclick=topicScreen;
   const g=m.querySelector('.mgrid');
-  ACTS.forEach((A,i)=>{const t=h(`<button class="tile"><div class="th" style="background-image:url(${IMG[A.img]})"></div><div class="tl"><span class="n" style="background:${COLV[A.col]}">${i+1}</span>${A.name}</div>${S.done[A.id]?`<span class="ck">${ic('check')}</span>`:''}</button>`);t.onclick=()=>go(i);g.append(t)});
+  ACTS.forEach((A,i)=>{const t=h(`<button class="tile"><div class="th" style="background-image:url(&quot;${A.thumb||IMG[A.img]}&quot;)${A.thumb?';background-size:contain;background-repeat:no-repeat;background-color:var(--sky)':''}"></div><div class="tl"><span class="n" style="background:${COLV[A.col]}">${i+1}</span>${A.name}</div>${S.done[A.id]?`<span class="ck">${ic('check')}</span>`:''}</button>`);t.onclick=()=>go(i);g.append(t)});
   m.querySelector('.bigbtn').onclick=()=>{const i=ACTS.findIndex(A=>!S.done[A.id]);go(i<0?0:i)};
   const st=h(`<button class="tile set" aria-label="Settings">${ic('gear').replace('<svg','<svg class="gear"')}<div class="tl">Settings</div></button>`);st.onclick=settings;g.append(st);
-  const n=SEL().length;m.querySelector('.mstat').innerHTML=`<span class="pill on" style="cursor:default">${S.mode==='home'?'Home':ONE_CLASS?'Classroom':'Class '+esc(S.cls||'-')} · ${n===W.length?'All words':n+' words'} · Speaking step ${S.talk?'on':'off'}</span>`;
+  const n=SEL().length;m.querySelector('.mstat').innerHTML=`<span class="pill on" style="cursor:default">${S.mode==='home'?'Home':ONE_CLASS?'Classroom':'Class '+esc(S.cls||'-')} · ${S.topic==='body'?'Body parts':n===W.length?'All words':n+' words'} · Speaking step ${S.talk?'on':'off'}</span>`;
   a.append(m);
   // sound check: if the device has no English voice (or no speech at all), say so on the menu
   later(()=>{if(cur!==-1)return;const msg=recOn()?(!S.sound?'Sound is off (speaker button at the top).':''):!hasSS?'This browser cannot speak.':(voicesLoaded&&!voice)?'No English voice on this device.':!S.sound?'Sound is off (speaker button at the top).':'';
@@ -976,11 +1539,11 @@ function boot(){load();pickVoice();
   $('#bHome').onclick=()=>go(-1);$('#bPrev').onclick=()=>{if(cur>0)go(cur-1)};$('#bNext').onclick=()=>{if(cur>=0&&cur<ACTS.length-1)go(cur+1)};
   $('#bAgain').onclick=()=>{if(cur>=0)go(cur)};
   $('#bSound').onclick=()=>{S.sound=!S.sound;store();soundIcon();if(!S.sound)hush();if(cur===-1)go(-1)};
-  $('#bTip').onclick=()=>{if(cur<0){modal(`<h2>How to use</h2><ul><li>Tap a game, or press "Start" to open the first unfinished game.</li><li>Top bar: menu, previous/next game, ${ONE_CLASS?'':'class, '}name picker, stars, play again, sound, tips, full screen.</li><li>The orange "Next" button moves to the next round; the dots jump to any round.</li><li><b>Speaking step:</b> after a correct answer the "Your turn!" screen opens. The question is spoken, the class answers out loud ("Help" says the answer). The star comes when you press "We said it!".</li>${ONE_CLASS?'':'<li><b>Class:</b> the purple label (e.g. J6A) changes the class. Each class keeps its own stars.</li>'}<li><b>Star reward:</b> in the name picker, press "Star reward", tap the children who are behaving well, then "Star draw!". Each child's stars are counted on their bubble; New round clears them. After a normal pick, "Give a star" rewards that child directly.</li><li><b>Name picker:</b> the person icon picks a name and says it; everyone gets one turn per round. The "Name" button on the "Your turn!" screen also picks a name.</li><li><b>Settings</b> (last tile): classroom/home, speaking step, teams, classes, names and words to practise.</li><li>If the device has no English voice, sentences appear on screen for an adult to read aloud.</li><li>Stars and settings are saved on this device.</li></ul><div class="row"><button class="bigbtn" data-x>OK</button></div>`);return}
+  $('#bTip').onclick=()=>{if(cur<0){if(cur===-3)return;modal(`<h2>How to use</h2><ul><li>Choose a topic first: <b>Family members</b> or <b>Body parts</b>. "◀ Topics" on the menu goes back.</li><li>Tap a game, or press "Start" to open the first unfinished game.</li><li>Top bar: menu, previous/next game, ${ONE_CLASS?'':'class, '}name picker, stars, play again, sound, tips, full screen.</li><li>The orange "Next" button moves to the next round; the dots jump to any round.</li><li><b>Speaking step:</b> after a correct answer the "Your turn!" screen opens. The question is spoken, the class answers out loud ("Help" says the answer). The star comes when you press "We said it!".</li>${ONE_CLASS?'':'<li><b>Class:</b> the purple label (e.g. J6A) changes the class. Each class keeps its own stars.</li>'}<li><b>Star reward:</b> in the name picker, press "Star reward", tap the children who are behaving well, then "Star draw!". Each child's stars are counted on their bubble; New round clears them. After a normal pick, "Give a star" rewards that child directly.</li><li><b>Name picker:</b> the person icon picks a name and says it; everyone gets one turn per round. The "Name" button on the "Your turn!" screen also picks a name.</li><li><b>Settings</b> (last tile): classroom/home, speaking step, teams, classes, names and words to practise.</li><li>If the device has no English voice, sentences appear on screen for an adult to read aloud.</li><li>Stars and settings are saved on this device.</li></ul><div class="row"><button class="bigbtn" data-x>OK</button></div>`);return}
     const A=ACTS[cur];modal(`<h2>${A.name}</h2>${S.mode==='home'?'<p><b>At home:</b> these tips are written for the classroom; play them with your child. On the "Your turn!" screen, press "I said it!" when your child says the sentence.</p>':''}<ul>${A.tip.map(t=>`<li>${t}</li>`).join('')}</ul><div class="row"><button class="bigbtn" data-x>OK</button></div>`)};
   $('#bFull').onclick=toggleFull;
   document.addEventListener('fullscreenchange',fit);document.addEventListener('webkitfullscreenchange',fit);
-  fit();if(!ONE_CLASS&&S.mode==='class'&&!S.cls)classScreen();else go(-1)}
+  setTopic(S.topic);fit();if(!ONE_CLASS&&S.mode==='class'&&!S.cls)classScreen();else topicScreen()}
 boot();
 </script>
 </body></html>
