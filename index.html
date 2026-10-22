@@ -447,6 +447,15 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 .ph .hs{animation:none!important;filter:none!important;transform:none!important}
 .ph .hs ellipse{transition:fill .2s}
 .tpb{align-items:flex-end;gap:10px}
+.dsg .dsfig{display:flex;align-items:flex-end;justify-content:center}
+.dsrow.ds-role{display:grid;grid-template-columns:repeat(4,96px);gap:10px}
+.dso{width:96px;height:96px}
+.dso img{width:100%;height:100%;object-fit:contain}
+.dsopts{gap:34px}.dscol{gap:16px}
+.dsrow{max-width:560px;gap:10px}
+.dssurp{padding:10px 18px}
+.galfig{height:210px;display:flex;align-items:flex-end;justify-content:center}.galfig svg{height:100%;width:auto}
+.dspbox .grow{flex-wrap:wrap}
 </style>
 
 </head><body><div id="stage"><div id="board">
@@ -470,13 +479,13 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 </div></div>
 
 <script>
-const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp", "c_mum": "assets/c_mum.webp", "c_dad": "assets/c_dad.webp", "c_grandma": "assets/c_grandma.webp", "c_grandpa": "assets/c_grandpa.webp", "c_sister": "assets/c_sister.webp", "c_brother": "assets/c_brother.webp", "c_aunt": "assets/c_aunt.webp", "c_uncle": "assets/c_uncle.webp", "t_mum": "assets/t_mum.webp", "t_dad": "assets/t_dad.webp", "t_grandma": "assets/t_grandma.webp", "t_grandpa": "assets/t_grandpa.webp", "t_sister": "assets/t_sister.webp", "t_brother": "assets/t_brother.webp", "t_aunt": "assets/t_aunt.webp", "t_uncle": "assets/t_uncle.webp"};
+const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp", "c_mum": "assets/c_mum.webp", "c_dad": "assets/c_dad.webp", "c_grandma": "assets/c_grandma.webp", "c_grandpa": "assets/c_grandpa.webp", "c_sister": "assets/c_sister.webp", "c_brother": "assets/c_brother.webp", "c_aunt": "assets/c_aunt.webp", "c_uncle": "assets/c_uncle.webp", "t_mum": "assets/t_mum.webp", "t_dad": "assets/t_dad.webp", "t_grandma": "assets/t_grandma.webp", "t_grandpa": "assets/t_grandpa.webp", "t_sister": "assets/t_sister.webp", "t_brother": "assets/t_brother.webp", "t_aunt": "assets/t_aunt.webp", "t_uncle": "assets/t_uncle.webp", "m_mum": "assets/m_mum.webp", "m_dad": "assets/m_dad.webp", "m_grandma": "assets/m_grandma.webp", "m_grandpa": "assets/m_grandpa.webp", "m_sister": "assets/m_sister.webp", "m_brother": "assets/m_brother.webp", "m_aunt": "assets/m_aunt.webp", "m_uncle": "assets/m_uncle.webp", "t_paint": "assets/t_paint.webp", "t_design": "assets/t_design.webp"};
 const ONE_CLASS=true; /* true: no class selection, one name list (version for any teacher) */
 const SKEY=ONE_CLASS?'myfamily-teacher':'myfamily';
 const DEFAULT_NAMES={};
 /* Recorded natural voice: every fixed sentence is a short clip. A line is split into sentences; if every sentence
    has a clip the clips play one after another, otherwise the device voice is used (e.g. for children's names). */
-const AUD={"hello": "assets/audio/hello.mp3", "this is my family": "assets/audio/this_is_my_family.mp3", "meet everyone": "assets/audio/meet_everyone.mp3", "well done": "assets/audio/well_done.mp3", "who is she": "assets/audio/who_is_she.mp3", "who is he": "assets/audio/who_is_he.mp3", "listen": "assets/audio/listen.mp3", "now choose": "assets/audio/now_choose.mp3", "listen again": "assets/audio/listen_again.mp3", "spin the wheel": "assets/audio/spin_the_wheel.mp3", "look and remember": "assets/audio/look_and_remember.mp3", "close your eyes": "assets/audio/close_your_eyes.mp3", "open your eyes": "assets/audio/open_your_eyes.mp3", "what's missing": "assets/audio/what_s_missing.mp3", "goodbye family": "assets/audio/goodbye_family.mp3", "see you": "assets/audio/see_you.mp3", "your turn": "assets/audio/your_turn.mp3", "super star": "assets/audio/super_star.mp3", "yes": "assets/audio/yes.mp3", "no": "assets/audio/no.mp3", "she": "assets/audio/she.mp3", "he": "assets/audio/he.mp3", "she is my cousin": "assets/audio/she_is_my_cousin.mp3", "he is my cousin": "assets/audio/he_is_my_cousin.mp3", "mum": "assets/audio/mum.mp3", "touch the mum": "assets/audio/touch_the_mum.mp3", "find the mum": "assets/audio/find_the_mum.mp3", "that's my mum": "assets/audio/that_s_my_mum.mp3", "it's my mum": "assets/audio/it_s_my_mum.mp3", "she is my mum": "assets/audio/she_is_my_mum.mp3", "wave like mum": "assets/audio/wave_like_mum.mp3", "dad": "assets/audio/dad.mp3", "touch the dad": "assets/audio/touch_the_dad.mp3", "find the dad": "assets/audio/find_the_dad.mp3", "that's my dad": "assets/audio/that_s_my_dad.mp3", "it's my dad": "assets/audio/it_s_my_dad.mp3", "he is my dad": "assets/audio/he_is_my_dad.mp3", "jump like dad": "assets/audio/jump_like_dad.mp3", "grandma": "assets/audio/grandma.mp3", "touch the grandma": "assets/audio/touch_the_grandma.mp3", "find the grandma": "assets/audio/find_the_grandma.mp3", "that's my grandma": "assets/audio/that_s_my_grandma.mp3", "it's my grandma": "assets/audio/it_s_my_grandma.mp3", "she is my grandma": "assets/audio/she_is_my_grandma.mp3", "dance like grandma": "assets/audio/dance_like_grandma.mp3", "grandpa": "assets/audio/grandpa.mp3", "touch the grandpa": "assets/audio/touch_the_grandpa.mp3", "find the grandpa": "assets/audio/find_the_grandpa.mp3", "that's my grandpa": "assets/audio/that_s_my_grandpa.mp3", "it's my grandpa": "assets/audio/it_s_my_grandpa.mp3", "he is my grandpa": "assets/audio/he_is_my_grandpa.mp3", "walk like grandpa": "assets/audio/walk_like_grandpa.mp3", "sister": "assets/audio/sister.mp3", "touch the sister": "assets/audio/touch_the_sister.mp3", "find the sister": "assets/audio/find_the_sister.mp3", "that's my sister": "assets/audio/that_s_my_sister.mp3", "it's my sister": "assets/audio/it_s_my_sister.mp3", "she is my sister": "assets/audio/she_is_my_sister.mp3", "hop like your sister": "assets/audio/hop_like_your_sister.mp3", "brother": "assets/audio/brother.mp3", "touch the brother": "assets/audio/touch_the_brother.mp3", "find the brother": "assets/audio/find_the_brother.mp3", "that's my brother": "assets/audio/that_s_my_brother.mp3", "it's my brother": "assets/audio/it_s_my_brother.mp3", "he is my brother": "assets/audio/he_is_my_brother.mp3", "run like your brother": "assets/audio/run_like_your_brother.mp3", "baby brother": "assets/audio/baby_brother.mp3", "touch the baby brother": "assets/audio/touch_the_baby_brother.mp3", "find the baby brother": "assets/audio/find_the_baby_brother.mp3", "that's my baby brother": "assets/audio/that_s_my_baby_brother.mp3", "it's my baby brother": "assets/audio/it_s_my_baby_brother.mp3", "he is my baby brother": "assets/audio/he_is_my_baby_brother.mp3", "cry like a baby": "assets/audio/cry_like_a_baby.mp3", "waaah": "assets/audio/waaah.mp3", "baby sister": "assets/audio/baby_sister.mp3", "touch the baby sister": "assets/audio/touch_the_baby_sister.mp3", "find the baby sister": "assets/audio/find_the_baby_sister.mp3", "that's my baby sister": "assets/audio/that_s_my_baby_sister.mp3", "it's my baby sister": "assets/audio/it_s_my_baby_sister.mp3", "she is my baby sister": "assets/audio/she_is_my_baby_sister.mp3", "clap like a baby": "assets/audio/clap_like_a_baby.mp3", "uncle": "assets/audio/uncle.mp3", "touch the uncle": "assets/audio/touch_the_uncle.mp3", "find the uncle": "assets/audio/find_the_uncle.mp3", "that's my uncle": "assets/audio/that_s_my_uncle.mp3", "it's my uncle": "assets/audio/it_s_my_uncle.mp3", "he is my uncle": "assets/audio/he_is_my_uncle.mp3", "wave to your uncle": "assets/audio/wave_to_your_uncle.mp3", "aunt": "assets/audio/aunt.mp3", "touch the aunt": "assets/audio/touch_the_aunt.mp3", "find the aunt": "assets/audio/find_the_aunt.mp3", "that's my aunt": "assets/audio/that_s_my_aunt.mp3", "it's my aunt": "assets/audio/it_s_my_aunt.mp3", "she is my aunt": "assets/audio/she_is_my_aunt.mp3", "spin like your aunt": "assets/audio/spin_like_your_aunt.mp3", "cousin": "assets/audio/cousin.mp3", "touch the cousin": "assets/audio/touch_the_cousin.mp3", "find the cousin": "assets/audio/find_the_cousin.mp3", "that's my cousin": "assets/audio/that_s_my_cousin.mp3", "it's my cousin": "assets/audio/it_s_my_cousin.mp3", "high five cousin": "assets/audio/high_five_cousin.mp3", "this is my body": "assets/audio/this_is_my_body.mp3", "touch and listen": "assets/audio/touch_and_listen.mp3", "body parts": "assets/audio/body_parts.mp3", "family members": "assets/audio/family_members.mp3", "excuse me": "assets/audio/excuse_me.mp3", "face": "assets/audio/face.mp3", "this is my face": "assets/audio/this_is_my_face.mp3", "touch your face": "assets/audio/touch_your_face.mp3", "eyes": "assets/audio/eyes.mp3", "these are my eyes": "assets/audio/these_are_my_eyes.mp3", "touch your eyes": "assets/audio/touch_your_eyes.mp3", "ears": "assets/audio/ears.mp3", "these are my ears": "assets/audio/these_are_my_ears.mp3", "touch your ears": "assets/audio/touch_your_ears.mp3", "nose": "assets/audio/nose.mp3", "this is my nose": "assets/audio/this_is_my_nose.mp3", "touch your nose": "assets/audio/touch_your_nose.mp3", "mouth": "assets/audio/mouth.mp3", "this is my mouth": "assets/audio/this_is_my_mouth.mp3", "touch your mouth": "assets/audio/touch_your_mouth.mp3", "hair": "assets/audio/hair.mp3", "this is my hair": "assets/audio/this_is_my_hair.mp3", "touch your hair": "assets/audio/touch_your_hair.mp3", "arms": "assets/audio/arms.mp3", "these are my arms": "assets/audio/these_are_my_arms.mp3", "wave your arms": "assets/audio/wave_your_arms.mp3", "body": "assets/audio/body.mp3", "shake your body": "assets/audio/shake_your_body.mp3", "she is tall": "assets/audio/she_is_tall.mp3", "she is short": "assets/audio/she_is_short.mp3", "she is thin": "assets/audio/she_is_thin.mp3", "she is fat": "assets/audio/she_is_fat.mp3", "is she tall or short": "assets/audio/is_she_tall_or_short.mp3", "is she thin or fat": "assets/audio/is_she_thin_or_fat.mp3", "what colour hair has she got": "assets/audio/what_colour_hair_has_she_got.mp3", "what colour eyes has she got": "assets/audio/what_colour_eyes_has_she_got.mp3", "she has got curly hair": "assets/audio/she_has_got_curly_hair.mp3", "she has got straight hair": "assets/audio/she_has_got_straight_hair.mp3", "she has got brown hair": "assets/audio/she_has_got_brown_hair.mp3", "she has got black hair": "assets/audio/she_has_got_black_hair.mp3", "she has got yellow hair": "assets/audio/she_has_got_yellow_hair.mp3", "she has got red hair": "assets/audio/she_has_got_red_hair.mp3", "she has got blue eyes": "assets/audio/she_has_got_blue_eyes.mp3", "she has got brown eyes": "assets/audio/she_has_got_brown_eyes.mp3", "she has got green eyes": "assets/audio/she_has_got_green_eyes.mp3", "he is tall": "assets/audio/he_is_tall.mp3", "he is short": "assets/audio/he_is_short.mp3", "he is thin": "assets/audio/he_is_thin.mp3", "he is fat": "assets/audio/he_is_fat.mp3", "is he tall or short": "assets/audio/is_he_tall_or_short.mp3", "is he thin or fat": "assets/audio/is_he_thin_or_fat.mp3", "what colour hair has he got": "assets/audio/what_colour_hair_has_he_got.mp3", "what colour eyes has he got": "assets/audio/what_colour_eyes_has_he_got.mp3", "he has got curly hair": "assets/audio/he_has_got_curly_hair.mp3", "he has got straight hair": "assets/audio/he_has_got_straight_hair.mp3", "he has got brown hair": "assets/audio/he_has_got_brown_hair.mp3", "he has got black hair": "assets/audio/he_has_got_black_hair.mp3", "he has got yellow hair": "assets/audio/he_has_got_yellow_hair.mp3", "he has got red hair": "assets/audio/he_has_got_red_hair.mp3", "he has got blue eyes": "assets/audio/he_has_got_blue_eyes.mp3", "he has got brown eyes": "assets/audio/he_has_got_brown_eyes.mp3", "he has got green eyes": "assets/audio/he_has_got_green_eyes.mp3", "she's my mum": "assets/audio/she_s_my_mum.mp3", "oh she is my mum": "assets/audio/oh_she_is_my_mum.mp3", "she's my sister": "assets/audio/she_s_my_sister.mp3", "oh she is my sister": "assets/audio/oh_she_is_my_sister.mp3", "she's my grandma": "assets/audio/she_s_my_grandma.mp3", "oh she is my grandma": "assets/audio/oh_she_is_my_grandma.mp3", "she's my aunt": "assets/audio/she_s_my_aunt.mp3", "oh she is my aunt": "assets/audio/oh_she_is_my_aunt.mp3", "she's my baby sister": "assets/audio/she_s_my_baby_sister.mp3", "oh she is my baby sister": "assets/audio/oh_she_is_my_baby_sister.mp3", "he's my dad": "assets/audio/he_s_my_dad.mp3", "oh he is my dad": "assets/audio/oh_he_is_my_dad.mp3", "he's my brother": "assets/audio/he_s_my_brother.mp3", "oh he is my brother": "assets/audio/oh_he_is_my_brother.mp3", "he's my grandpa": "assets/audio/he_s_my_grandpa.mp3", "oh he is my grandpa": "assets/audio/oh_he_is_my_grandpa.mp3", "he's my uncle": "assets/audio/he_s_my_uncle.mp3", "oh he is my uncle": "assets/audio/oh_he_is_my_uncle.mp3", "he's my baby brother": "assets/audio/he_s_my_baby_brother.mp3", "oh he is my baby brother": "assets/audio/oh_he_is_my_baby_brother.mp3", "knock knock": "assets/audio/knock_knock.mp3", "what is it": "assets/audio/what_is_it.mp3", "curly or straight": "assets/audio/curly_or_straight.mp3", "design your character": "assets/audio/design_your_character.mp3", "touch the face": "assets/audio/touch_the_face.mp3", "touch the eyes": "assets/audio/touch_the_eyes.mp3", "touch the ears": "assets/audio/touch_the_ears.mp3", "touch the nose": "assets/audio/touch_the_nose.mp3", "touch the mouth": "assets/audio/touch_the_mouth.mp3", "touch the hair": "assets/audio/touch_the_hair.mp3", "touch the arms": "assets/audio/touch_the_arms.mp3", "touch the body": "assets/audio/touch_the_body.mp3", "try again": "assets/audio/try_again.mp3"};
+const AUD={"hello": "assets/audio/hello.mp3", "this is my family": "assets/audio/this_is_my_family.mp3", "meet everyone": "assets/audio/meet_everyone.mp3", "well done": "assets/audio/well_done.mp3", "who is she": "assets/audio/who_is_she.mp3", "who is he": "assets/audio/who_is_he.mp3", "listen": "assets/audio/listen.mp3", "now choose": "assets/audio/now_choose.mp3", "listen again": "assets/audio/listen_again.mp3", "spin the wheel": "assets/audio/spin_the_wheel.mp3", "look and remember": "assets/audio/look_and_remember.mp3", "close your eyes": "assets/audio/close_your_eyes.mp3", "open your eyes": "assets/audio/open_your_eyes.mp3", "what's missing": "assets/audio/what_s_missing.mp3", "goodbye family": "assets/audio/goodbye_family.mp3", "see you": "assets/audio/see_you.mp3", "your turn": "assets/audio/your_turn.mp3", "super star": "assets/audio/super_star.mp3", "yes": "assets/audio/yes.mp3", "no": "assets/audio/no.mp3", "she": "assets/audio/she.mp3", "he": "assets/audio/he.mp3", "she is my cousin": "assets/audio/she_is_my_cousin.mp3", "he is my cousin": "assets/audio/he_is_my_cousin.mp3", "mum": "assets/audio/mum.mp3", "touch the mum": "assets/audio/touch_the_mum.mp3", "find the mum": "assets/audio/find_the_mum.mp3", "that's my mum": "assets/audio/that_s_my_mum.mp3", "it's my mum": "assets/audio/it_s_my_mum.mp3", "she is my mum": "assets/audio/she_is_my_mum.mp3", "wave like mum": "assets/audio/wave_like_mum.mp3", "dad": "assets/audio/dad.mp3", "touch the dad": "assets/audio/touch_the_dad.mp3", "find the dad": "assets/audio/find_the_dad.mp3", "that's my dad": "assets/audio/that_s_my_dad.mp3", "it's my dad": "assets/audio/it_s_my_dad.mp3", "he is my dad": "assets/audio/he_is_my_dad.mp3", "jump like dad": "assets/audio/jump_like_dad.mp3", "grandma": "assets/audio/grandma.mp3", "touch the grandma": "assets/audio/touch_the_grandma.mp3", "find the grandma": "assets/audio/find_the_grandma.mp3", "that's my grandma": "assets/audio/that_s_my_grandma.mp3", "it's my grandma": "assets/audio/it_s_my_grandma.mp3", "she is my grandma": "assets/audio/she_is_my_grandma.mp3", "dance like grandma": "assets/audio/dance_like_grandma.mp3", "grandpa": "assets/audio/grandpa.mp3", "touch the grandpa": "assets/audio/touch_the_grandpa.mp3", "find the grandpa": "assets/audio/find_the_grandpa.mp3", "that's my grandpa": "assets/audio/that_s_my_grandpa.mp3", "it's my grandpa": "assets/audio/it_s_my_grandpa.mp3", "he is my grandpa": "assets/audio/he_is_my_grandpa.mp3", "walk like grandpa": "assets/audio/walk_like_grandpa.mp3", "sister": "assets/audio/sister.mp3", "touch the sister": "assets/audio/touch_the_sister.mp3", "find the sister": "assets/audio/find_the_sister.mp3", "that's my sister": "assets/audio/that_s_my_sister.mp3", "it's my sister": "assets/audio/it_s_my_sister.mp3", "she is my sister": "assets/audio/she_is_my_sister.mp3", "hop like your sister": "assets/audio/hop_like_your_sister.mp3", "brother": "assets/audio/brother.mp3", "touch the brother": "assets/audio/touch_the_brother.mp3", "find the brother": "assets/audio/find_the_brother.mp3", "that's my brother": "assets/audio/that_s_my_brother.mp3", "it's my brother": "assets/audio/it_s_my_brother.mp3", "he is my brother": "assets/audio/he_is_my_brother.mp3", "run like your brother": "assets/audio/run_like_your_brother.mp3", "baby brother": "assets/audio/baby_brother.mp3", "touch the baby brother": "assets/audio/touch_the_baby_brother.mp3", "find the baby brother": "assets/audio/find_the_baby_brother.mp3", "that's my baby brother": "assets/audio/that_s_my_baby_brother.mp3", "it's my baby brother": "assets/audio/it_s_my_baby_brother.mp3", "he is my baby brother": "assets/audio/he_is_my_baby_brother.mp3", "cry like a baby": "assets/audio/cry_like_a_baby.mp3", "waaah": "assets/audio/waaah.mp3", "baby sister": "assets/audio/baby_sister.mp3", "touch the baby sister": "assets/audio/touch_the_baby_sister.mp3", "find the baby sister": "assets/audio/find_the_baby_sister.mp3", "that's my baby sister": "assets/audio/that_s_my_baby_sister.mp3", "it's my baby sister": "assets/audio/it_s_my_baby_sister.mp3", "she is my baby sister": "assets/audio/she_is_my_baby_sister.mp3", "clap like a baby": "assets/audio/clap_like_a_baby.mp3", "uncle": "assets/audio/uncle.mp3", "touch the uncle": "assets/audio/touch_the_uncle.mp3", "find the uncle": "assets/audio/find_the_uncle.mp3", "that's my uncle": "assets/audio/that_s_my_uncle.mp3", "it's my uncle": "assets/audio/it_s_my_uncle.mp3", "he is my uncle": "assets/audio/he_is_my_uncle.mp3", "wave to your uncle": "assets/audio/wave_to_your_uncle.mp3", "aunt": "assets/audio/aunt.mp3", "touch the aunt": "assets/audio/touch_the_aunt.mp3", "find the aunt": "assets/audio/find_the_aunt.mp3", "that's my aunt": "assets/audio/that_s_my_aunt.mp3", "it's my aunt": "assets/audio/it_s_my_aunt.mp3", "she is my aunt": "assets/audio/she_is_my_aunt.mp3", "spin like your aunt": "assets/audio/spin_like_your_aunt.mp3", "cousin": "assets/audio/cousin.mp3", "touch the cousin": "assets/audio/touch_the_cousin.mp3", "find the cousin": "assets/audio/find_the_cousin.mp3", "that's my cousin": "assets/audio/that_s_my_cousin.mp3", "it's my cousin": "assets/audio/it_s_my_cousin.mp3", "high five cousin": "assets/audio/high_five_cousin.mp3", "this is my body": "assets/audio/this_is_my_body.mp3", "touch and listen": "assets/audio/touch_and_listen.mp3", "body parts": "assets/audio/body_parts.mp3", "family members": "assets/audio/family_members.mp3", "excuse me": "assets/audio/excuse_me.mp3", "face": "assets/audio/face.mp3", "this is my face": "assets/audio/this_is_my_face.mp3", "touch your face": "assets/audio/touch_your_face.mp3", "eyes": "assets/audio/eyes.mp3", "these are my eyes": "assets/audio/these_are_my_eyes.mp3", "touch your eyes": "assets/audio/touch_your_eyes.mp3", "ears": "assets/audio/ears.mp3", "these are my ears": "assets/audio/these_are_my_ears.mp3", "touch your ears": "assets/audio/touch_your_ears.mp3", "nose": "assets/audio/nose.mp3", "this is my nose": "assets/audio/this_is_my_nose.mp3", "touch your nose": "assets/audio/touch_your_nose.mp3", "mouth": "assets/audio/mouth.mp3", "this is my mouth": "assets/audio/this_is_my_mouth.mp3", "touch your mouth": "assets/audio/touch_your_mouth.mp3", "hair": "assets/audio/hair.mp3", "this is my hair": "assets/audio/this_is_my_hair.mp3", "touch your hair": "assets/audio/touch_your_hair.mp3", "arms": "assets/audio/arms.mp3", "these are my arms": "assets/audio/these_are_my_arms.mp3", "wave your arms": "assets/audio/wave_your_arms.mp3", "body": "assets/audio/body.mp3", "shake your body": "assets/audio/shake_your_body.mp3", "she is tall": "assets/audio/she_is_tall.mp3", "she is short": "assets/audio/she_is_short.mp3", "she is thin": "assets/audio/she_is_thin.mp3", "she is fat": "assets/audio/she_is_fat.mp3", "is she tall or short": "assets/audio/is_she_tall_or_short.mp3", "is she thin or fat": "assets/audio/is_she_thin_or_fat.mp3", "what colour hair has she got": "assets/audio/what_colour_hair_has_she_got.mp3", "what colour eyes has she got": "assets/audio/what_colour_eyes_has_she_got.mp3", "she has got curly hair": "assets/audio/she_has_got_curly_hair.mp3", "she has got straight hair": "assets/audio/she_has_got_straight_hair.mp3", "she has got brown hair": "assets/audio/she_has_got_brown_hair.mp3", "she has got black hair": "assets/audio/she_has_got_black_hair.mp3", "she has got yellow hair": "assets/audio/she_has_got_yellow_hair.mp3", "she has got red hair": "assets/audio/she_has_got_red_hair.mp3", "she has got blue eyes": "assets/audio/she_has_got_blue_eyes.mp3", "she has got brown eyes": "assets/audio/she_has_got_brown_eyes.mp3", "she has got green eyes": "assets/audio/she_has_got_green_eyes.mp3", "he is tall": "assets/audio/he_is_tall.mp3", "he is short": "assets/audio/he_is_short.mp3", "he is thin": "assets/audio/he_is_thin.mp3", "he is fat": "assets/audio/he_is_fat.mp3", "is he tall or short": "assets/audio/is_he_tall_or_short.mp3", "is he thin or fat": "assets/audio/is_he_thin_or_fat.mp3", "what colour hair has he got": "assets/audio/what_colour_hair_has_he_got.mp3", "what colour eyes has he got": "assets/audio/what_colour_eyes_has_he_got.mp3", "he has got curly hair": "assets/audio/he_has_got_curly_hair.mp3", "he has got straight hair": "assets/audio/he_has_got_straight_hair.mp3", "he has got brown hair": "assets/audio/he_has_got_brown_hair.mp3", "he has got black hair": "assets/audio/he_has_got_black_hair.mp3", "he has got yellow hair": "assets/audio/he_has_got_yellow_hair.mp3", "he has got red hair": "assets/audio/he_has_got_red_hair.mp3", "he has got blue eyes": "assets/audio/he_has_got_blue_eyes.mp3", "he has got brown eyes": "assets/audio/he_has_got_brown_eyes.mp3", "he has got green eyes": "assets/audio/he_has_got_green_eyes.mp3", "she's my mum": "assets/audio/she_s_my_mum.mp3", "oh she is my mum": "assets/audio/oh_she_is_my_mum.mp3", "she's my sister": "assets/audio/she_s_my_sister.mp3", "oh she is my sister": "assets/audio/oh_she_is_my_sister.mp3", "she's my grandma": "assets/audio/she_s_my_grandma.mp3", "oh she is my grandma": "assets/audio/oh_she_is_my_grandma.mp3", "she's my aunt": "assets/audio/she_s_my_aunt.mp3", "oh she is my aunt": "assets/audio/oh_she_is_my_aunt.mp3", "she's my baby sister": "assets/audio/she_s_my_baby_sister.mp3", "oh she is my baby sister": "assets/audio/oh_she_is_my_baby_sister.mp3", "he's my dad": "assets/audio/he_s_my_dad.mp3", "oh he is my dad": "assets/audio/oh_he_is_my_dad.mp3", "he's my brother": "assets/audio/he_s_my_brother.mp3", "oh he is my brother": "assets/audio/oh_he_is_my_brother.mp3", "he's my grandpa": "assets/audio/he_s_my_grandpa.mp3", "oh he is my grandpa": "assets/audio/oh_he_is_my_grandpa.mp3", "he's my uncle": "assets/audio/he_s_my_uncle.mp3", "oh he is my uncle": "assets/audio/oh_he_is_my_uncle.mp3", "he's my baby brother": "assets/audio/he_s_my_baby_brother.mp3", "oh he is my baby brother": "assets/audio/oh_he_is_my_baby_brother.mp3", "knock knock": "assets/audio/knock_knock.mp3", "what is it": "assets/audio/what_is_it.mp3", "curly or straight": "assets/audio/curly_or_straight.mp3", "design your character": "assets/audio/design_your_character.mp3", "touch the face": "assets/audio/touch_the_face.mp3", "touch the eyes": "assets/audio/touch_the_eyes.mp3", "touch the ears": "assets/audio/touch_the_ears.mp3", "touch the nose": "assets/audio/touch_the_nose.mp3", "touch the mouth": "assets/audio/touch_the_mouth.mp3", "touch the hair": "assets/audio/touch_the_hair.mp3", "touch the arms": "assets/audio/touch_the_arms.mp3", "touch the body": "assets/audio/touch_the_body.mp3", "try again": "assets/audio/try_again.mp3", "he has got grey hair": "assets/audio/he_has_got_grey_hair.mp3", "she has got grey hair": "assets/audio/she_has_got_grey_hair.mp3", "pink": "assets/audio/pink.mp3", "blue": "assets/audio/blue.mp3", "purple": "assets/audio/purple.mp3", "green": "assets/audio/green.mp3", "orange": "assets/audio/orange.mp3", "yellow": "assets/audio/yellow.mp3", "red": "assets/audio/red.mp3", "surprise": "assets/audio/surprise.mp3", "wow": "assets/audio/wow.mp3"};
 const akey=s=>s.toLowerCase().replace(/[^a-z0-9' ]+/g,' ').replace(/\s+/g,' ').trim();
 const sents=t=>(String(t).match(/[^.!?]+[.!?]*/g)||[]).map(s=>s.trim()).filter(Boolean);
 const recOn=()=>Object.keys(AUD).length>0&&(!S.voiceName||S.voiceName==='__rec');
@@ -668,15 +677,64 @@ const BODYMAP={
    face:[.5,.18,.23,.09],ears:[[.245,.19,.055,.035],[.745,.19,.055,.035]],eyes:[.49,.165,.19,.028],nose:[.5,.192,.05,.016],mouth:[.5,.222,.11,.02]}};
 /* o: hl (part to highlight), head (face close-up), hgt (height in %, for short people next to tall ones) */
 function photo(role,o={}){const c=CAST[role],W=c.w,H=c.h,P=BODYMAP[role];
-  let vb=`0 0 ${W} ${H}`;if(o.head){const[a,b,x,y]=c.head;vb=`${(a*W).toFixed(1)} ${(b*H).toFixed(1)} ${((x-a)*W).toFixed(1)} ${((y-b)*H).toFixed(1)}`}
+  let acc='',pad=0;
+  if(o.acc&&o.acc!=='none'&&!o.head&&typeof accSVG==='function'){const k=ACC[o.acc],E=EYEPOS[role],mx=(E[0][0]+E[1][0])/2*W,my=(E[0][1]+E[1][1])/2*H,dist=(E[1][0]-E[0][0])*W,s=dist/46,hw=(c.head[2]-c.head[0])*W,sh=hw/150,top=.003*H;
+    if(k==='g')acc=accSVG('g',mx,my,s);
+    else if(k==='m'){const sm=s*.85;acc=accSVG('m',mx,my+.45*dist-34*sm,sm)}
+    else if(k==='c'){acc=accSVG('c',mx,top+(112-44)*sh,sh*.9);pad=42*sh}
+    else if(k==='h'){acc=accSVG('h',mx,top+66*sh,sh);pad=88*sh}
+    else{const sb=sh*.85,tx=mx+(k==='b'?1:-1)*hw*.3,ty=top+hw*.14;acc=accSVG(k,tx,ty+60*sb,sb);pad=Math.max(0,24*sb-ty)}}
+  let vb=`0 ${(-pad).toFixed(1)} ${W} ${(H+pad).toFixed(1)}`;if(o.head){const[a,b,x,y]=c.head;vb=`${(a*W).toFixed(1)} ${(b*H).toFixed(1)} ${((x-a)*W).toFixed(1)} ${((y-b)*H).toFixed(1)}`}
   const el=r=>`<ellipse cx="${(r[0]*W).toFixed(1)}" cy="${(r[1]*H).toFixed(1)}" rx="${(r[2]*W).toFixed(1)}" ry="${(r[3]*H).toFixed(1)}"/>`;
   const L=v=>Array.isArray(v[0])?v:[v];
   const parts=P?['body','arms','hair','face','ears','eyes','nose','mouth'].map(p=>`<g data-part="${p}" class="pt hs" fill="rgba(0,0,0,0)">${L(P[p]).map(el).join('')}</g>`).join(''):'';
   let rr=null;if(o.hl){if(P&&P[o.hl])rr=P[o.hl];else if(o.hl==='eyes')rr=[.5,c.ey,.21,.07*W/H];else if(o.hl==='hair'){const hb=c.head;rr=[.5,hb[3]*.32,.44,hb[3]*.36]}}
   const vw=o.head?(c.head[2]-c.head[0])*W:W,sw=vw/(o.head?55:20);
   const ring=rr?`<g class="ring" fill="none" stroke="#FFB300" style="stroke-width:${sw.toFixed(1)}px;stroke-dasharray:${(sw*2.4).toFixed(1)} ${(sw*1.5).toFixed(1)}">${L(rr).map(el).join('')}</g>`:'';
-  return `<svg class="pp ph" viewBox="${vb}" ${o.hgt?`style="height:${o.hgt}%"`:''} role="img" aria-label="${role}"><image href="${IMG['c_'+role]}" width="${W}" height="${H}"/>${parts}${ring}</svg>`}
+  return `<svg class="pp ph" viewBox="${vb}" ${o.hgt?`style="height:${o.hgt}%"`:''} role="img" aria-label="${role}"><image href="${o.src||IMG['c_'+role]}" width="${W}" height="${H}"/>${parts}${acc}${ring}</svg>`}
 const photoThumb=role=>IMG['t_'+role];
+/* ---- colour changes on the pictures (hair, eyes, clothes) ----
+   Each person has a mask picture: red = hair, green = eyes (iris), blue = clothes (top).
+   The new colour keeps the light and shade of the original drawing. */
+const EYEPOS={mum:[[.433,.119],[.606,.119]],dad:[[.436,.107],[.566,.105]],grandma:[[.421,.158],[.592,.159]],grandpa:[[.422,.106],[.574,.106]],
+ sister:[[.386,.169],[.599,.166]],brother:[[.403,.17],[.585,.167]],aunt:[[.416,.11],[.581,.111]],uncle:[[.41,.131],[.583,.131]]};
+const RAMP={hair:{brown:['#3b2314','#b0743f'],black:['#0e0c10','#5d555c'],yellow:['#b8861c','#ffe98f'],red:['#7c200b','#ff7f3d'],grey:['#77757f','#efeef3'],mystery:['#a8a5b8','#ecebf3']},
+ eyes:{blue:['#0f3d7a','#8ad0fa'],brown:['#341b0b','#b07440'],green:['#0d4a24','#8adb99'],mystery:['#8a879c','#e0dfe8']},
+ top:{pink:'#FF5F92',blue:'#3FB2E6',purple:'#8C64DB',green:'#4CC48E',orange:'#FF8A3D',yellow:'#F2C94C',red:'#E5484D'}};
+const hex=c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16));
+const PIX={};let castP=null;
+function loadImg(src){return new Promise((ok,no)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=no;i.src=src})}
+function castReady(){if(castP)return castP;castP=Promise.all(Object.keys(CAST).map(async r=>{
+  const[a,m]=await Promise.all([loadImg(IMG['c_'+r]),loadImg(IMG['m_'+r])]);const W=a.naturalWidth,H=a.naturalHeight;
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');x.drawImage(a,0,0);const img=x.getImageData(0,0,W,H);
+  x.clearRect(0,0,W,H);x.drawImage(m,0,0,W,H);const msk=x.getImageData(0,0,W,H).data;
+  const st={};[['hair',0],['eyes',1],['top',2]].forEach(([k,ch])=>{const ls=[];for(let i=0;i<msk.length;i+=4)if(msk[i+ch]>160){const d=img.data;ls.push(.299*d[i]+.587*d[i+1]+.114*d[i+2])}
+    ls.sort((p,q)=>p-q);st[k]=ls.length?[ls[Math.floor(ls.length*.04)],ls[Math.floor(ls.length*.96)]]:[0,255]});
+  PIX[r]={W,H,img,msk,st}})).catch(e=>{castP=null;throw e});return castP}
+const RCACHE={};
+/* o: {hc, ec, top}; a value equal to the person's own colour (or empty) keeps the original drawing */
+function recolorKey(role,o){const p=PEOPLE[role];return [role,o.hc&&o.hc!==p.hc?o.hc:'',o.ec&&o.ec!==p.ec?o.ec:'',o.top||''].join('|')}
+function recolor(role,o){const key=recolorKey(role,o);if(RCACHE[key])return RCACHE[key];const[,hc,ec,top]=key.split('|');
+  if(!hc&&!ec&&!top)return IMG['c_'+role];const P=PIX[role];if(!P)return null;
+  const{W,H,img,msk,st}=P,out=new ImageData(new Uint8ClampedArray(img.data),W,H),d=out.data;
+  const jobs=[];if(hc)jobs.push([0,RAMP.hair[hc],st.hair]);if(ec)jobs.push([1,RAMP.eyes[ec],st.eyes]);
+  if(top){const c=hex(RAMP.top[top]);jobs.push([2,[c.map(v=>v*.42),c.map(v=>v+(255-v)*.5)],st.top])}
+  jobs.forEach(([ch,ramp,[lo,hi]])=>{const a=Array.isArray(ramp[0])?ramp[0]:hex(ramp[0]),b=Array.isArray(ramp[1])?ramp[1]:hex(ramp[1]),span=Math.max(20,hi-lo);
+    for(let i=0;i<d.length;i+=4){const w=msk[i+ch]/255;if(w<.02)continue;const L=.299*img.data[i]+.587*img.data[i+1]+.114*img.data[i+2];
+      let t=(L-lo)/span;t=t<0?0:t>1?1:t;for(let k=0;k<3;k++){const c=a[k]+(b[k]-a[k])*t;d[i+k]=d[i+k]*(1-w)+c*w}}});
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;cv.getContext('2d').putImageData(out,0,0);
+  let url=cv.toDataURL('image/webp',.9);if(!url.startsWith('data:image/webp'))url=cv.toDataURL('image/png');
+  const ks=Object.keys(RCACHE);if(ks.length>60)delete RCACHE[ks[0]];return RCACHE[key]=url}
+/* draw a (re)coloured person into an element; later calls win over earlier ones */
+function setPhoto(el,role,o={}){const tok=(el._pt=(el._pt||0)+1);const go=()=>{if(el._pt!==tok)return;const src=recolor(role,o);el.innerHTML=photo(role,{...o,src:src||undefined})};
+  if(!(o.hc||o.ec||o.top)||RCACHE[recolorKey(role,o)]||PIX[role])go();else{el.innerHTML=photo(role,o);castReady().then(go).catch(()=>{})}}
+/* which coloured part is under the pointer: 'hair', 'eyes' or null (eyes get a little extra room) */
+function partAt(svg,e,role){const P=PIX[role];if(!P||!svg)return null;const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;
+  const m=svg.getScreenCTM();if(!m)return null;const q=pt.matrixTransform(m.inverse());const x=Math.round(q.x),y=Math.round(q.y);
+  const at=(x,y,ch)=>x>=0&&y>=0&&x<P.W&&y<P.H&&P.msk[(y*P.W+x)*4+ch]>110;
+  const R=Math.round(P.W*.03);for(let dy=-R;dy<=R;dy+=2)for(let dx=-R;dx<=R;dx+=2)if(at(x+dx,y+dy,1))return'eyes';
+  const R2=Math.round(P.W*.02);for(let dy=-R2;dy<=R2;dy+=2)for(let dx=-R2;dx<=R2;dx+=2)if(at(x+dx,y+dy,0))return'hair';return null}
+
 
 /* ---- people used in the body screens (attributes match the pictures) ---- */
 const PEOPLE={
@@ -906,6 +964,7 @@ function bDoor(area,ctx){
    the colour the child SAYS spreads over the hair. If speech recognition is not available (or does not
    understand twice), big colour buttons appear so the turn can still finish. */
 const SRec=window.SpeechRecognition||window.webkitSpeechRecognition;
+const PAINT_ROLES=['mum','dad','sister','brother','aunt','uncle'];
 /* forgiving colour matching: young learners' pronunciation is often recognised as a similar word */
 const SOUNDS={red:['red','read','rad','rid','bread','wed','rate','ret'],blue:['blue','blew','glue','boo','blu','flu'],green:['green','grin','clean','queen','grain','greene'],
   brown:['brown','bran','round','crown','brawn','browne','brow'],black:['black','block','blank','plaque','back','blacks','flack'],yellow:['yellow','hello','jello','yello','fellow','mellow']};
@@ -934,16 +993,16 @@ function paintEasy(play,ctx){
     <div class="tr" style="color:var(--muted)">1 The child ASKS the class the question (tap the bubble to hear it). 2 The child taps the grey hair/eyes with the magic brush. 3 The class answers; press ✓. Then the eyes.</div></div></div>`);
   play.append(v);
   const fig=v.querySelector('.mp2'),turn=v.querySelector('.turn'),mq=v.querySelector('.mqt'),ma=v.querySelector('.mat');
-  let look,stage,phase='hair';
-  const P=()=>look.sex==='m'?'He':'She',pl=()=>P().toLowerCase();
+  let role,look,stage,phase='hair',queue=[];
+  const P=()=>pr(look),pl=()=>P().toLowerCase();
   const qOf=()=>phase==='hair'?`What colour hair has ${pl()} got?`:`What colour eyes has ${pl()} got?`;
   const aOf=()=>phase==='hair'?`${P()} has got ${look.hc} hair.`:`${P()} has got ${look.ec} eyes.`;
-  const draw=()=>{fig.innerHTML=person({...look,hc:stage.hair?look.hc:'mystery',ec:stage.eyes?look.ec:'mystery',hl:stage.step===2?phase:null,vb:phase==='eyes'?HEAD:undefined})};
+  const draw=()=>setPhoto(fig,role,{hc:stage.hair?look.hc:'mystery',ec:stage.eyes?look.ec:'mystery',hl:stage.step===2?phase:null,head:phase==='eyes'&&stage.step<4});
   const setStep=n=>{stage.step=n;v.querySelectorAll('.step').forEach((s,i)=>{s.classList.toggle('on',i+1===n);s.classList.toggle('done',i+1<n)});draw()};
-  function newTurn(){look={...randLook(),kid:0};stage={hair:false,eyes:false,step:1};phase='hair';mq.textContent=qOf();ma.textContent='?';setStep(1)}
+  function newTurn(){if(!queue.length)queue=shuffle(PAINT_ROLES);role=queue.shift();look=PEOPLE[role];stage={hair:false,eyes:false,step:1};phase='hair';mq.textContent=qOf();ma.textContent='?';setStep(1)}
   v.querySelector('.mq').onclick=()=>{say(qOf());if(stage.step===1)later(()=>setStep(2),1600)};
-  fig.addEventListener('click',e=>{const g=e.target.closest('[data-part]');if(!g||stage.step!==2)return;
-    if(g.dataset.part!==phase){buzz();return}
+  fig.addEventListener('click',e=>{if(stage.step!==2)return;const part=partAt(fig.querySelector('svg'),e,role);if(!part)return;
+    if(part!==phase){buzz();return}
     stage[phase]=true;fig.classList.remove('magic');void fig.offsetWidth;fig.classList.add('magic');burst(fig);tone([[523,.08,0],[784,.08,.08],[1046,.2,.16]]);setStep(3);ma.textContent='?'});
   v.querySelector('.ma').onclick=()=>{if(stage.step===3){ma.textContent=aOf();say(aOf())}};
   v.querySelector('.mok').onclick=()=>{if(stage.step!==3)return;ma.textContent=aOf();ding();
@@ -962,12 +1021,12 @@ function paintMedium(play,ctx){
     <div class="tr" style="color:var(--muted)">The class asks the question (tap the pink bubble to hear it). The child presses the microphone and says the answer: "She has got red hair." The colour the child says appears. If the microphone does not work, the child says it and taps the colour.</div></div></div>`);
   play.append(v);
   const fig=v.querySelector('.mp2'),turn=v.querySelector('.turn'),mq=v.querySelector('.mqt'),mic=v.querySelector('.mic'),said=v.querySelector('.said'),sw=v.querySelector('.swatches');
-  let look,phase,col={},fails=0,rec=null,busy=false;
-  const P=()=>look.sex==='m'?'He':'She',pl=()=>P().toLowerCase();
+  let role,look,phase,col={},fails=0,rec=null,busy=false,queue=[];
+  const P=()=>pr(look),pl=()=>P().toLowerCase();
   const allowed=()=>phase==='hair'?['brown','black','yellow','red']:['blue','brown','green'];
   const qOf=()=>phase==='hair'?`What colour hair has ${pl()} got?`:`What colour eyes has ${pl()} got?`;
   const aOf=c=>phase==='hair'?`${P()} has got ${c} hair.`:`${P()} has got ${c} eyes.`;
-  const draw=()=>{fig.innerHTML=person({...look,hc:col.hair||'mystery',ec:col.eyes||'mystery',hl:phase&&!col[phase]?phase:null,vb:phase==='eyes'?HEAD:undefined})};
+  const draw=()=>setPhoto(fig,role,{hc:col.hair||'mystery',ec:col.eyes||'mystery',hl:phase&&!col[phase]?phase:null,head:phase==='eyes'});
   function showSwatches(){sw.hidden=false;sw.innerHTML='';allowed().forEach(c=>{const b=h(`<button class="swb" aria-label="${c}" style="background:${phase==='hair'?HAIRC[c]:EYEC[c]}"></button>`);b.onclick=()=>apply(c);sw.append(b)})}
   function apply(c){col[phase]=c;sw.hidden=true;said.textContent='';fig.classList.remove('magic');void fig.offsetWidth;fig.classList.add('magic');draw();burst(fig);
     tone([[523,.08,0],[659,.08,.08],[784,.08,.16],[1046,.25,.24]]);later(()=>say(`Yes! ${aOf(c)}`),500);
@@ -984,64 +1043,72 @@ function paintMedium(play,ctx){
     try{rec.start()}catch(e){stop();showSwatches()}}
   mic.onclick=listen;
   v.querySelector('.mq').onclick=()=>{if(phase)say(qOf())};
-  function newTurn(){look={...randLook(),kid:0};col={};phase='hair';fails=0;sw.hidden=true;said.textContent='';mq.textContent=qOf();draw()}
+  function newTurn(){if(!queue.length)queue=shuffle(PAINT_ROLES);role=queue.shift();look=PEOPLE[role];col={};phase='hair';fails=0;sw.hidden=true;said.textContent='';mq.textContent=qOf();draw()}
   v.querySelector('.mnext').onclick=()=>{newTurn();nextTurnName(turn);later(()=>say(qOf()),namesOn()?2000:300)};
   newTurn();later(()=>say(qOf()),400);
 }
 
 
 /* ---------- A4 Design Your Character ---------- */
-const ACC={none:'',glasses:'g',bow:'b',crown:'c',hat:'h'};
+const ACC={none:'',glasses:'g',bow:'b',crown:'c',hat:'h',flower:'f',moustache:'m'};
 function bDesign(area,ctx){
   const play=h('<div class="play"></div>');area.append(play);
-  const st=S.design=S.design||{sex:'f',height:'tall',build:'thin',hair:'curly',hc:'brown',ec:'blue',shirt:'#FF5F92',acc:'none',skin:SKIN[0],role:'sister'};
+  const ROLES=['mum','dad','grandma','grandpa','sister','brother','aunt','uncle'];
+  const fresh=r=>({v:2,role:r,height:PEOPLE[r].height,hc:PEOPLE[r].hc,ec:PEOPLE[r].ec,top:'',acc:'none'});
+  if(!S.design||S.design.v!==2||!CAST[S.design.role])S.design=fresh('sister');
+  const st=S.design;
   const v=h(`<div class="dsg"><div class="bfig big dsfig"></div><div class="dsopts"></div>
-    <div class="dsbar"><button class="bigbtn pinkb dspresent">${ic('mouth')} Present!</button><button class="bigbtn purpleb dsgal">${ic('star')} Our characters</button></div></div>`);
+    <div class="dsbar"><button class="bigbtn orangeb dssurp" aria-label="Surprise">${DICE}</button><button class="bigbtn pinkb dspresent">${ic('mouth')} Present!</button><button class="bigbtn purpleb dsgal">${ic('star')} Our characters</button></div></div>`);
   play.append(v);
   const fig=v.querySelector('.dsfig'),opts=v.querySelector('.dsopts');
-  const P=()=>st.sex==='m'?'He':'She';
-  const draw=()=>{fig.innerHTML=person({...st,kid:0})};
-  const mini=o=>person({sex:st.sex,hair:st.hair,hc:st.hc,ec:st.ec,skin:st.skin,shirt:st.shirt,...o,vb:o.vb||'0 0 300 530'});
+  const P=()=>pr(PEOPLE[st.role]);
+  const draw=(magic)=>{setPhoto(fig,st.role,{hc:st.hc,ec:st.ec,top:st.top,acc:st.acc,hgt:st.height==='short'?74:100});if(magic){fig.classList.remove('magic');void fig.offsetWidth;fig.classList.add('magic');burst(fig)}};
+  const hairIc=c=>`<svg viewBox="0 0 60 60"><circle cx="30" cy="36" r="15" fill="#F6D2B5"/><g fill="${HAIRC[c]}"><circle cx="15" cy="26" r="9"/><circle cx="22" cy="16" r="9"/><circle cx="33" cy="13" r="9"/><circle cx="43" cy="19" r="9"/><circle cx="46" cy="30" r="7"/><circle cx="14" cy="36" r="7"/></g></svg>`;
+  const eyeIc=c=>`<svg viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="24" ry="17" fill="#fff" stroke="#2F2D52" stroke-width="3"/><circle cx="30" cy="30" r="12" fill="${EYEC[c]}"/><circle cx="30" cy="30" r="5" fill="#1d1a2e"/><circle cx="34" cy="26" r="3" fill="#fff"/></svg>`;
+  const shirtIc=c=>`<svg viewBox="0 0 60 60"><path d="M20 8 L8 18 L14 28 L19 25 L19 54 L41 54 L41 25 L46 28 L52 18 L40 8 Q30 16 20 8Z" fill="${c}" stroke="rgba(0,0,0,.15)" stroke-width="2"/></svg>`;
+  const sizeIc=t=>`<svg viewBox="0 0 60 60"><rect x="${t==='tall'?22:22}" y="${t==='tall'?4:26}" width="16" height="${t==='tall'?52:30}" rx="7" fill="${t==='tall'?'#FF8A3D':'#8C64DB'}"/><circle cx="30" cy="${t==='tall'?4:26}" r="0"/></svg>`;
   const rows=[
-    {k:'sex',opts:[['f',mini({sex:'f',vb:HEAD})],['m',mini({sex:'m',vb:HEAD})]],say:v=>v==='f'?'She':'He'},
-    {k:'height',opts:[['tall',mini({height:'tall'})],['short',mini({height:'short'})]],say:v=>`${P()} is ${v}.`},
-    {k:'build',opts:[['thin',mini({build:'thin'})],['fat',mini({build:'fat'})]],say:v=>`${P()} is ${v}.`},
-    {k:'hair',opts:[['curly',mini({hair:'curly',vb:HEAD})],['straight',mini({hair:'straight',vb:HEAD})]],say:v=>`${P()} has got ${v} hair.`},
-    {k:'hc',opts:['brown','black','yellow','red'].map(c=>[c,`<span class="dot" style="background:${HAIRC[c]}"></span>`]),say:v=>`${P()} has got ${v} hair.`},
-    {k:'ec',opts:['blue','brown','green'].map(c=>[c,`<span class="dot eye" style="background:${EYEC[c]}"></span>`]),say:v=>`${P()} has got ${v} eyes.`},
-    {k:'skin',opts:SKIN.map(c=>[c,`<span class="dot" style="background:${c}"></span>`])},
-    {k:'shirt',opts:['#FF5F92','#3FB2E6','#8C64DB','#4CC48E','#FF8A3D','#F2C94C'].map(c=>[c,`<span class="dot" style="background:${c}"></span>`])},
-    {k:'acc',opts:[['none','<span class="dot" style="background:#fff;border:3px dashed #bbb"></span>'],['glasses',accIcon('g')],['bow',accIcon('b')],['crown',accIcon('c')],['hat',accIcon('h')]]}
+    {k:'role',col:0,opts:ROLES.map(r=>[r,`<img src="${photoThumb(r)}" alt="">`]),say:v=>`${pr(PEOPLE[v])}'s my ${v}.`,set:v=>{const keep={top:st.top,acc:st.acc};Object.assign(st,fresh(v),keep)}},
+    {k:'height',col:0,opts:[['tall',sizeIc('tall')],['short',sizeIc('short')]],say:v=>`${P()} is ${v}.`},
+    {k:'acc',col:0,opts:Object.keys(ACC).map(a=>[a,a==='none'?'<span class="dot" style="background:#fff;border:3px dashed #bbb"></span>':accIcon(ACC[a])]),say:()=>'Wow!'},
+    {k:'hc',col:1,opts:['brown','black','yellow','red','grey'].map(c=>[c,hairIc(c)]),say:v=>`${P()} has got ${v} hair.`},
+    {k:'ec',col:1,opts:['blue','brown','green'].map(c=>[c,eyeIc(c)]),say:v=>`${P()} has got ${v} eyes.`},
+    {k:'top',col:1,opts:Object.keys(RAMP.top).map(c=>[c,shirtIc(RAMP.top[c])]),say:v=>cap(v)+'!'}
   ];
-  function render(){draw();opts.innerHTML='';const colA=h('<div class="dscol"></div>'),colB=h('<div class="dscol"></div>');opts.append(colA,colB);
-    rows.forEach((r,ri)=>{const row=h(`<div class="dsrow"></div>`);r.opts.forEach(([val,inner])=>{const b=h(`<button class="dso ${st[r.k]===val?'on':''}" aria-label="${r.k} ${val}">${inner}</button>`);
-      b.onclick=()=>{st[r.k]=val;store();render();if(r.say)say(r.say(val));else tone([[700,.08,0]])};row.append(b)});(['sex','height','build','hair','acc'].includes(r.k)?colA:colB).append(row)})}
-  render();
-  const lines=()=>{const p=P();const L=[`${p} is ${st.height}.`,`${p} is ${st.build}.`,`${p} has got ${st.hair} hair.`,`${p} has got ${st.hc} hair.`,`${p} has got ${st.ec} eyes.`];return L};
+  function render(magic){draw(magic);opts.innerHTML='';const cols=[h('<div class="dscol"></div>'),h('<div class="dscol"></div>')];opts.append(...cols);
+    rows.forEach(r=>{const row=h(`<div class="dsrow ds-${r.k}"></div>`);r.opts.forEach(([val,inner])=>{const b=h(`<button class="dso ${st[r.k]===val?'on':''}" aria-label="${r.k} ${val}">${inner}</button>`);
+      b.onclick=()=>{if(r.set)r.set(val);else st[r.k]=val;store();render(true);say(r.say(val))};row.append(b)});cols[r.col].append(row)})}
+  render();castReady().catch(()=>{});
+  v.querySelector('.dssurp').onclick=()=>{const r=pick(ROLES,1)[0];Object.assign(st,fresh(r),{height:pick(['tall','short'],1)[0],hc:pick(['brown','black','yellow','red','grey'],1)[0],ec:pick(['blue','brown','green'],1)[0],top:pick(Object.keys(RAMP.top),1)[0],acc:pick(Object.keys(ACC),1)[0]});
+    store();render(true);tone([[523,.08,0],[659,.08,.08],[784,.08,.16],[1046,.2,.24]]);say('Surprise!')};
   v.querySelector('.dspresent').onclick=()=>present({...st},null);
   v.querySelector('.dsgal').onclick=gallery;
-  function present(c,savedName){const p=c.sex==='m'?'He':'She';const pl=p.toLowerCase();
-    const roles=ONE.filter(x=>x.g===(c.sex==='m'?'he':'she'));if(!roles.some(x=>x.w===c.role))c.role=roles[0].w;
-    const L=()=>[`Who is ${pl}?`,`${p}'s my ${c.role}.`,`${p} is ${c.height}.`,`${p} is ${c.build}.`,`${p} has got ${c.hair} hair.`,`${p} has got ${c.hc} hair.`,`${p} has got ${c.ec} eyes.`];
-    const g=h(`<div class="gate"><div class="gbox dspbox"><div class="bfig big">${person({...c,kid:0})}</div><div class="gcol">
+  function linesOf(c){const p=PEOPLE[c.role],P=pr(p),pl=P.toLowerCase();
+    return [`Who is ${pl}?`,`${P}'s my ${c.role}.`,`${P} is ${c.height}.`,`${P} is ${p.build}.`,`${P} has got ${p.hair} hair.`,`${P} has got ${c.hc} hair.`,`${P} has got ${c.ec} eyes.`]}
+  function questionsOf(c){const p=PEOPLE[c.role],P=pr(p),pl=P.toLowerCase();
+    return [{q:`Who is ${pl}?`,a:`${P}'s my ${c.role}.`},{q:`Is ${pl} tall or short?`,a:`${P} is ${c.height}.`},{q:`What colour hair has ${pl} got?`,a:`${P} has got ${c.hc} hair.`},{q:`What colour eyes has ${pl} got?`,a:`${P} has got ${c.ec} eyes.`}]}
+  const look=c=>({hc:c.hc,ec:c.ec,top:c.top,acc:c.acc,hgt:c.height==='short'?74:100});
+  function present(c,savedName){const L=linesOf(c);
+    const g=h(`<div class="gate"><div class="gbox dspbox"><div class="bfig big"></div><div class="gcol">
       <div class="gt">${ic('mouth')}<span>Present!</span></div>
-      <div class="dsroles">${roles.map(x=>`<button class="dsrole ${x.w===c.role?'on':''}" data-w="${x.w}"><img src="${IMG[x.id]}" alt="${x.w}"></button>`).join('')}</div>
       <div class="dslines"></div>
-      <div class="grow"><button class="bigbtn greenb dsok">${ic('star')} Super!</button><button class="bigbtn blueb dsx">${ic('left')} Back</button></div></div></div></div>`);
-    const paint=()=>{const box=g.querySelector('.dslines');box.innerHTML='';L().forEach((l,i)=>{const b=h(`<button class="bline">${i?`<span class="spk">${ic('son')}</span>`:''}${l}</button>`);if(!i)b.classList.add('bq');b.onclick=()=>say(l);box.append(b)})};
-    g.querySelectorAll('.dsrole').forEach(b=>b.onclick=()=>{c.role=b.dataset.w;st.role=c.role;store();g.querySelectorAll('.dsrole').forEach(x=>x.classList.toggle('on',x===b));paint();say(`${p}'s my ${c.role}.`)});
-    paint();
+      <div class="grow"><button class="bigbtn pinkb dsask">${ic('ear')} Ask me!</button><button class="bigbtn greenb dsok">${ic('star')} Super!</button><button class="bigbtn blueb dsx">${ic('left')}</button></div>
+      <div class="tr" style="color:var(--muted)">The child presents the character (tap a sentence to hear it). "Ask me!": the class asks 4 questions, the child answers.</div></div></div></div>`);
+    const pf=g.querySelector('.bfig');setPhoto(pf,c.role,look(c));
+    const box=g.querySelector('.dslines');L.forEach((l,i)=>{const b=h(`<button class="bline">${i?`<span class="spk">${ic('son')}</span>`:''}${l}</button>`);if(!i)b.classList.add('bq');b.onclick=()=>say(l);box.append(b)});
     g.querySelector('.dsx').onclick=()=>g.remove();
-    g.querySelector('.dsok').onclick=()=>{addStar(2,g.querySelector('.bfig'));ding();ctx.done();
-      if(!savedName){const key=S.cls||'_';const gal=(S.gallery=S.gallery||{})[key]=(S.gallery[key]||[]);const nm=(namesOn()&&(S.picked[S.cls]||[]).slice(-1)[0])||'';gal.push({...c,name:nm});if(gal.length>40)gal.shift();store()}
+    g.querySelector('.dsask').onclick=()=>{const svg=pf.innerHTML.replace(/ style="height:\d+%"/,'');const Q=questionsOf(c);let i=0;
+      const nextQ=()=>{if(i>=Q.length){addStar(1,pf);return}const x=Q[i++];talk({svg,q:x.q,a:x.a,mode:'ask'},nextQ)};nextQ()};
+    g.querySelector('.dsok').onclick=()=>{addStar(2,pf);ding();ctx.done();
+      if(!savedName){const key=S.cls||'_';const gal=(S.gallery=S.gallery||{})[key]=((S.gallery[key]||[]).filter(x=>x.v===2));const nm=(namesOn()&&(S.picked[S.cls]||[]).slice(-1)[0])||'';gal.push({...c,name:nm});if(gal.length>40)gal.shift();store()}
       g.remove();later(()=>say('Super star!'),300)};
-    $('#area').append(g);later(()=>say(L().join(' ')),400)}
-  function gallery(){const key=S.cls||'_';const gal=(S.gallery||{})[key]||[];
+    $('#area').append(g);later(()=>say(L.join(' ')),400)}
+  function gallery(){const key=S.cls||'_';const gal=((S.gallery||{})[key]||[]).filter(x=>x.v===2&&CAST[x.role]);
     const g=h(`<div class="gate"><div class="gbox galbox"><div class="gt">${ic('star')}<span>Our characters</span></div><div class="galgrid"></div>
       <div class="grow"><button class="bigbtn blueb gx">${ic('left')} Back</button><button class="pill gclr">Clear</button></div></div></div>`);
     const grid=g.querySelector('.galgrid');
     if(!gal.length)grid.innerHTML='<div class="tr" style="color:var(--muted)">No characters yet. Design one and press "Super!" after the presentation.</div>';
-    gal.slice().reverse().forEach(c=>{const b=h(`<button class="galitem">${person({...c,kid:0})}${c.name?`<span>${esc(c.name)}</span>`:''}</button>`);b.onclick=()=>{g.remove();present({...c},c.name||'-')};grid.append(b)});
+    gal.slice().reverse().forEach(c=>{const b=h(`<button class="galitem"><div class="galfig"></div>${c.name?`<span>${esc(c.name)}</span>`:''}</button>`);setPhoto(b.querySelector('.galfig'),c.role,look(c));b.onclick=()=>{g.remove();present({...c},c.name||'-')};grid.append(b)});
     g.querySelector('.gx').onclick=()=>g.remove();
     g.querySelector('.gclr').onclick=()=>{const c=g.querySelector('.gclr');if(c.dataset.sure){S.gallery[key]=[];store();g.remove();gallery()}else{c.dataset.sure=1;c.textContent='Tap again to clear'}};
     $('#area').append(g)}
@@ -1049,23 +1116,26 @@ function bDesign(area,ctx){
   const nb=h(`<button class="bigbtn dsnextc">${ic('pick')}</button>`);nb.onclick=()=>nextTurnName(turn);if(namesOn())v.querySelector('.dsbar').prepend(nb);
   later(()=>say('Design your character!'),300);
 }
-function accIcon(t){return `<svg viewBox="0 0 60 60" width="84" height="84">${accSVG(t,30,t==='h'?38:32,t==='g'?.55:.42)}</svg>`}
+const DICE='<svg viewBox="0 0 60 60" width="46" height="46"><rect x="8" y="8" width="44" height="44" rx="10" fill="#fff"/><g fill="#FF8A3D"><circle cx="20" cy="20" r="5"/><circle cx="40" cy="20" r="5"/><circle cx="30" cy="30" r="5"/><circle cx="20" cy="40" r="5"/><circle cx="40" cy="40" r="5"/></g></svg>';
+function accIcon(t){const s={g:.55,m:.5,b:.55,f:.8,c:.45,h:.5}[t]||.5,c={g:112,b:52,c:26,h:11,f:52,m:146}[t]||112;return `<svg viewBox="0 0 60 60" width="84" height="84">${accSVG(t,30,30-(c-112)*s,s)}</svg>`}
 /* accessories drawn on the head (head centre 150,112) */
 function accSVG(t,cx=150,cy=112,s=1){const T=`transform="translate(${cx} ${cy}) scale(${s}) translate(-150 -112)"`;
   return {g:`<g ${T} fill="none" stroke="#2F2D52" stroke-width="5"><circle cx="127" cy="112" r="20"/><circle cx="173" cy="112" r="20"/><path d="M147 112h6"/></g>`,
     b:`<g ${T}><path d="M150 52 L112 32 L116 72Z M150 52 L188 32 L184 72Z" fill="#FF5F92"/><circle cx="150" cy="52" r="10" fill="#D9467A"/></g>`,
     c:`<g ${T}><path d="M100 50 L112 8 L132 36 L150 2 L168 36 L188 8 L200 50Z" fill="#FFD54A" stroke="#F2B51C" stroke-width="4"/><circle cx="150" cy="30" r="6" fill="#FF5F92"/></g>`,
-    h:`<g ${T}><path d="M150 -30 L104 52 L196 52Z" fill="#3FB2E6"/><circle cx="150" cy="-30" r="10" fill="#FFD54A"/><circle cx="135" cy="20" r="6" fill="#fff"/><circle cx="160" cy="34" r="6" fill="#fff"/></g>`}[t]||''}
+    h:`<g ${T}><path d="M150 -30 L104 52 L196 52Z" fill="#3FB2E6"/><circle cx="150" cy="-30" r="10" fill="#FFD54A"/><circle cx="135" cy="20" r="6" fill="#fff"/><circle cx="160" cy="34" r="6" fill="#fff"/></g>`,
+    f:`<g ${T}>${[0,72,144,216,288].map(a=>`<circle cx="${150+15*Math.cos(a*Math.PI/180)}" cy="${52+15*Math.sin(a*Math.PI/180)}" r="12" fill="#FF8FB8"/>`).join('')}<circle cx="150" cy="52" r="9" fill="#FFD54A"/></g>`,
+    m:`<g ${T}><path d="M150 146 C138 132 112 136 104 154 C118 146 134 154 150 150 C166 154 182 146 196 154 C188 136 162 132 150 146Z" fill="#3b2314"/></g>`}[t]||''}
 
 ACTS_BODY.push(
  {id:'b_funny',name:'Funny Body',thumb:photoThumb('brother'),col:'pink',alt:false,run:bFunny,
   tip:['Target words. Press GO: the name picker calls a child (if names are added) and gives a task.','"Touch the nose!": the child touches the part on the board; it does something funny.','"What is it?": a part glows, the child says the word, you press Correct. The rest of the class can whisper "Help!"']},
  {id:'b_door',name:'Mystery Door',thumb:photoThumb('uncle'),col:'purple',alt:true,run:bDoor,
   tip:['Productive language. The child knocks; a family member is behind the door.','Each picture card asks one question; the child answers in a full sentence ("She is tall."). Press ✓.','All cards ✓ = 2 stars. "Next child" closes the door with a new person.']},
- {id:'b_paint',name:'Magic Paint',thumb:BTH({sex:'f',hair:'straight',hc:'mystery',ec:'mystery',vb:HEAD}),col:'green',alt:false,run:bPaint,
+ {id:'b_paint',name:'Magic Paint',thumb:IMG.t_paint,col:'green',alt:false,run:bPaint,
   tip:['Two levels (top right). EASY: the CHILD asks the class "What colour hair has she got?", paints the grey hair with the magic brush and the class answers; press ✓.','MEDIUM: the class asks the question; the child presses the microphone and says "She has got red hair." The colour the child says appears.','The microphone uses the browser\'s speech recognition (Chrome or Edge, internet needed). If it does not work, colour buttons appear: the child says the sentence and taps the colour.']},
- {id:'b_design',name:'Design Your Character',thumb:BTH({sex:'f',hair:'curly',hc:'red',ec:'green',shirt:'#4CC48E',acc:'crown'}),col:'blue',alt:true,run:bDesign,
-  tip:['Each picture button changes the character and says the sentence ("She has got curly hair.").','"Present!": choose who it is with the family pictures, the child presents; tap a sentence to hear it.','"Super!" gives 2 stars and saves the character in "Our characters".']}
+ {id:'b_design',name:'Design Your Character',thumb:IMG.t_design,col:'blue',alt:true,run:bDesign,
+  tip:['Choose a family member, then change height, hair colour, eye colour, clothes and add a hat, crown, glasses... Each button says the sentence ("She has got red hair.").','The dice makes a surprise character.','"Present!": the child describes the character; tap a sentence to hear it. "Ask me!": the class asks 4 questions and the child answers. "Super!" gives 2 stars and saves it in "Our characters".']}
 );
 
 
