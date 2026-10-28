@@ -472,6 +472,7 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 @keyframes unShake{20%{transform:translateX(-10px)}40%{transform:translateX(10px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
 .unback{position:absolute;left:30px;bottom:24px;font-size:24px}
 .tpscreen{position:relative}
+.clsscreen.many{gap:26px}.clsscreen.many h1{font-size:80px}.clsscreen.many .clsrow{gap:30px;max-width:1300px}.clsscreen.many .clsbtn{width:360px;height:220px;font-size:100px}
 </style>
 
 </head><body><div id="stage"><div id="board">
@@ -496,8 +497,12 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 
 <script>
 const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp", "c_mum": "assets/c_mum.webp", "c_dad": "assets/c_dad.webp", "c_grandma": "assets/c_grandma.webp", "c_grandpa": "assets/c_grandpa.webp", "c_sister": "assets/c_sister.webp", "c_brother": "assets/c_brother.webp", "c_aunt": "assets/c_aunt.webp", "c_uncle": "assets/c_uncle.webp", "t_mum": "assets/t_mum.webp", "t_dad": "assets/t_dad.webp", "t_grandma": "assets/t_grandma.webp", "t_grandpa": "assets/t_grandpa.webp", "t_sister": "assets/t_sister.webp", "t_brother": "assets/t_brother.webp", "t_aunt": "assets/t_aunt.webp", "t_uncle": "assets/t_uncle.webp", "m_mum": "assets/m_mum.webp", "m_dad": "assets/m_dad.webp", "m_grandma": "assets/m_grandma.webp", "m_grandpa": "assets/m_grandpa.webp", "m_sister": "assets/m_sister.webp", "m_brother": "assets/m_brother.webp", "m_aunt": "assets/m_aunt.webp", "m_uncle": "assets/m_uncle.webp", "t_paint": "assets/t_paint.webp", "t_design": "assets/t_design.webp", "farm": "assets/farm.webp"};
-const ONE_CLASS=true; /* true: no class selection, one name list (version for any teacher) */
-const SKEY=ONE_CLASS?'myfamily-teacher':'myfamily';
+const ONE_BUILD=true; /* true: version for any teacher (one name list) until a class-lists file is loaded */
+let ONE_CLASS=ONE_BUILD;
+const SKEY=ONE_BUILD?'myfamily-teacher':'myfamily';
+const CLS_SESSION='myfamily-class-chosen';
+const clsChosen=()=>{try{return sessionStorage.getItem(CLS_SESSION)===String(S.cls)}catch(e){return false}};
+const markChosen=()=>{try{sessionStorage.setItem(CLS_SESSION,String(S.cls))}catch(e){}};
 const DEFAULT_NAMES={};
 /* Recorded natural voice: every fixed sentence is a short clip. A line is split into sentences; if every sentence
    has a clip the clips play one after another, otherwise the device voice is used (e.g. for children's names). */
@@ -577,7 +582,7 @@ const today=()=>new Date().toISOString().slice(0,10);
 const clsNames=()=>(S.names[S.cls]||[]);
 const absentNow=()=>{const a=S.absent[S.cls];return a&&a.date===today()?a.list:[]};
 const namesOn=()=>S.mode==='class'&&!!S.cls&&clsNames().length>0;
-function load(){let v=null;try{v=JSON.parse(localStorage.getItem(SKEY)||'null')}catch(e){}if(!v)try{v=JSON.parse(sessionStorage.getItem(SKEY)||'null')}catch(e){}if(v)Object.assign(S,v);if(!Array.isArray(S.ts))S.ts=[0,0];['names','picked','absent','byClass','good','rewards'].forEach(k=>{if(!S[k]||typeof S[k]!=='object')S[k]={}});if(!Array.isArray(S.classes)||!S.classes.length)S.classes=['J6A','J6C'];if(ONE_CLASS){S.classes=['class'];if(S.mode==='class'||!S.cls)S.cls='class'}Object.keys(DEFAULT_NAMES).forEach(c=>{if(!(S.names[c]||[]).length)S.names[c]=DEFAULT_NAMES[c].slice()});
+function load(){let v=null;try{v=JSON.parse(localStorage.getItem(SKEY)||'null')}catch(e){}if(!v)try{v=JSON.parse(sessionStorage.getItem(SKEY)||'null')}catch(e){}if(v)Object.assign(S,v);if(!Array.isArray(S.ts))S.ts=[0,0];['names','picked','absent','byClass','good','rewards'].forEach(k=>{if(!S[k]||typeof S[k]!=='object')S[k]={}});if(ONE_BUILD)ONE_CLASS=!S.multi;if(!Array.isArray(S.classes)||!S.classes.length)S.classes=Object.keys(DEFAULT_NAMES).length?Object.keys(DEFAULT_NAMES):['J6A','J6C'];if(!ONE_BUILD){Object.keys(DEFAULT_NAMES).forEach(c=>{if(!S.classes.includes(c))S.classes.push(c)});S.classes.sort()}if(ONE_CLASS){S.classes=['class'];if(S.mode==='class'||!S.cls)S.cls='class'}Object.keys(DEFAULT_NAMES).forEach(c=>{if(!(S.names[c]||[]).length)S.names[c]=DEFAULT_NAMES[c].slice()});
 }
 function store(){if(S.mode==='home'||S.cls)saveCls();const j=JSON.stringify(S);try{localStorage.setItem(SKEY,j)}catch(e){try{sessionStorage.setItem(SKEY,j)}catch(_){}}}
 
@@ -1288,10 +1293,10 @@ function paintBar(){const c=$('#bCls'),p=$('#bPick');const on=S.mode==='class';
 function classScreen(){clearTimers();cur=-2;const a=$('#area');a.innerHTML='';setTitle('My Family','pink');$('#board').classList.remove('alt');
   ['bPrev','bNext','bAgain','bTip'].forEach(id=>$('#'+id).classList.add('off'));$('#bCls').hidden=true;$('#bPick').hidden=true;
   const cols=[['var(--pink)','#D9467A'],['var(--blue)','#2A8FBD'],['var(--green)','#33A072'],['var(--purple)','#6E49B8'],['var(--orange)','#D96A24']];
-  const v=h(`<div class="clsscreen"><h1>Which class?</h1><div class="clsrow"></div><button class="homelink">Playing at home</button></div>`);
+  const v=h(`<div class="clsscreen${S.classes.length>3?' many':''}"><h1>Which class?</h1><div class="clsrow"></div><button class="homelink">Playing at home</button></div>`);
   S.classes.forEach((c,i)=>{const n=(S.names[c]||[]).length;const b=h(`<button class="clsbtn" style="--c:${cols[i%5][0]};--s:${cols[i%5][1]}">${esc(c)}<small>${n?n+' children':'No names yet'}</small></button>`);
-    b.onclick=()=>{useCtx('class',c);topicScreen()};v.querySelector('.clsrow').append(b)});
-  v.querySelector('.homelink').onclick=()=>{useCtx('home');topicScreen()};
+    b.onclick=()=>{useCtx('class',c);markChosen();ding();unitScreen()};v.querySelector('.clsrow').append(b)});
+  v.querySelector('.homelink').onclick=()=>{useCtx('home');unitScreen()};
   a.append(v);paintStars()}
 
 function pickName(){const all=clsNames(),abs=absentNow();let done=S.picked[S.cls]||[];
@@ -1412,6 +1417,13 @@ function menu(){const T=TOPICS[S.topic]||TOPICS.family;setTitle(T.name,T.col);co
     if(msg){const w=h(`<div class="warnbar">${ic('warn')}<span>${msg} Sentences will appear on screen; ${S.mode==='home'?'please':'teacher,'} read them aloud.</span></div>`);m.insertBefore(w,m.querySelector('.mgrid'))}},1200)}
 
 /* ---------- settings ---------- */
+/* class-lists file: {"type":"class-lists","classes":{"J6A":["Name",…],…}} */
+function importClassLists(text){let d;try{d=JSON.parse(text)}catch(e){return 0}
+  if(!d||d.type!=='class-lists'||!d.classes||typeof d.classes!=='object')return 0;
+  const keys=Object.keys(d.classes).map(k=>String(k).trim().toUpperCase().slice(0,12)).filter(Boolean).slice(0,12);if(!keys.length)return 0;
+  Object.keys(d.classes).forEach(k=>{const K=String(k).trim().toUpperCase().slice(0,12);const list=Array.isArray(d.classes[k])?[...new Set(d.classes[k].map(s=>String(s).trim()).filter(Boolean))].slice(0,40):[];S.names[K]=list});
+  saveCls();S.multi=true;S.classes=keys;if(ONE_BUILD)ONE_CLASS=false;S.mode='class';S.cls=null;try{sessionStorage.removeItem(CLS_SESSION)}catch(e){}store();paintBar();return keys.length}
+function removeClassLists(){S.classes.forEach(c=>{if(c!=='class')delete S.names[c]});S.multi=false;S.classes=['class'];S.cls='class';store()}
 function settings(){
   const seg=(id,opts,val)=>`<span class="seg" data-k="${id}">${opts.map(([v,l])=>`<button data-v="${v}" class="${String(val)===String(v)?'on':''}">${l}</button>`).join('')}</span>`;
   const sel=new Set(SEL().map(x=>x.id));
@@ -1425,6 +1437,8 @@ function settings(){
     <div class="srow"><span class="lab">Names</span>${ONE_CLASS?'':seg('ncls',S.classes.map(c=>[c,c]),nc)}<span class="ncount pill" style="cursor:default">${(S.names[nc]||[]).length} names</span>
       <span class="note">One name per line, or paste from Excel. Names stay on this device only and are never sent anywhere.</span>
       <textarea class="namesbox" id="namesbox" data-cls="${esc(nc)}" spellcheck="false" placeholder="Name 1&#10;Name 2&#10;Name 3">${esc((S.names[nc]||[]).join('\n'))}</textarea></div>
+    <div class="srow"><span class="lab">Class lists</span><button class="pill" id="clsLoad">Load class lists</button>${S.multi?'<button class="pill" id="clsDrop">Remove class lists</button>':''}<input type="file" id="clsFile" accept=".json,application/json" hidden>
+      <span class="note">A class-lists file (from your school) adds every class with its names; then the site asks "Which class?" when it opens. Names stay on this device only.</span></div>
     <div class="srow"><span class="lab">Words to practise</span><button class="pill" id="wAll">All</button><span class="note" style="margin-left:0;flex-basis:auto">Games ask about the chosen words; wrong options may come from other words.</span></div>
     <div class="wchips">${W.map(x=>`<button class="wchip ${sel.has(x.id)?'on':''}" data-id="${x.id}"><img src="${IMG[x.id]}" alt="">${x.w}</button>`).join('')}</div>
     <div class="row" style="justify-content:space-between"><button class="bigbtn pinkb" id="rst">Reset</button><button class="bigbtn" data-x>Done</button></div>`,M=>{
@@ -1438,6 +1452,9 @@ function settings(){
     const ci=M.querySelector('.clsin');if(ci)ci.addEventListener('change',()=>{const list=[...new Set(ci.value.split(/[,;]/).map(s=>s.trim().toUpperCase()).filter(Boolean))].slice(0,8);if(list.length){S.classes=list;if(S.cls&&!list.includes(S.cls))useCtx('class',list[0]);store();paintBar();settings()}});
     M.querySelectorAll('.wchip').forEach(c=>c.onclick=()=>{const id=c.dataset.id;const cur=new Set(SEL().map(x=>x.id));if(cur.has(id)){if(cur.size===1)return;cur.delete(id)}else cur.add(id);S.words=cur.size===W.length?null:[...cur];store();settings()});
     M.querySelector('#wAll').onclick=()=>{S.words=null;store();settings()};
+    const cf=M.querySelector('#clsFile');M.querySelector('#clsLoad').onclick=()=>cf.click();
+    cf.onchange=()=>{const f=cf.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const n=importClassLists(r.result);if(n){closeModal();classScreen()}else modal(`<h2>This file is not a class list</h2><p>Please choose the class-lists file (.json).</p><div class="row"><button class="bigbtn" data-x>OK</button></div>`)};r.readAsText(f)};
+    const cd=M.querySelector('#clsDrop');if(cd)cd.onclick=()=>modal(`<h2>Remove class lists?</h2><p>All classes and their names are removed from this device. Stars stay.</p><div class="row"><button class="bigbtn blueb" id="no">Cancel</button><button class="bigbtn pinkb" id="yes">Remove</button></div>`,b=>{b.querySelector('#no').onclick=settings;b.querySelector('#yes').onclick=()=>{removeClassLists();location.reload()}});
     M.querySelector('#rst').onclick=()=>modal(`<h2>Reset progress?</h2><p>Stars, team points, star rewards and finished games for this class (or home mode) will be cleared. Settings and names stay.</p><div class="row"><button class="bigbtn blueb" id="no">Cancel</button><button class="bigbtn pinkb" id="yes">Reset</button></div>`,b=>{b.querySelector('#no').onclick=settings;b.querySelector('#yes').onclick=()=>{S.stars=0;S.done={};S.ts=[0,0];S.team=0;S.picked={};if(S.mode==='class'&&S.cls){S.rewards[S.cls]={};S.good[S.cls]={date:today(),list:[]}}store();paintStars();closeModal();go(-1)}});
   });
   $('#modal').onclick=e=>{if(e.target===$('#modal')){closeModal();if(cur===-1)go(-1)}};
@@ -1693,7 +1710,7 @@ function boot(){load();pickVoice();
     const A=ACTS[cur];modal(`<h2>${A.name}</h2>${S.mode==='home'?'<p><b>At home:</b> these tips are written for the classroom; play them with your child. On the "Your turn!" screen, press "I said it!" when your child says the sentence.</p>':''}<ul>${A.tip.map(t=>`<li>${t}</li>`).join('')}</ul><div class="row"><button class="bigbtn" data-x>OK</button></div>`)};
   $('#bFull').onclick=toggleFull;
   document.addEventListener('fullscreenchange',fit);document.addEventListener('webkitfullscreenchange',fit);
-  setTopic(S.topic);fit();if(!ONE_CLASS&&S.mode==='class'&&!S.cls)classScreen();else unitScreen()}
+  setTopic(S.topic);fit();if(!ONE_CLASS&&S.mode==='class'&&(!S.cls||!clsChosen()))classScreen();else unitScreen()}
 boot();
 </script>
 </body></html>
