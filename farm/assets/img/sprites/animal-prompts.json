@@ -1,0 +1,58 @@
+{
+  "generator": "built-in image_gen",
+  "transparent_background": true,
+  "delivery": {
+    "format": "WebP",
+    "width": 880,
+    "height": 800,
+    "quality": 93,
+    "packaging": "Full generated canvas fitted without trimming on transparent 880x800 canvas; original PNG source retained."
+  },
+  "assets": [
+    {
+      "name": "cow",
+      "source": "exec-ca07537f-8bb9-4004-8048-cbc16d877691.png",
+      "prompt": "Use case: stylized-concept. Asset type: transparent full-body animal sprite for original premium children's magical farm game. Create ONE adorable young cow facing LEFT in a standing side/three-quarter view, white plush coat with bold black patches, rounded muzzle blush pink, red collar with shiny little gold bell, small ivory horns, sweet expression and huge glossy expressive brown eyes with double catchlights. Clearly show all FOUR separate legs and hooves. Premium cinematic 3D-painted toy sculpture, soft tactile fur, rounded appealing anatomy, meticulous volumetric shading, warm upper-left key light and delicate peach rim light, harmonious saturated colors. Full body and tail entirely in canvas, centered, feet at about95% of height, top margin modest, aspect ratio 220:200 (1100x1000 preferred). True transparent alpha backdrop, no ground plane and NO baked contact/cast shadow. No text, no logos, no scenery, no border, no other animals; not flat vector or outlined clipart; completely original design.",
+      "png": "cow.png",
+      "webp": "cow.webp"
+    },
+    {
+      "name": "horse",
+      "source": "exec-6e207e2e-d12a-4dbb-8883-08abf76a056f.png",
+      "prompt": "An original stylized brown farm horse with dark mane, white forehead stripe, four visible legs, facing left. Warm 3D storybook illustration, full body on transparent background, no text.",
+      "png": "horse.png",
+      "webp": "horse.webp"
+    },
+    {
+      "name": "pig",
+      "source": "exec-6e74b0b7-4f93-41cc-9b8d-0e450e777b15.png",
+      "prompt": "Use case: stylized-concept. Asset type: transparent full-body animal sprite for original premium children's magical farm game. Create ONE adorable pink pig facing LEFT, standing side/three-quarter view. Round plump rosy body, velvety short coat, curled tail, soft floppy triangular ears, rounded pink snout, huge glossy kind eyes with double catchlights, pink rosy cheeks, sweet little smile. Clearly show FOUR separate legs and dark rose cloven hooves. Premium cinematic 3D-painted toy sculpture, rounded appealing anatomy, meticulous volumetric shading, warm upper-left key light and delicate peach rim, harmonious saturated colors. Full body and tail entirely in canvas, centered, feet at95%ofheight, modest topmargin, aspect ratio220:200 (1100x1000preferred). True transparent alpha backdrop; no groundplane and NO baked contact/cast shadow. No clothing, text, logo, scenery, border, other animals; not flat vector or outlined clipart; completely original design.",
+      "png": "pig.png",
+      "webp": "pig.webp"
+    },
+    {
+      "name": "hen",
+      "source": "exec-a108acec-49b2-4114-858c-8312e297d4be.png",
+      "prompt": "Use case: stylized-concept. Asset type: transparent full-body animal sprite for original premium children's magical farm game. Create ONE adorable plump farm hen facing LEFT in a standing side/three-quarter view. Warm cinnamon brown body with layered soft feathers, slightly darker chocolate wing and short fan tail, small bright red comb and wattles, golden orange beak, two orange legs and feet. Huge glossy kind brown eyes with double catchlights, warm cheek glow and friendly expression. Premium cinematic 3D-painted toy sculpture, rounded appealing anatomy, meticulous volumetric shading, warm upper-left keylight and delicate peach rim, harmonious saturated colors. Whole body comb tail and toes entirely visible, centered with transparent margins, feet at95%height, aspectratio220:200 (1100x1000preferred). True transparent alpha backdrop; NO groundplane, baked contact/cast shadow, text, logo, scenery, border or other animals. Not flat vector/outlinedclipart, completely original design.",
+      "png": "hen.png",
+      "webp": "hen.webp"
+    },
+    {
+      "name": "sheep",
+      "source": "exec-9988c044-5f19-4efc-9445-bd59abecfe29.png",
+      "prompt": "Use case: stylized-concept. Asset type: transparent full-body animal sprite for original premium children's magical farm game. Create ONE adorable sheep facing LEFT in standing side/three-quarter view. Round white fluffy fleece with beautiful soft wool curls and warm ivory highlights, black face and black legs, soft floppy dark ears, little white forelock, large friendly glossy brown eyes with double catchlights, tiny gentle smile. Show clearly FOUR separate legs and hooves beneath fleece. Premium cinematic 3D-painted toy sculpture, tactile fiber details, rounded appealing anatomy, meticulous volumetric shading, warm upper-left keylight and delicate peachrim, harmonious saturated colors. Whole body ears tail hooves entirely in canvas, centered with transparent margins, feet at95%height, aspectratio220:200 (1100x1000preferred). True transparent alpha backdrop; NO groundplane or baked contact/cast shadow. No clothing, text, logo, scenery, border or other animals. Not flat vector or outlinedclipart, completely original design.",
+      "png": "sheep.png",
+      "webp": "sheep.webp"
+    },
+    {
+      "name": "duck",
+      "source": "exec-0da5b7f9-be4c-4158-8c83-da7d26b26cb5.png",
+      "prompt": "Use case: stylized-concept. Asset type: transparent full-body animal sprite for original premium children's magical farm game. Create ONE adorable white duck facing LEFT in standing side/three-quarter view. Plump pear-shaped body with soft white layered feathers and warm ivory highlights, short lifted tail, tucked wings, orange rounded bill and two orange webbed feet. Huge glossy kind brown eyes with double catchlights, subtle rosy cheek glow, sweet playful expression. Premium cinematic 3D-painted toy sculpture, tactile feather details, rounded appealing anatomy, meticulous volumetric shading, warm upper-left keylight and delicate peach rim, harmonious saturated colors. Whole body bill tail feet entirely visible, centered with transparent margins, feet at95%height, aspectratio220:200 (1100x1000preferred). True transparent alpha backdrop; NO groundplane or baked contact/cast shadow. No clothing, text, logo, scenery, border or other animals. Not flat vector or outlinedclipart; completely original design.",
+      "png": "duck.png",
+      "webp": "duck.webp"
+    }
+  ],
+  "notes": [
+    "Horse first two generation attempts failed with HTTP400 output moderation category other. Simplified third prompt succeeded."
+  ]
+}

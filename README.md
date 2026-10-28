@@ -1,7 +1,9 @@
 # My Family for Teachers
 
 Interactive English games for young learners (ages 5–6), organised by the units of *Ready Steady 2A*.
-The first screen shows the units; **Unit 2 – I Love My Family!** is ready, the others are coming soon. Inside Unit 2 the teacher chooses a topic:
+The first screen shows the units; **Unit 2 – I Love My Family!** and **Unit 3 – Farm Animals** are ready, the others are coming soon.
+
+**Unit 3** opens *The Enchanted Farm* (folder [`farm/`](farm/), link: https://nazrin-teacher.github.io/my-family/farm/): four speaking missions with Pip the chick (Meet the Animals, The Great Animal Rescue, My Little Farm, My Talking Farm). In Classroom mode Pip calls one child at a time by name, using the class list from this site's Settings → Names; the microphone button appears only in Home mode. Inside Unit 2 the teacher chooses a topic:
 
 - **Family members:** mum, dad, grandma, grandpa, sister, brother, baby brother, baby sister, uncle, aunt, cousin.
 - **Body parts:** face, eyes, ears, nose, mouth, hair, arms, body; tall, short, thin, fat, curly, straight.

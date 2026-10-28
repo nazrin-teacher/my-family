@@ -1,0 +1,1181 @@
+{
+  "method": "Clear RGBA for pixels with alpha <= 2; all pixels with alpha >= 3 preserved exactly. Lossless encoding, no resizing or erosion.",
+  "files": [
+    {
+      "path": "enchanted-farm/assets/img/sprites/barn-open.png",
+      "dimensions": [
+        1347,
+        1167
+      ],
+      "cleared_near_transparent_pixels": 9320,
+      "bytes_before": 1808491,
+      "bytes_after": 1702907,
+      "sha256_before": "1bf9a9118ef646de16c19e4a9009955d894e18a5cae51a5587f78e5b3578dcb7",
+      "sha256_after": "287b2023eac6c02579df98d6c8ec4b58526a3805715ce13f63475ead1c36196e",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/barn-open.webp",
+      "dimensions": [
+        900,
+        780
+      ],
+      "cleared_near_transparent_pixels": 3570,
+      "bytes_before": 151834,
+      "bytes_after": 558260,
+      "sha256_before": "7b69f212ebef288680c7d985fbc572a420aeaca5331a4e786d45e0b96ed47246",
+      "sha256_after": "13de0867ad0dfb9157daa1c42da220aab61325c737359ba111e8e621f7294e5f",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/barn.png",
+      "dimensions": [
+        1347,
+        1167
+      ],
+      "cleared_near_transparent_pixels": 13988,
+      "bytes_before": 1987848,
+      "bytes_after": 1899765,
+      "sha256_before": "077306c1bee0188ad379cea64f75296d8be09265f161e1d96f03d64a5040f981",
+      "sha256_after": "8f08d3e3a41f959306378ddaa204ca5ddcd773a27589d3e795fa4d48975b3f97",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/barn.webp",
+      "dimensions": [
+        900,
+        780
+      ],
+      "cleared_near_transparent_pixels": 5708,
+      "bytes_before": 177182,
+      "bytes_after": 605962,
+      "sha256_before": "c0ec8b71df8b4cd5f5f94716f9e0f59a207beabe7c2dd85bb923abeb9c35e365",
+      "sha256_after": "df5a70af217602dec828de777ff5eff03ac8f52dc0a46fc8cb855053cc0643d8",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/bush.png",
+      "dimensions": [
+        1470,
+        1070
+      ],
+      "cleared_near_transparent_pixels": 139863,
+      "bytes_before": 1994909,
+      "bytes_after": 1851877,
+      "sha256_before": "00f491a2db8922954b936faa2633005e35f3523904dd4d68c03f04b26f434968",
+      "sha256_after": "95fcc98b94225d5ee624eb6a61308b3b2aaaccbfd42ac5a1043571d577ab9479",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/bush.webp",
+      "dimensions": [
+        660,
+        480
+      ],
+      "cleared_near_transparent_pixels": 27490,
+      "bytes_before": 122716,
+      "bytes_after": 352578,
+      "sha256_before": "ad1f07a1bcb3fc86513eabbe4ab3a20839f9274903ff2b5de02ce0e0ec367974",
+      "sha256_after": "4713ed8d49d1180c3f471a03f166770d79446f53395f2840ab448ba4106ef62a",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/cart.png",
+      "dimensions": [
+        1491,
+        1055
+      ],
+      "cleared_near_transparent_pixels": 27682,
+      "bytes_before": 1702501,
+      "bytes_after": 1615633,
+      "sha256_before": "57ec6eb344f9e184ecf5f927953656d9d59c59ecf93ce7900f6c1c10b43bafd5",
+      "sha256_after": "04b7e39c54e7ab76a04f4bff632d57f0aa5139e59cc864e5bae27ed7ae429abf",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/cart.webp",
+      "dimensions": [
+        720,
+        510
+      ],
+      "cleared_near_transparent_pixels": 5318,
+      "bytes_before": 116064,
+      "bytes_after": 317486,
+      "sha256_before": "5980b26b9963dc93cd6a0d5994f9becdc978f3c9305904415868af17369564ac",
+      "sha256_after": "391a2accd50d57e4ad9f2319a58940baf937cee5efcd5e05e9c3ffd07b3f9bb2",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/cow.png",
+      "dimensions": [
+        1315,
+        1196
+      ],
+      "cleared_near_transparent_pixels": 49640,
+      "bytes_before": 1856478,
+      "bytes_after": 1704643,
+      "sha256_before": "9fa2b2883d8d5f4791bf544c1834c7305c57d13a284645e79317a202cb9ad0f0",
+      "sha256_after": "125996f8f330c819a9655aa4d3ac8bb13e0c9a593bdbba9fceff9dda602ee0c9",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/cow.webp",
+      "dimensions": [
+        880,
+        800
+      ],
+      "cleared_near_transparent_pixels": 17312,
+      "bytes_before": 171180,
+      "bytes_after": 435752,
+      "sha256_before": "cf2f02e1379376ee1f8b467c8fab28a163c5680c3bcc81192c4311a8433a2f9a",
+      "sha256_after": "ef26a90958eb93722bb38ead460dfcf25464e2907d3902cc94f73bba354f6565",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/duck.png",
+      "dimensions": [
+        1315,
+        1196
+      ],
+      "cleared_near_transparent_pixels": 29413,
+      "bytes_before": 1024539,
+      "bytes_after": 950156,
+      "sha256_before": "ab5c62bd40723d7933a1deaea369d2a52c8f6dbac652e7da9322987f6e60b2aa",
+      "sha256_after": "c343d33a5b7bdd4b6ce5544c7809678d9f7d83f728626c198c8a06dc89215fb5",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/duck.webp",
+      "dimensions": [
+        880,
+        800
+      ],
+      "cleared_near_transparent_pixels": 9714,
+      "bytes_before": 98926,
+      "bytes_after": 263128,
+      "sha256_before": "305facbcf61da7971f6dfcf0cee8e5a08a5fe3e78b42da0cee8f52bd64645e47",
+      "sha256_after": "c73fd04149d341e8377c5e72fccd56154d7039c72f9642a01b93ead20e8c86a3",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/field.png",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "cleared_near_transparent_pixels": 20582,
+      "bytes_before": 2296313,
+      "bytes_after": 2213485,
+      "sha256_before": "38c6a2382ebbcab9b8c7dc06cc8585a0bec5ccfadda8bc1594915f1ac9ed6612",
+      "sha256_after": "125bbea4b4cc880b11f240cc17f46dda2f4b32c5f49fec607e765d075424f63b",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/field.webp",
+      "dimensions": [
+        960,
+        540
+      ],
+      "cleared_near_transparent_pixels": 6195,
+      "bytes_before": 216244,
+      "bytes_after": 604498,
+      "sha256_before": "a1f46d9f42a8318ecee81e69007fc7e71528221ed5f8d4b2aebe049b4bfc144e",
+      "sha256_after": "19d04770470a36e88b20f0a04219abf13c904fb2be1228bc56458124e30560e3",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/flowers.png",
+      "dimensions": [
+        1518,
+        1036
+      ],
+      "cleared_near_transparent_pixels": 29841,
+      "bytes_before": 1773693,
+      "bytes_after": 1721077,
+      "sha256_before": "e7a18a7a85a1c6b11f11a291d94292e6196cb363fd36d78195c15eda7168bec7",
+      "sha256_after": "33a10ac4e3b8215bade95b1bdfd1ecf94b29debf53171b38088ba81de375e28d",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/flowers.webp",
+      "dimensions": [
+        660,
+        450
+      ],
+      "cleared_near_transparent_pixels": 4081,
+      "bytes_before": 104864,
+      "bytes_after": 312642,
+      "sha256_before": "d82e70d249abc209c82e14e8558621ec81c8a9cb9ccc7448ed8bf4fcb6805774",
+      "sha256_after": "2faa785a30bc485b790376b0779ec8de32c92b9940f3cf9e86d8de3ceb0c55e9",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/gate-open.png",
+      "dimensions": [
+        1374,
+        1145
+      ],
+      "cleared_near_transparent_pixels": 33997,
+      "bytes_before": 1675564,
+      "bytes_after": 1596308,
+      "sha256_before": "a4dc4d7f89e481b03d2ad1d59e2a11e84ae8b5aaaa05f6394aa2a6934adb98b2",
+      "sha256_after": "d383d6ad25b876b0c4bf6ba024cf19395dc60d59720b0d063fdb4f0c18296f56",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/gate-open.webp",
+      "dimensions": [
+        1080,
+        900
+      ],
+      "cleared_near_transparent_pixels": 20830,
+      "bytes_before": 231622,
+      "bytes_after": 771762,
+      "sha256_before": "be1b728c08ecb01c4cc45bb988d2d2c1e2b0710c172bd4b1d71cf0a255ef2d3e",
+      "sha256_after": "4eeae745b67c3b4c8aec3b5729fbb8b139e81f876118eb46c30549f14436a7c0",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/gate.png",
+      "dimensions": [
+        1374,
+        1145
+      ],
+      "cleared_near_transparent_pixels": 29084,
+      "bytes_before": 2086036,
+      "bytes_after": 1998106,
+      "sha256_before": "69547955491dc2a7313db689abbad7319aa5b0b1b557fec5a43b8deabe88f073",
+      "sha256_after": "2fac2b0cfab40929f4759e028eb39773f1351860775ae77acc7ee37c80cde109",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/gate.webp",
+      "dimensions": [
+        1080,
+        900
+      ],
+      "cleared_near_transparent_pixels": 16930,
+      "bytes_before": 306148,
+      "bytes_after": 939238,
+      "sha256_before": "ff91c42663d6e05e281a6e0afc4d73049431692b4dfda942d9528eba846e53c4",
+      "sha256_after": "86418c3a731533d2958790ae8778d0de782b39b81213b370416e699d1ced49c1",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/hay.png",
+      "dimensions": [
+        1426,
+        1103
+      ],
+      "cleared_near_transparent_pixels": 24278,
+      "bytes_before": 1801944,
+      "bytes_after": 1720046,
+      "sha256_before": "d5cb8632688c088ee271c3625143bcd378025ac25439f984d630228da19c256d",
+      "sha256_after": "ca02d7e2f76754aa45b7386879bd86bf7d5d9381b453632484d2cc64a13298f2",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/hay.webp",
+      "dimensions": [
+        660,
+        510
+      ],
+      "cleared_near_transparent_pixels": 4105,
+      "bytes_before": 109408,
+      "bytes_after": 319376,
+      "sha256_before": "0aa3dc93182ad865d3ac5a1acb8c1b7a2bca1befecea60d9a9a0189ce324083e",
+      "sha256_after": "06850d49f1ef5e53ff83a009a1333eae72428c27e7526d63935fb9b3275931d5",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/hen.png",
+      "dimensions": [
+        1315,
+        1196
+      ],
+      "cleared_near_transparent_pixels": 18056,
+      "bytes_before": 1429183,
+      "bytes_after": 1309373,
+      "sha256_before": "4ec45df49dfde32d27b6814d736e2e1b1514bbd4d1421b9ea535029d15220289",
+      "sha256_after": "b95d480a42150aafd1ebab0514325192303f30f8502e84de55b8915f533b475a",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/hen.webp",
+      "dimensions": [
+        880,
+        800
+      ],
+      "cleared_near_transparent_pixels": 5608,
+      "bytes_before": 118768,
+      "bytes_after": 367050,
+      "sha256_before": "a025ee7ee343f47d0aa32085307b1b217e80ee665c0ecdfeb30b51a61b333f16",
+      "sha256_after": "62a614a7788a7b3632ee57dd169fad2e3eb87b497d59fb19ff83652dd75b1785",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/henhouse.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 12881,
+      "bytes_before": 1612926,
+      "bytes_after": 1526544,
+      "sha256_before": "270007ae3a7386deef3899983cf27beca44815b376bab1e2bc8db65cef1c6444",
+      "sha256_after": "512a3d78588ce3653d58b0cfdedc6da080bb81d7f4363fe09b03612f501aa793",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/henhouse.webp",
+      "dimensions": [
+        660,
+        660
+      ],
+      "cleared_near_transparent_pixels": 2586,
+      "bytes_before": 88172,
+      "bytes_after": 286854,
+      "sha256_before": "75333c246a5d0863043644200292e92edd644aa8e337f58abb06688d6a4a4f78",
+      "sha256_after": "922b5775a3e3e5d5cffeed209cb6cfac11e74ae9cf09dadaa496bb9d85c65685",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/horse.png",
+      "dimensions": [
+        1374,
+        1145
+      ],
+      "cleared_near_transparent_pixels": 31479,
+      "bytes_before": 1340033,
+      "bytes_after": 1213963,
+      "sha256_before": "8f3dd16288ccac43c8704fc4501a2242b46f5f91475e39a438a882eb8c362e19",
+      "sha256_after": "4a853a2f0313af22a089b69eb64704dfc1ab56fa49c52fc1e54e4188540365c8",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/horse.webp",
+      "dimensions": [
+        880,
+        800
+      ],
+      "cleared_near_transparent_pixels": 10810,
+      "bytes_before": 126818,
+      "bytes_after": 318974,
+      "sha256_before": "99599816842e9fe5590b14169ed6302457cb5f1e8a8248e61ed13d7d7d0a32d4",
+      "sha256_after": "ecae91d1fa3b7cf889f45de1a4b29125cbc21176c49403e6d776d0af39c3cb56",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-again.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 19768,
+      "bytes_before": 968069,
+      "bytes_after": 836903,
+      "sha256_before": "74f4142df268d863e18372a88932ebaefda207bfaa786a42560967a60ac16da1",
+      "sha256_after": "d1480f5d1c3de85b4275b7f2340d10809d231d6f8fc214d154068ff8baff6ac6",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-again.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 800,
+      "bytes_before": 18784,
+      "bytes_after": 43628,
+      "sha256_before": "7b5973249184a55568249b5f3b44d4c923617e61eeecfd338e546da478f41d5c",
+      "sha256_after": "1b59b6cd7402d0c986c6be36603b896f782821f5cb314037e8d02e70799ee8fa",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-bulb.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 11098,
+      "bytes_before": 797440,
+      "bytes_after": 730289,
+      "sha256_before": "7553b8b835ddfe68e9e1c312fce7ff1ad60ad85072b868ce082ef527cf8a1e00",
+      "sha256_after": "cc0a7dcd5b550866c999202a7dad3ecc456001d71d995d625fa4a29d58999f3b",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-bulb.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 553,
+      "bytes_before": 17982,
+      "bytes_after": 39388,
+      "sha256_before": "771a31464e8706e9dc9eecab96304266ee3ece7b6af62997014bf0f35128a0c4",
+      "sha256_after": "b4e54c4e8f2d7d884ba5ffa8ea53efff1b385af2b0ba0db44030e197979060a6",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-ear.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 13318,
+      "bytes_before": 958290,
+      "bytes_after": 833880,
+      "sha256_before": "8cba07863fb87ebb32a66963c73ec89dcd94777be1f94e750bc3d37edbc56474",
+      "sha256_after": "5ca311c162a734d867a6b87958cb00741190c64e22d2a9cda67392d70fbd4444",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-ear.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 561,
+      "bytes_before": 18532,
+      "bytes_after": 43656,
+      "sha256_before": "f422c2fe05194f78f6677dcf8f9cc07eececeb822d3ebee3c91a15c5a551bc42",
+      "sha256_after": "e747806766230dbea04af33cc43a52585f597d66f96a84dcedfd16c729405328",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-gear.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 27959,
+      "bytes_before": 1283811,
+      "bytes_after": 1164527,
+      "sha256_before": "d754d5924a5cab7392ddbaa32233b0d13100eeaabd2fd0fc1d825c23e761516c",
+      "sha256_after": "fd9b312dcf217a7f533a15642cbefedfcdf7a35275c1ade7126978a79dbeb376",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-gear.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 837,
+      "bytes_before": 23222,
+      "bytes_after": 52570,
+      "sha256_before": "fbba88c8d467c1808bff635557a83b9674d4792a5def57461c73ba29963cebfb",
+      "sha256_after": "446a551f51ba1b11594844ed03b7f11066ab9b3a9534ee5f62242c6d6f71e05b",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-home.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 17892,
+      "bytes_before": 1314342,
+      "bytes_after": 1214281,
+      "sha256_before": "9c9fae0a0cd9658dee4b0bcfbca7252f1ecf2fe38b33bf8b48b65908785f7fff",
+      "sha256_after": "cb1b42fade923b5b84e66ee1ffaef119dd55562caee3ed0bb7e2aa01547ae517",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-home.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 531,
+      "bytes_before": 24202,
+      "bytes_after": 60554,
+      "sha256_before": "4738aa0818a288d9a80e487edac78ee254a5cfb7b13b98af530402d0238beee1",
+      "sha256_after": "ff6c47b23e7dbccd29bb32c98a83cf937d7845f541bbb895b42d45138991b57c",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-mic.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 12716,
+      "bytes_before": 1011679,
+      "bytes_after": 957519,
+      "sha256_before": "e65b73f51f9628055c8a439a90e913da538b81b84040dd4871a7ae89822eef8d",
+      "sha256_after": "08bdfb2045aade4a9deca7a02f45465df741022bb9b51d23f1773af043a87f60",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-mic.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 460,
+      "bytes_before": 20886,
+      "bytes_after": 46428,
+      "sha256_before": "a395d60f351c67ff8745c5d2f39f741625ae78157ce1f1d1935c3ad53a0ae0aa",
+      "sha256_after": "ff34964c463be9156ce039ec336f5d8ba3a57bb96ac85d6c294afa0d527745a6",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-mouth.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 11931,
+      "bytes_before": 824929,
+      "bytes_after": 722613,
+      "sha256_before": "162d766243db8f82f19d0a44271f88a7a2d39e7065724692c30bb214deedf001",
+      "sha256_after": "64e27d2c959563910beb42dc7b4dd30d56eed058697c30e840718c4263917941",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-mouth.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 450,
+      "bytes_before": 15052,
+      "bytes_after": 35508,
+      "sha256_before": "881cdc339a5b2070e6a97debc43e2cd9d04e55f00ee6f2a775f62c4a9e1bb584",
+      "sha256_after": "68c2ad1dc60f10e9d5090861498420172a23728a3abca9479d58ea6590777643",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-next.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 9178,
+      "bytes_before": 891078,
+      "bytes_after": 788027,
+      "sha256_before": "1c109a26c290ac2f1194c118b45789ada1ebb8316b353db50fc3469affaf9c70",
+      "sha256_after": "0f07db742fd052135250f17cbb22c6c357da0acf982ed05c3312a7bf7bfcb961",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-next.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 391,
+      "bytes_before": 12084,
+      "bytes_after": 34030,
+      "sha256_before": "7fe8f1230e30afc71d578b209fd2f989ab7f61dfbc49e7bc9710ce57d731ff9f",
+      "sha256_after": "57c54c638a3c2c7860600926ccc677c7e5bb7218c7464e78258887e501839d78",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-play.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 6480,
+      "bytes_before": 821267,
+      "bytes_after": 719074,
+      "sha256_before": "0dfa36b841434ea648693b484751a372f70788e12806d6743239f36897931b06",
+      "sha256_after": "91c2370d5c0b64e5d395db562cb0eb4d0c52af35b060d5f5bbcc38bf34813f53",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-play.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 262,
+      "bytes_before": 12246,
+      "bytes_after": 30450,
+      "sha256_before": "35b8556021fbc35875018696b211a5539c3f9e395d8fceac590008bbf0e1bb6d",
+      "sha256_after": "c09f73e41f3a6f6b811a60933566272a2eb7e93fe5d61794d64024bc1e0ecc00",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-rotate.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 7426,
+      "bytes_before": 981240,
+      "bytes_after": 863159,
+      "sha256_before": "9a2e7279f63b37b768ef674849e766702084193c5f8a31c4dfc98604583d669c",
+      "sha256_after": "aa347c78f05a9bbe791ded7108dffc6e124d7d137513700f3f7a91a8f04e9a75",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-rotate.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 349,
+      "bytes_before": 16300,
+      "bytes_after": 45772,
+      "sha256_before": "7b7b9dc66f2aa08d1fcd1d2476d6300e6a6f4d66dd12f8d5605c6239f4548f7f",
+      "sha256_after": "9bf99524161c6ad9456a3393cc4a74d55980df853e5a6f507ac4b0894b3d5b02",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-star.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 6385,
+      "bytes_before": 864350,
+      "bytes_after": 740447,
+      "sha256_before": "494a912246b43bbf0f9ec98fb1d44b1d370b6b94f7831a1c8a3d4cca496a8510",
+      "sha256_after": "d4328b5bd4451b3fb07665acea8b71d10d57a3c637405c32f2c5a51e596143e3",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-star.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 390,
+      "bytes_before": 16404,
+      "bytes_after": 39284,
+      "sha256_before": "aa06aee40c8c275fa51f13b8dbe591b2b623e15631804b5163280643e2ec8fbb",
+      "sha256_after": "edc7a9f67687372538f71777ae699f419f22082e708e1b90886b81f791930af6",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-thumb.png",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "cleared_near_transparent_pixels": 14929,
+      "bytes_before": 972007,
+      "bytes_after": 850909,
+      "sha256_before": "96ea30482c51baa59a5a9811294b1728ee90de096bcd48c1322b0dbab88c37c3",
+      "sha256_after": "7b36e1d773d7ef502cf056e96a65263ac79d9242b331b791507a27f8c5d74c0e",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/icon-thumb.webp",
+      "dimensions": [
+        256,
+        256
+      ],
+      "cleared_near_transparent_pixels": 415,
+      "bytes_before": 15140,
+      "bytes_after": 40086,
+      "sha256_before": "b1955a5b0a2959e54ce695571c856a9db979ef0ae7313a1274cd40f70fff4b75",
+      "sha256_after": "0b973ef2187004ed9b3f72b0bb139cd996ed4fe36fddef5ee2c43fb32ddd7d13",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/lantern-done.png",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "cleared_near_transparent_pixels": 12914,
+      "bytes_before": 1473111,
+      "bytes_after": 1422620,
+      "sha256_before": "cd37895b8959564f708421bf412923db90abc439dbb8d0a4b6df7ab69ef854ae",
+      "sha256_after": "bd84dab88b06165b6f097a5c981bdd842b97b2e28fb9a12f9765e4fa7ae2a24f",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/lantern-done.webp",
+      "dimensions": [
+        480,
+        600
+      ],
+      "cleared_near_transparent_pixels": 2035,
+      "bytes_before": 75938,
+      "bytes_after": 235702,
+      "sha256_before": "cbe618aa51743addd0ce5faabfa249040620b675eeac369fed1a01efabe13e54",
+      "sha256_after": "7f748a7652e6afb7fb306620d0f834cde87eb57115b1755316b40f22af3a29b9",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/lantern-off.png",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "cleared_near_transparent_pixels": 11503,
+      "bytes_before": 1499491,
+      "bytes_after": 1431774,
+      "sha256_before": "eda23ccba12ef80b24ccfc9175b3314ce32bf70879ddb4ece49fdaa3fdacf58b",
+      "sha256_after": "19618ebaab19f73fd2a0df52018702b3f3a9b2439f7dcefa1848b16784c3c38b",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/lantern-off.webp",
+      "dimensions": [
+        480,
+        600
+      ],
+      "cleared_near_transparent_pixels": 1938,
+      "bytes_before": 73064,
+      "bytes_after": 216558,
+      "sha256_before": "8dfb8375b455af0337428102104e881e9e157ef11f5f735c17fdc97191a09b96",
+      "sha256_after": "acb98098103e1e5d334b9df1e6ba8672817e0605ee73e078b7c9cbe8a4e5fe00",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/lantern-on.png",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "cleared_near_transparent_pixels": 15179,
+      "bytes_before": 1523890,
+      "bytes_after": 1471968,
+      "sha256_before": "72508cbd365ea51a11e717016839ef9da79e242dcda59a56ed0a9e79163eb8a3",
+      "sha256_after": "910d301abce9178ccc094eae3d4ef14995f301ef16e026fb87b4caa0c2d6c41b",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/lantern-on.webp",
+      "dimensions": [
+        480,
+        600
+      ],
+      "cleared_near_transparent_pixels": 2293,
+      "bytes_before": 81016,
+      "bytes_after": 228286,
+      "sha256_before": "0c45bb2b93f542580b405ffcb714d69a915dd770207abbdbe27122ed11cba004",
+      "sha256_after": "4cb9e1ef6ccdda734cdebb807248a8768f3d718a069dee12f95c6100c0409979",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/log.png",
+      "dimensions": [
+        1703,
+        924
+      ],
+      "cleared_near_transparent_pixels": 16506,
+      "bytes_before": 1806680,
+      "bytes_after": 1748897,
+      "sha256_before": "79d556d8e1b986eeca05b93707dbd3aa0d482f9b186a6b3ebe19ca1bbbbff8e8",
+      "sha256_after": "b2b063f3a21bf71a417452cc0fbf10902d5811abaa85bb3d44786e9e62908159",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/log.webp",
+      "dimensions": [
+        720,
+        390
+      ],
+      "cleared_near_transparent_pixels": 2306,
+      "bytes_before": 93696,
+      "bytes_after": 266282,
+      "sha256_before": "2fcd7ae593cd086e8b8f2ceeb0123ec5d9be4a840714c646ce33c8b3dc45ad2e",
+      "sha256_after": "2993b442a24aec2f1bdcfdd543de0f9b1b85593079bbc98bae00b39047cb6e41",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/mud.png",
+      "dimensions": [
+        1714,
+        918
+      ],
+      "cleared_near_transparent_pixels": 37295,
+      "bytes_before": 1878753,
+      "bytes_after": 1803838,
+      "sha256_before": "f33e899610dd2370490942c721c68222b2e72961072309ff52d8ba11864433f7",
+      "sha256_after": "04485bdd4ae278f0787bdee352ada9f8cec9a3da0ffcd43747c9cdac75a0450c",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/mud.webp",
+      "dimensions": [
+        840,
+        450
+      ],
+      "cleared_near_transparent_pixels": 7287,
+      "bytes_before": 128208,
+      "bytes_after": 354562,
+      "sha256_before": "e8857812e1695f6520a3825ee7f5eabd2f7334c1d20501c85fdbef883a567252",
+      "sha256_after": "ac8b99117ab50cc3f27c21d389bd2b79042e72104dedcd22e324effb0cf48008",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pig.png",
+      "dimensions": [
+        1315,
+        1196
+      ],
+      "cleared_near_transparent_pixels": 31551,
+      "bytes_before": 1797988,
+      "bytes_after": 1608729,
+      "sha256_before": "ad8f5af9b5adc5987ed386260695337ae9e1383b78b0a5cf4f0270035f0cd929",
+      "sha256_after": "10d18f443487d1c605e01c488e9f094032a30e6b558c90bb655f06d8192faa96",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pig.webp",
+      "dimensions": [
+        880,
+        800
+      ],
+      "cleared_near_transparent_pixels": 10818,
+      "bytes_before": 130866,
+      "bytes_after": 387406,
+      "sha256_before": "a1d23fb8d68e8586f11d9145e192e86e05c5b59e68ae5a8bff1d9fd0205cb385",
+      "sha256_after": "134e484b300d77a0ba40867e6a45ba668e9504cd2885cdce853edfa64bbfcbe7",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-happy.png",
+      "dimensions": [
+        1196,
+        1315
+      ],
+      "cleared_near_transparent_pixels": 27702,
+      "bytes_before": 1270231,
+      "bytes_after": 1192045,
+      "sha256_before": "b5f5cb766b8e3ec4f7cf779e024b92adc91d4acaa63af76d439ec8a0fe8210ac",
+      "sha256_after": "59b36efb728d9915e6dfa064f0970b7d0bcac1cfb337ded906305e0983686aa6",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-happy.webp",
+      "dimensions": [
+        800,
+        880
+      ],
+      "cleared_near_transparent_pixels": 11788,
+      "bytes_before": 119102,
+      "bytes_after": 398580,
+      "sha256_before": "d938fd2135dcbd1cc7b3d59099d9d0af891b2f16a82c4e4dfbaa2d31507ab885",
+      "sha256_after": "092bd8e51a313a6b1772f8ff061cd15be12cf531af24749c85a8e0cbda03f196",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-idle.png",
+      "dimensions": [
+        1196,
+        1315
+      ],
+      "cleared_near_transparent_pixels": 26175,
+      "bytes_before": 1161647,
+      "bytes_after": 1085365,
+      "sha256_before": "e069dfbeba0b1df7f6ee3299aaf8e71d0b99a7e80674d3e705f442388243497f",
+      "sha256_after": "6ceb125758a6ed6e697b5971bedc3e5613bb7d3ecce6c2a93f2ec020fa63c443",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-idle.webp",
+      "dimensions": [
+        800,
+        880
+      ],
+      "cleared_near_transparent_pixels": 11074,
+      "bytes_before": 106564,
+      "bytes_after": 364302,
+      "sha256_before": "8116d86affacce27a9e6230f9827054eb12270776efe10ac699f7b5bc1101335",
+      "sha256_after": "90038116584f23b299ced4b2d90da6c1f2816971f801d19b9041cd911fdc2ecd",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-point.png",
+      "dimensions": [
+        1196,
+        1315
+      ],
+      "cleared_near_transparent_pixels": 27998,
+      "bytes_before": 1247622,
+      "bytes_after": 1175583,
+      "sha256_before": "2561a720c3dbe5e42297b7638b97a94b9a4aec75493409b94b6a7a141f6c1858",
+      "sha256_after": "9de72817a0b64f85630825d35213a284764eaa60fffcbded53a9ce2987a28e96",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-point.webp",
+      "dimensions": [
+        800,
+        880
+      ],
+      "cleared_near_transparent_pixels": 12063,
+      "bytes_before": 120824,
+      "bytes_after": 395178,
+      "sha256_before": "5cf2f834cd21304433e2629a43448b3671d30483e5e76cd5a3edded4cedd2c9f",
+      "sha256_after": "d53c59de76ec9c229d4d70d9f4634e0aedde0e8e5c9e4a3df3e9348dfebb69d5",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-talk.png",
+      "dimensions": [
+        1196,
+        1315
+      ],
+      "cleared_near_transparent_pixels": 28278,
+      "bytes_before": 1133255,
+      "bytes_after": 1068594,
+      "sha256_before": "a475962f784dedb66beb1cafaeaa8dd2eb9e021e43ecee0047c3a73464f74e9c",
+      "sha256_after": "e240ab6c0b52c6679e041bf9aa26225dfcd333e55035a1ad0f7e83293f821bf1",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-talk.webp",
+      "dimensions": [
+        800,
+        880
+      ],
+      "cleared_near_transparent_pixels": 12197,
+      "bytes_before": 121202,
+      "bytes_after": 351712,
+      "sha256_before": "87307c6eb04d996207faa221a8d019a55fd5ab1cdce7ee5c0535b6bb61a5ae88",
+      "sha256_after": "da209340f324af33e447584c9322f5863cdca64294e05c729869622e1ed28572",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-think.png",
+      "dimensions": [
+        1196,
+        1315
+      ],
+      "cleared_near_transparent_pixels": 20598,
+      "bytes_before": 1109658,
+      "bytes_after": 1044844,
+      "sha256_before": "44fe9ad4c848f8701293447f3934303c6d3206751042eb4fa2a1f2130925eb90",
+      "sha256_after": "c5fef5d2ab147a86d5b6dd306229bfb8ac1fc99a4540eca3f4ebb68c3c3283ab",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-think.webp",
+      "dimensions": [
+        800,
+        880
+      ],
+      "cleared_near_transparent_pixels": 8596,
+      "bytes_before": 104252,
+      "bytes_after": 347900,
+      "sha256_before": "144ac3231c8a9470b2ae9d73027cf7718f97c1e8119e000ca3b6c2328bd8c2fd",
+      "sha256_after": "163ba36a93fb31dded325231c00727fd0cce38d862fb86b3afaf1216c019a472",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-wave.png",
+      "dimensions": [
+        1195,
+        1316
+      ],
+      "cleared_near_transparent_pixels": 31201,
+      "bytes_before": 1320554,
+      "bytes_after": 1251976,
+      "sha256_before": "2e77289d6f25c00b187a102dad62d665f43a01f53834a59012bdca2d724f52af",
+      "sha256_after": "3d94e62215070ec11a99cb07deae0a1e58b1a6240c9e2a028b4b89ed4ad6023d",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pip-wave.webp",
+      "dimensions": [
+        800,
+        880
+      ],
+      "cleared_near_transparent_pixels": 13329,
+      "bytes_before": 126270,
+      "bytes_after": 415612,
+      "sha256_before": "395ec98f609588fdf1be3407e51b94523c12e56693a1041b8d5152d7599b9ba8",
+      "sha256_after": "ea444bab3323ac7cf75fcbe47266dda58695db2c22993b6cde808ad5dcc0d110",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pond.png",
+      "dimensions": [
+        1723,
+        913
+      ],
+      "cleared_near_transparent_pixels": 28893,
+      "bytes_before": 2245252,
+      "bytes_after": 2203066,
+      "sha256_before": "b7177068227294c7eee764906b5da558ab9122e6cac86cbbfbe7bb0305daed06",
+      "sha256_after": "19b948010d7053d81a4733fec02f07d1d8ed22ecde4f6e90d4be1728251deaf8",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/pond.webp",
+      "dimensions": [
+        1020,
+        540
+      ],
+      "cleared_near_transparent_pixels": 9745,
+      "bytes_before": 236296,
+      "bytes_after": 648982,
+      "sha256_before": "648826b652d678e8b1b8e8b7e4c10726a541b7852bc17825d359bfe1c79257d0",
+      "sha256_after": "98ba14e13bbf2243b09b35485a2c6285f23c52490f6bb9a0bbe9e530c23c890e",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/rainbow.png",
+      "dimensions": [
+        1665,
+        945
+      ],
+      "cleared_near_transparent_pixels": 15169,
+      "bytes_before": 1500328,
+      "bytes_after": 1394961,
+      "sha256_before": "f418b61048840b972e8bf665d9c945673a537597f6cf8eb027a534eb24a26b81",
+      "sha256_after": "4517fc52e3ad150b446bd70726bef4f30ee81dfa111b5709449680c895341aae",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/rainbow.webp",
+      "dimensions": [
+        900,
+        510
+      ],
+      "cleared_near_transparent_pixels": 3693,
+      "bytes_before": 77500,
+      "bytes_after": 308246,
+      "sha256_before": "eecbd16672a8fe4c1eb72e2914e80d16c162a8aa3e2641ebf6893aadacec2a6a",
+      "sha256_after": "0e171ad683125fb492805fd76becafccb2366c4f349fd21a0333fa9598b4aa47",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/sheep.png",
+      "dimensions": [
+        1315,
+        1196
+      ],
+      "cleared_near_transparent_pixels": 32839,
+      "bytes_before": 1765162,
+      "bytes_after": 1610588,
+      "sha256_before": "de441de63e21d194e3118d1e60f19602da0e61432ef82263e1627851c1165648",
+      "sha256_after": "72bcdc729376b13553ff3803d0f81e363db952f0dc475e5c103706cdc63976cf",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/sheep.webp",
+      "dimensions": [
+        880,
+        800
+      ],
+      "cleared_near_transparent_pixels": 11533,
+      "bytes_before": 157566,
+      "bytes_after": 432380,
+      "sha256_before": "50fd70883169e6a0f0b680b33b3ff150b0f8e8b7ef89254750728b8d247f0de2",
+      "sha256_after": "f02275f51f9a76cba0f3451078b9a8eb9d75d0be3a9a5bdcf20fad3f28447ee7",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/stable.png",
+      "dimensions": [
+        1363,
+        1154
+      ],
+      "cleared_near_transparent_pixels": 10926,
+      "bytes_before": 1956296,
+      "bytes_after": 1841799,
+      "sha256_before": "966f0155d2238f66b3f2c24dbffffd37470e0a7205679973c1215a2b97afca76",
+      "sha256_after": "4e57e5bf5d2ff90edc5900e907b5c6703932593ebc27a0368b181d1505605056",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/stable.webp",
+      "dimensions": [
+        780,
+        660
+      ],
+      "cleared_near_transparent_pixels": 2875,
+      "bytes_before": 127186,
+      "bytes_after": 393956,
+      "sha256_before": "91646a9636139d320986ae1e4e1ba30bc59b139eef958c2253e0219a6fac0d04",
+      "sha256_after": "bdac5c21f6cdf57546eb854143c7ea4f2099ae6a734029c3e6d9f0c3e043636e",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/tent.png",
+      "dimensions": [
+        1391,
+        1131
+      ],
+      "cleared_near_transparent_pixels": 31597,
+      "bytes_before": 1860143,
+      "bytes_after": 1741932,
+      "sha256_before": "0b51c71fda6710ed54a7c0c1c6baac43423f414a9456ff81287295a322e3c5c3",
+      "sha256_after": "c6b944803526ee01f253a99d9e6f7cd23b5815d60ea52d4c961cf52a4ad7d968",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/tent.webp",
+      "dimensions": [
+        960,
+        780
+      ],
+      "cleared_near_transparent_pixels": 13541,
+      "bytes_before": 204064,
+      "bytes_after": 632246,
+      "sha256_before": "54974bb23493b729349a97ccc8e287e3f204fa7004f45e13c72cbbee84b3262b",
+      "sha256_after": "a851a28aa6145002f6828ea1d420e8cf61a3dba5843f2c832b25fcd7d69cf82f",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/tree.png",
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "cleared_near_transparent_pixels": 30007,
+      "bytes_before": 1920943,
+      "bytes_after": 1862219,
+      "sha256_before": "36bfb254efc87c153cca75519464ef3da394a6f56dba3a19bc813ab245997fd9",
+      "sha256_after": "8edd956955aeab10c1d2c7f245bdffdb5e9a4fc0f6cc242510c313ecc62cfc5e",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/tree.webp",
+      "dimensions": [
+        720,
+        900
+      ],
+      "cleared_near_transparent_pixels": 10187,
+      "bytes_before": 205942,
+      "bytes_after": 595520,
+      "sha256_before": "e2331cff98de72e963e20a0e28407d3627abd636d5fee30e75236da4fbde7417",
+      "sha256_after": "ef3ff1e655f3a376fd7f989453c4f5609795b9e2d5c19718fbe3c397f735b4a9",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/trough.png",
+      "dimensions": [
+        1586,
+        992
+      ],
+      "cleared_near_transparent_pixels": 22861,
+      "bytes_before": 1901562,
+      "bytes_after": 1838538,
+      "sha256_before": "1a425b80cc5a487bdabae3b0dede52c2ed6851a9a42fe5ce4dd5d1f70c40b8bc",
+      "sha256_after": "86fc0db14b5af4e04cbb86bd5502364eb5fda8c0eb4bf083b838d7ac5c47bf77",
+      "all_other_pixels_preserved": true
+    },
+    {
+      "path": "enchanted-farm/assets/img/sprites/trough.webp",
+      "dimensions": [
+        720,
+        450
+      ],
+      "cleared_near_transparent_pixels": 3532,
+      "bytes_before": 101584,
+      "bytes_after": 295310,
+      "sha256_before": "78570f0e35aa5a34fba28f3b68922321e49f7255476160df455f7beb356f2754",
+      "sha256_after": "d9b6d011788ecdaf2913a138dfd188b374bdd26482455594f4d9b0e1680a3785",
+      "all_other_pixels_preserved": true
+    }
+  ],
+  "skipped": [],
+  "replaced": 90,
+  "png_count": 45,
+  "webp_count": 45,
+  "bytes_before": 71193446,
+  "bytes_after": 76478481
+}

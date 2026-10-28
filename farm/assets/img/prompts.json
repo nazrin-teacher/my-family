@@ -1,0 +1,42 @@
+{
+  "generator": "Built-in image_gen",
+  "size": [
+    1600,
+    900
+  ],
+  "delivery": "WebP quality 90 with full-colour PNG fallback",
+  "scenes": [
+    {
+      "name": "welcome",
+      "files": [
+        "bg-welcome.webp",
+        "bg-welcome.png"
+      ],
+      "prompt": "Use case: stylized-concept. Create ONE magnificent original environment painting for a premium animated children's English-learning game, The Enchanted Farm. Asset: wide 16:9 landscape background, requested 1600 x 900 pixels. SCENERY ONLY, no characters, animals, buildings, gates, fences, roads or text. A magical twilight farm valley: jewel-teal and sage rolling meadows, rounded distant blue-purple hills, soft lilac mist between hills, a luminous peach-gold sunset on the horizon, dreamy indigo and lavender sky scattered with small soft stars, spectacular but gentle cinematic light. Rounded storybook 3D-painted forms, richly crafted hand-painted surfaces, soft grass with broad leaf tufts, little wildflowers restricted to extreme lower corners, beautiful depth and warm subsurface light. Composition MUST work as a game layer: horizon about 57% down (y 510 of 900), upper central 65% calm low-detail sky for a large title, LOWER central 80% a wide gently sloping EMPTY smooth playable meadow for separately placed SVG characters and buildings. Distant tree groups only at outer left/right edge, no central tree or props, no dominating mountain, no lake. Lush inviting storybook world at top animated family film quality, highly polished, harmonious and readable, never photorealistic. No logo, no watermark, no text, no border. Not an existing brand."
+    },
+    {
+      "name": "map",
+      "files": [
+        "bg-map.webp",
+        "bg-map.png"
+      ],
+      "prompt": "Use case: stylized-concept. ONE original premium children's game environment background, 16:9 1600 x 900. Warm golden-hour storybook valley viewed from gently elevated camera, NOT top-down map. Richly painted soft 3D rounded hills and lush moss-green meadows, soft distant forest edges with tiny rounded trees, gold volumetric rays and atmospheric depth, tiny pale-turquoise winding stream confined to FAR DISTANT valley near horizon only. Make it magnificent, charming and masterfully composed. Horizon at 55% down (y 495), lower 45% a broad OPEN gently sloped unbroken grass meadow with even lighting, very low clutter and NO river across lower meadow: this is the playable area where separate farm buildings and a trail of lanterns are overlaid later. Central 80% below y 480 must remain empty and usable. Very subtle wildflower framing at bottom corners only. Upper central sky muted warm periwinkle to cream, uncluttered. Soft 3D-painted storybook material, beautiful painterly edges, saturated sage, spring green, teal and golden peach harmony. SCENERY ONLY: NO buildings, fences, paths, animals, characters, lanterns, text, icons, badges, logo or watermark. Completely original, no existing franchise."
+    },
+    {
+      "name": "meadow",
+      "files": [
+        "bg-meadow.webp",
+        "bg-meadow.png"
+      ],
+      "prompt": "Use case: stylized-concept. Paint ONE magnificent sunny lush meadow background for a premium animated educational children's game. 16:9 1600 x 900 landscape. Original soft 3D storybook environment art with rounded forms, exquisite warm light, painterly grass, glorious puffy clouds, airy powder-blue to butter-cream sky, gentle layered lime and sage hills, diffuse sunbeams, soft bokeh limited to extreme foreground corners. Horizon around 55% height y495. Leave lower central 85% an open, smooth, uncluttered grassy stage for animal SVG objects to be placed on top. Mostly uninterrupted grass without paths or props. Small pink, cream and golden wildflowers and soft leaves frame ONLY the extreme bottom-left and bottom-right corners, a few faraway round trees confined to outer 10% edges. Central area must remain visibly empty; no tree behind center, no central focal object. Top animated family film quality, joyful, tactile, elegant and calm rather than hyperbusy. SCENERY ONLY, no animals, people, characters, buildings, gates, fences, text, lettering, numbers, logo or watermark."
+    },
+    {
+      "name": "farm",
+      "files": [
+        "bg-farm.webp",
+        "bg-farm.png"
+      ],
+      "prompt": "Use case: stylized-concept. Create ONE original premium soft-3D-painted storybook farmyard landscape background for a children's game, wide 16:9 1600x900. Bright warm morning sunlight, sky in soft aquamarine with rounded creamy clouds, distant softly lit sage-green hills and rounded orchard foliage only along the distant outer edges, warm cream-gold light with subtle atmospheric haze. Horizon at 55% down (y495). The lower half is a broad EMPTY smooth pale honey-colored earthen clearing blended into short lush grass at the edges, viewed at a gentle elevated angle, enough green that this belongs to an enchanted farm world. Entire central 85% and lower area intentionally low detail and clear for draggable animal characters, farm homes and hiding props overlaid by game code. Rounded soft forms, sophisticated painted textures and ambient occlusion at the peripheral grass, magnificent cinematic depth, polished animated family-film quality, whimsical and original. Tiny wildflowers only in far bottom corners. SCENERY ONLY: absolutely NO buildings, animals, characters, people, fences, gates, crates, buckets, logs, paths, text, symbols, logo or watermark. Not photorealistic; no existing brand or franchise."
+    }
+  ]
+}

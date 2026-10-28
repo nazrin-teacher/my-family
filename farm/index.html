@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5FC3FF">
+  <meta name="description" content="The Enchanted Farm – a magical English speaking adventure for young learners (Farm Animals).">
+  <title>The Enchanted Farm</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="loading" class="loading" role="status">Loading the Enchanted Farm…</div>
+
+  <div id="stage" class="stage">
+    <div id="bg" class="layer bg"></div>
+    <div id="world" class="layer world"></div>
+    <div class="magic-veil" aria-hidden="true"></div>
+
+    <div id="pip-dock" class="pip-dock" hidden>
+      <div id="pip" class="pip" aria-hidden="true"></div>
+    </div>
+    <div id="bubble" class="bubble" hidden aria-live="polite"><span id="bubble-text"></span></div>
+
+    <div class="hud" id="hud">
+      <div class="hud-left" id="hud-left"></div>
+      <div class="hud-right" id="hud-right">
+        <div class="hud-stars" id="hud-stars" hidden><span id="star-count">0</span><span class="sr-only"> stars</span></div>
+      </div>
+    </div>
+
+    <div id="speak-panel" class="speak-panel" hidden></div>
+    <div id="overlay" class="overlay" hidden></div>
+  </div>
+
+  <button type="button" id="grownups-open" class="grownups-open" aria-label="Grown-ups: press and hold">
+    <img class="icon-img" src="assets/img/sprites/icon-gear.webp" alt="" draggable="false">
+    <span class="hold-ring" aria-hidden="true"></span>
+  </button>
+
+  <div class="rotate-hint" aria-hidden="true">
+    <img class="icon-img" src="assets/img/sprites/icon-rotate.webp" alt="" draggable="false">
+  </div>
+
+  <dialog id="grownups" class="grownups" aria-labelledby="gu-title">
+    <h2 id="gu-title">For teachers and parents</h2>
+    <fieldset>
+      <legend>Where are you using the farm?</legend>
+      <label><input type="radio" name="mode" value="home" data-setting="mode"> Home – the child plays; missions open one after another</label>
+      <label><input type="radio" name="mode" value="class" data-setting="mode"> Classroom – longer waiting time, all ready missions open, "Everybody, together!"</label>
+    </fieldset>
+    <fieldset>
+      <legend>Thinking and speaking time</legend>
+      <label><input type="radio" name="wait" value="short" data-setting="wait"> Short</label>
+      <label><input type="radio" name="wait" value="normal" data-setting="wait"> Normal</label>
+      <label><input type="radio" name="wait" value="long" data-setting="wait"> Long</label>
+    </fieldset>
+    <fieldset>
+      <legend>Options</legend>
+      <label><input type="checkbox" data-setting="mic"> Microphone button (Home mode only; smart boards have no microphone): the child can record and hear their own voice. The recording stays only in this browser tab and is deleted after each speaking turn. Nothing is uploaded.</label>
+      <p id="gu-mic-warn" class="warn" hidden>This browser cannot record audio here (the page needs https or localhost).</p>
+      <label><input type="checkbox" data-setting="reducedMotion"> Less movement (calmer animations)</label>
+    </fieldset>
+    <section>
+      <h3>Speaking</h3>
+      <p>The farm does <strong>not</strong> listen to or check the child's speech. When the child (or the class) has said the sentence, a grown-up taps <strong>"We said it!"</strong> (thumbs up). Each speaking turn waits, then shows a hint button (light bulb) and a Next arrow.</p>
+      <p>On this device: <strong id="gu-stars">0</strong> magic stars · <strong id="gu-speaking">0</strong> speaking turns confirmed by a grown-up.</p>
+    </section>
+    <section>
+      <h3>Voice</h3>
+      <p>Pip uses the browser's built-in English voice: <span id="gu-voice">–</span>. <button type="button" id="gu-test-voice">Test the voice</button></p>
+      <p id="gu-voice-warn" class="warn" hidden>No English voice was found on this device. Pip's words are shown in the speech bubble; please read them aloud, or try Chrome, Edge or Safari.</p>
+      <p id="gu-storage-warn" class="warn" hidden>Progress cannot be saved in this browser (private mode?). It will reset when the page is closed.</p>
+    </section>
+    <section>
+      <h3>Privacy</h3>
+      <p>No accounts, no names, no photos, no advertising. Only stars and settings are saved, in this browser. Classroom progress does not carry over to home devices.</p>
+    </section>
+    <div class="gu-actions">
+      <button type="button" id="gu-restart" class="danger">Start the adventure again</button>
+      <button type="button" id="gu-close">Close</button>
+    </div>
+  </dialog>
+
+  <div id="error-box" class="error-box" role="alert" hidden>
+    <p data-msg></p>
+    <button type="button" id="error-map">Back to the map</button>
+  </div>
+
+  <noscript><p class="noscript">Please turn on JavaScript to play The Enchanted Farm.</p></noscript>
+
+  <script src="js/content.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/names.js"></script>
+  <script src="js/stage.js"></script>
+  <script src="js/games/meet.js"></script>
+  <script src="js/games/rescue.js"></script>
+  <script src="js/games/littlefarm.js"></script>
+  <script src="js/games/talkingfarm.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

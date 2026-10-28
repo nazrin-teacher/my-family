@@ -1,0 +1,26 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "name": "icon-again",
+      "prompt": "Use case: stylized-concept. A single premium original magical farm children's game UI icon, glossy rounded 3D toy sculpture, rich enamel and ceramic material, soft beveled edges, warm upper-left keylight, fine peach rim highlights, harmonious teal cream and honey gold palette. Full icon centered in square canvas with 10% transparent margin, truly transparent background, no ground shadow, no plate, no text, no watermark, no scenery. Clear simple silhouette suitable at64px. Match quality of a beautifully painted 3D animated storybook game, not flat vector. Subject: One thick golden circular replay arrow, looping counterclockwise through about300degrees, large blunt arrowhead at upper left, rounded toy bevels, honeygold sides and buttery cream highlights.",
+      "transparent": true,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "icon-mouth",
+      "prompt": "Use case: stylized-concept. A single premium original magical farm children's game UI icon, glossy rounded 3D toy sculpture, rich enamel and ceramic material, soft beveled edges, warm upper-left keylight, fine peach rim highlights, harmonious teal cream and honey gold palette. Full icon centered in square canvas with 10% transparent margin, truly transparent background, no ground shadow, no plate, no text, no watermark, no scenery. Clear simple silhouette suitable at64px. Match quality of a beautifully painted 3D animated storybook game, not flat vector. Subject: A friendly speaking mouth icon: rounded soft coral lips slightly open in a warm small smile, ivory top teeth visible and dark warm interior, two small curved teal sound marks on the right to indicate speaking. No face, no head, no tongue sticking out.",
+      "transparent": true,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "icon-thumb",
+      "prompt": "Use case: stylized-concept. A single premium original magical farm children's game UI icon, glossy rounded 3D toy sculpture, rich enamel and ceramic material, soft beveled edges, warm upper-left keylight, fine peach rim highlights, harmonious teal cream and honey gold palette. Full icon centered in square canvas with 10% transparent margin, truly transparent background, no ground shadow, no plate, no text, no watermark, no scenery. Clear simple silhouette suitable at64px. Match quality of a beautifully painted 3D animated storybook game, not flat vector. Subject: One friendly cream-colored toy hand making a clear thumbs-up gesture, four softly rounded curled fingers, thumb pointing upward, a short teal sleeve cuff with tiny golden button. Three-quarter frontal view, gentle non-realistic toy proportions.",
+      "transparent": true,
+      "width": 256,
+      "height": 256
+    }
+  ]
+}

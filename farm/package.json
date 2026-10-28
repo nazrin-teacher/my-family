@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/content.test.js tests/integrity.test.js tests/progress.test.js"
+  }
+}

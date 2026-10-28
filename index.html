@@ -495,7 +495,7 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 </div></div>
 
 <script>
-const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp", "c_mum": "assets/c_mum.webp", "c_dad": "assets/c_dad.webp", "c_grandma": "assets/c_grandma.webp", "c_grandpa": "assets/c_grandpa.webp", "c_sister": "assets/c_sister.webp", "c_brother": "assets/c_brother.webp", "c_aunt": "assets/c_aunt.webp", "c_uncle": "assets/c_uncle.webp", "t_mum": "assets/t_mum.webp", "t_dad": "assets/t_dad.webp", "t_grandma": "assets/t_grandma.webp", "t_grandpa": "assets/t_grandpa.webp", "t_sister": "assets/t_sister.webp", "t_brother": "assets/t_brother.webp", "t_aunt": "assets/t_aunt.webp", "t_uncle": "assets/t_uncle.webp", "m_mum": "assets/m_mum.webp", "m_dad": "assets/m_dad.webp", "m_grandma": "assets/m_grandma.webp", "m_grandpa": "assets/m_grandpa.webp", "m_sister": "assets/m_sister.webp", "m_brother": "assets/m_brother.webp", "m_aunt": "assets/m_aunt.webp", "m_uncle": "assets/m_uncle.webp", "t_paint": "assets/t_paint.webp", "t_design": "assets/t_design.webp"};
+const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp", "c_mum": "assets/c_mum.webp", "c_dad": "assets/c_dad.webp", "c_grandma": "assets/c_grandma.webp", "c_grandpa": "assets/c_grandpa.webp", "c_sister": "assets/c_sister.webp", "c_brother": "assets/c_brother.webp", "c_aunt": "assets/c_aunt.webp", "c_uncle": "assets/c_uncle.webp", "t_mum": "assets/t_mum.webp", "t_dad": "assets/t_dad.webp", "t_grandma": "assets/t_grandma.webp", "t_grandpa": "assets/t_grandpa.webp", "t_sister": "assets/t_sister.webp", "t_brother": "assets/t_brother.webp", "t_aunt": "assets/t_aunt.webp", "t_uncle": "assets/t_uncle.webp", "m_mum": "assets/m_mum.webp", "m_dad": "assets/m_dad.webp", "m_grandma": "assets/m_grandma.webp", "m_grandpa": "assets/m_grandpa.webp", "m_sister": "assets/m_sister.webp", "m_brother": "assets/m_brother.webp", "m_aunt": "assets/m_aunt.webp", "m_uncle": "assets/m_uncle.webp", "t_paint": "assets/t_paint.webp", "t_design": "assets/t_design.webp", "farm": "assets/farm.webp"};
 const ONE_CLASS=true; /* true: no class selection, one name list (version for any teacher) */
 const SKEY=ONE_CLASS?'myfamily-teacher':'myfamily';
 const DEFAULT_NAMES={};
@@ -1195,11 +1195,13 @@ const UNIT_IC={
  healthy:'<svg viewBox="0 0 100 100"><path d="M50 30q-26-14-34 12-6 30 20 44 8 4 14 0 6 4 14 0 26-14 20-44-8-26-34-12z" fill="#4CC48E"/><path d="M50 30q0-14 10-20" stroke="#7A4A25" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M54 18q14-8 22 2-12 8-22-2z" fill="#3BAA6B"/></svg>',
  home:'<svg viewBox="0 0 100 100"><path d="M10 48 50 14l40 34" stroke="#FF8A3D" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 44v44h60V44L50 20z" fill="#FFB36B"/><rect x="42" y="60" width="16" height="28" rx="3" fill="#8C64DB"/><rect x="26" y="54" width="12" height="12" fill="#fff"/><rect x="62" y="54" width="12" height="12" fill="#fff"/></svg>',
  seasons:'<svg viewBox="0 0 100 100"><circle cx="36" cy="40" r="20" fill="#FFD54A"/><g stroke="#FFB300" stroke-width="5" stroke-linecap="round"><path d="M36 8v8M36 64v8M4 40h8M60 40h8"/></g><g stroke="#3FB2E6" stroke-width="5" stroke-linecap="round"><path d="M70 52v40M52 72h36M57 59l26 26M83 59 57 85"/></g></svg>'};
+/* Unit 3 is a separate game (The Enchanted Farm) in the site's farm/ folder. */
+const FARM_URL="farm/";
 const UNITS=[
  {n:0,t:'Hello Everybody',ic:'hello',col:'orange'},
  {n:1,t:'At School',ic:'school',col:'blue'},
  {n:2,t:'I Love My Family!',img:'cover',col:'pink',ready:1},
- {n:3,t:'Farm Animals',ic:'farm',col:'green'},
+ {n:3,t:'Farm Animals',img:'farm',col:'green',ready:1,href:FARM_URL},
  {n:4,t:'The Restaurant',ic:'food',col:'purple'},
  {n:5,t:'My Hobbies!',ic:'hobby',col:'blue'},
  {n:6,t:'Be Healthy',ic:'healthy',col:'green'},
@@ -1210,7 +1212,9 @@ function unitScreen(){clearTimers();hush();cur=-4;const a=$('#area');a.innerHTML
   const v=h(`<div class="unscreen"><h1>Units</h1><div class="ungrid">${UNITS.map(u=>`<button class="unbtn ${u.ready?'':'soon'}" data-n="${u.n}" style="--c:${COLV[u.col]}">
     <div class="unic">${u.img?`<img src="${IMG[u.img]}" alt="">`:UNIT_IC[u.ic]}</div>
     <div class="untx"><small>${u.n?'UNIT '+u.n:'STARTER'}</small><b>${u.t}</b>${u.ready?'':'<span class="unsoon">Coming soon</span>'}</div></button>`).join('')}</div></div>`);
-  v.querySelectorAll('.unbtn').forEach(b=>b.onclick=()=>{const u=UNITS[+b.dataset.n];if(!u.ready){buzz();b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');return}ding();topicScreen()});
+  v.querySelectorAll('.unbtn').forEach(b=>b.onclick=()=>{const u=UNITS[+b.dataset.n];if(!u.ready){buzz();b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');return}ding();
+    if(u.href){const url=u.href+(u.href.includes('?')?'&':'?')+'mode='+(S.mode==='home'?'home':'class');if(/^https?:/.test(u.href))window.open(url,'_blank','noopener');else location.href=url;return}
+    topicScreen()});
   a.append(v)}
 
 function topicScreen(){clearTimers();hush();cur=-3;const a=$('#area');a.innerHTML='';setTitle('My Family','pink');$('#board').classList.remove('alt');paintStars();paintBar();
