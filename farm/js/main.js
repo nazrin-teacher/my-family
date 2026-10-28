@@ -186,11 +186,13 @@
       if (m.id === current) { b.classList.add('is-current'); currentBtn = b; }
       if (m.id === justDone) b.classList.add('just-lit');
       b.setAttribute('aria-label', 'Mission ' + m.id + ': ' + m.title + (done ? ' (done)' : unlocked ? '' : ready ? ' (locked)' : ' (coming soon)'));
+      if (!ready) b.classList.add('is-soon');
       b.style.left = (p[0] - 48) + 'px'; b.style.top = (p[1] - 60) + 'px';
       b.onclick = function () {
         if (unlocked) { EF.audio.sfx('pop'); go('mission', m.id); return; }
         EF.audio.sfx('soft');
-        S.speak(C.PHRASES.mapLocked);
+        // Missions that are not made yet: say so (otherwise children wait for a lantern that cannot light up).
+        S.speak(!ready ? (current === null ? 'More adventures are coming soon.' : C.PHRASES.mapLocked) : C.PHRASES.mapLocked);
         if (currentBtn) { currentBtn.classList.remove('wiggle'); void currentBtn.offsetWidth; currentBtn.classList.add('wiggle'); }
       };
       world().appendChild(b);

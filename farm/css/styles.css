@@ -794,3 +794,6 @@ html.mode-class .stage:has(.farm-area) .bubble, html.mode-class .stage:has(.talk
   background: linear-gradient(150deg, #ffe676, #f5ae35); color: #5a3a12; box-shadow: 0 6px 0 #b88130;
   font: 900 40px/1.1 var(--display); text-align: center; overflow-wrap: anywhere;
 }
+
+/* Missions not made yet: dimmer than locked ones, so the four playable lanterns stand out. */
+.lantern.is-soon { opacity: .55; filter: saturate(.4); }
