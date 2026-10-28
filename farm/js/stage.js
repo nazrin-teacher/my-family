@@ -146,8 +146,13 @@
     function modelLine() { return run.say(o.model); }
 
     return Promise.resolve()
-      .then(function () { pipMood(null); return run.say(o.prompt); })
+      .then(function () { pipMood(null); return o.repeat ? null : run.say(o.prompt); })
       .then(function () {
+        if (o.repeat) {
+          // Repeat after Pip: the sentence, then straight to the class / child (no thinking pause needed).
+          pipMood('pointing');
+          return run.say(o.model).then(function () { return run.say(cls ? EF.content.PHRASES.everybody : EF.content.PHRASES.yourTurn, { rate: 0.95 }); });
+        }
         if (o.supported) {
           pipMood('thinking'); setBubble('', 'thinking');
           return run.wait(Math.round(t.think * 0.6))
@@ -160,7 +165,7 @@
       })
       .then(function () {
         // Classroom: after the choral practice, the independent turns go to one child at a time (name from the class list).
-        var child = !o.supported && cls && EF.names ? EF.names.next() : null;
+        var child = !o.supported && !o.repeat && cls && EF.names ? EF.names.next() : null;
         result.child = child;
         if (!child) return null;
         pipMood('pointing');
@@ -169,7 +174,7 @@
       })
       .then(function () {
         pipMood('pointing');
-        if (!o.supported) setBubble(o.prompt);
+        if (!o.supported) setBubble(o.repeat ? o.model : o.prompt);
         return openPanel(run, o, t, result);
       })
       .then(function (how) {
@@ -231,7 +236,7 @@
         next.hidden = false;
         next.classList.add('nudge');
       }, t.say);
-      replay.onclick = function () { EF.audio.sfx('tap'); speak(o.prompt); };
+      replay.onclick = function () { EF.audio.sfx('tap'); speak(o.repeat ? o.model : o.prompt); };
       if (result.child) { var chipEl = panel.querySelector('.speak-child'); if (chipEl) chipEl.onclick = function () { EF.audio.sayName(result.child); }; }
       hint.onclick = function () { result.usedHint = true; EF.audio.sfx('tap'); speak(o.model); };
       thumb.onclick = function () { resolve('confirm'); };

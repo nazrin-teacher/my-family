@@ -7,12 +7,12 @@
   'use strict';
 
   var ANIMALS = [
-    { id: 'cow',   name: 'cow',   sound: 'moo',   soundSay: 'Moo! Moo!',     home: 'barn',     colour: 'black and white', size: 'big' },
-    { id: 'horse', name: 'horse', sound: 'neigh', soundSay: 'Neigh!',        home: 'stable',   colour: 'brown',           size: 'big' },
-    { id: 'pig',   name: 'pig',   sound: 'oink',  soundSay: 'Oink! Oink!',   home: 'mud',      colour: 'pink',            size: 'small' },
-    { id: 'hen',   name: 'hen',   sound: 'cluck', soundSay: 'Cluck, cluck!', home: 'henhouse', colour: 'brown',           size: 'small' },
-    { id: 'sheep', name: 'sheep', sound: 'baa',   soundSay: 'Baa! Baa!',     home: 'field',    colour: 'white',           size: 'small' },
-    { id: 'duck',  name: 'duck',  sound: 'quack', soundSay: 'Quack! Quack!', home: 'pond',     colour: 'white',           size: 'small' }
+    { id: 'cow',   name: 'cow', plural: 'cows',   sound: 'moo',   soundSay: 'Moo! Moo!',     home: 'barn',     colour: 'black and white', size: 'big' },
+    { id: 'horse', name: 'horse', plural: 'horses', sound: 'neigh', soundSay: 'Neigh!',        home: 'stable',   colour: 'brown',           size: 'big' },
+    { id: 'pig',   name: 'pig', plural: 'pigs',   sound: 'oink',  soundSay: 'Oink! Oink!',   home: 'mud',      colour: 'pink',            size: 'small' },
+    { id: 'hen',   name: 'hen', plural: 'hens',   sound: 'cluck', soundSay: 'Cluck, cluck!', home: 'henhouse', colour: 'brown',           size: 'small' },
+    { id: 'sheep', name: 'sheep', plural: 'sheep', sound: 'baa',   soundSay: 'Baa! Baa!',     home: 'field',    colour: 'white',           size: 'small' },
+    { id: 'duck',  name: 'duck', plural: 'ducks',  sound: 'quack', soundSay: 'Quack! Quack!', home: 'pond',     colour: 'white',           size: 'small' }
   ];
 
   var HOMES = {
@@ -57,6 +57,18 @@
     bye: 'See you soon, Farm Explorer!'
   };
 
+  /* Colour of each animal (black and white are Unit 3 words; pink and brown are reviewed from Units 1–2). */
+  var COLOURS = { cow: 'black and white', horse: 'brown', pig: 'pink', hen: 'brown', sheep: 'white', duck: 'white' };
+  function colourSentence(a) { return "It's " + COLOURS[a.id] + '.'; }
+  var NUMBERS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+  function countSentence(n, a) { var w = NUMBERS[n]; return w.charAt(0).toUpperCase() + w.slice(1) + ' ' + a.plural + '.'; }
+  /* Caring for animals (Mission 12). */
+  var CARE = {
+    feed: { tool: 'hay', say: function (a) { return 'Feed the ' + a.name + '!'; }, model: 'I feed the animals.' },
+    brush: { tool: 'brush', say: function (a) { return 'Brush the ' + a.name + '!'; }, model: 'I brush the animals.' },
+    kind: { tool: 'heart', say: function (a) { return 'Be kind to the ' + a.name + '!'; }, model: "I'm kind to animals." }
+  };
+
   /* Home names are only spoken in the supported (practice) round. */
   var HOME_NAMES = { barn: 'barn', stable: 'stable', mud: 'mud', henhouse: 'hen house', field: 'field', pond: 'pond' };
 
@@ -91,43 +103,43 @@
       patterns: ['I can see a sheep.', "It's white.", "It's next to the cow.", 'It has got big eyes.', 'It has got four legs.'],
       story: 'Pip shows changing farm scenes and asks about them.',
       reward: 'Magic star for each level · the rainbow appears' },
-    { id: 5, week: 1, status: 'planned', title: 'Counting Meadow', location: 'field',
+    { id: 5, week: 1, status: 'ready', game: 'counting', title: 'Counting Meadow', location: 'field',
       objective: 'Count to seven, eight and nine.',
       vocabulary: ['seven', 'eight', 'nine'], patterns: ['How many ducks?', 'Eight ducks!'],
       story: 'Count the animals so the field can grow.', reward: 'Haystacks and sunflowers' },
-    { id: 6, week: 1, status: 'planned', title: 'Rainbow Farm', location: 'garden',
+    { id: 6, week: 1, status: 'ready', game: 'rainbow', title: 'Rainbow Farm', location: 'garden',
       objective: 'Colours black and white; describe animals.',
       vocabulary: ['black', 'white'], patterns: ["It's black.", "It's white."],
       story: 'Paint the farm back to life.', reward: 'Rainbow over the garden' },
-    { id: 7, week: 1, status: 'planned', title: 'Little Farm Speaker', location: 'pond',
+    { id: 7, week: 1, status: 'ready', game: 'review', title: 'Little Farm Speaker', location: 'pond',
       objective: 'Week 1 review: guided speaking at three levels.',
       vocabulary: ['all week 1 words'], patterns: ['I can see a cow.', "It's white.", "It's next to the cow."],
       story: 'Pip asks about the farm scene.', reward: 'Week 1 badge · fireflies' },
-    { id: 8, week: 2, status: 'planned', title: 'Big and Small', location: 'pond',
+    { id: 8, week: 2, status: 'ready', game: 'bigsmall', title: 'Big and Small', location: 'pond',
       objective: 'Describe size; big eyes, four legs.',
       vocabulary: ['big', 'small', 'big eyes', 'four legs'], patterns: ["It's big.", "It's small.", 'It has got big eyes.', 'It has got four legs.'],
       story: 'Help Pip sort big and small friends.', reward: 'Lily pads bloom' },
-    { id: 9, week: 2, status: 'planned', title: 'On the Farm – Story', location: 'tree',
+    { id: 9, week: 2, status: 'ready', game: 'story', title: 'On the Farm – Story', location: 'tree',
       objective: 'Listen to an interactive story.',
       vocabulary: ['unit words'], patterns: ['Look!', 'Where is the duck?', "It's under the tree."],
       story: 'A story under the Story Tree.', reward: 'Story Tree blossoms' },
-    { id: 10, week: 2, status: 'planned', title: 'Story Detective', location: 'tree',
+    { id: 10, week: 2, status: 'ready', game: 'detective', title: 'Story Detective', location: 'tree',
       objective: 'Sequence and retell the story with picture support.',
       vocabulary: ['unit words'], patterns: ['First…', 'I can see a horse.'],
       story: 'The story pictures are mixed up.', reward: 'Story book page' },
-    { id: 11, week: 2, status: 'planned', title: 'My Favourite Animal', location: 'garden',
+    { id: 11, week: 2, status: 'ready', game: 'favourite', title: 'My Favourite Animal', location: 'garden',
       objective: 'Describe a chosen animal.',
       vocabulary: ['colours', 'big', 'small'], patterns: ["It's white.", 'It has got big eyes.', 'It has got four legs.'],
       story: 'Make a portrait for the festival.', reward: 'Portrait in the gallery' },
-    { id: 12, week: 2, status: 'planned', title: 'Caring for Animals', location: 'care',
+    { id: 12, week: 2, status: 'ready', game: 'caring', title: 'Caring for Animals', location: 'care',
       objective: 'Feed, brush, be kind to animals.',
       vocabulary: ['feed', 'brush', 'be kind'], patterns: ['I feed the animals.', 'I brush the animals.', "I'm kind to animals."],
       story: 'The animals need care before the festival.', reward: 'Happy animals · hearts' },
-    { id: 13, week: 2, status: 'planned', title: 'The Mystery Barn', location: 'care',
+    { id: 13, week: 2, status: 'ready', game: 'mystery', title: 'The Mystery Barn', location: 'care',
       objective: 'Listening review: identify animals from sounds and hidden parts.',
       vocabulary: ['unit words'], patterns: ['What can you see?', 'I can see a sheep.', 'Where is the hen?'],
       story: 'Who is behind the barn doors?', reward: 'Barn windows light up' },
-    { id: 14, week: 2, status: 'planned', title: 'The Great Farm Festival', location: 'festival',
+    { id: 14, week: 2, status: 'ready', game: 'festival', title: 'The Great Farm Festival', location: 'festival',
       objective: 'Final speaking adventure using all unit language.',
       vocabulary: ['all unit words'], patterns: ['all unit sentences'],
       story: 'The lights return and the festival begins!', reward: 'Festival · Farm Explorer certificate' }
@@ -266,16 +278,21 @@
     var picked;
     if (level === 3) {
       // Little Farm Speaker: describe each animal in several sentences.
+      // Each sentence is also kept as a "part" (with a picture cue and a sentence starter) for the fading support.
       picked = ids.map(function (id) {
         var a = getAnimal(id), f = FACTS[id];
-        var parts = [canSee(a), sizeSentence(a)];
-        if (f.colour) parts.push(f.colour);
+        var parts = [{ cue: 'see', id: id, text: canSee(a), starter: 'I can see a…' }, { cue: 'size', text: sizeSentence(a), starter: "It's…" }];
+        if (f.colour) parts.push({ cue: 'colour', text: f.colour, starter: "It's…" });
         var where = describePosition(id, scene.positions, scene.tree);
-        if (where) parts.push(where);
-        if (f.legs) parts.push(FOUR_LEGS); else if (f.eyes) parts.push(BIG_EYES);
-        return { kind: 'describe', target: id, prompt: 'Tell me about the ' + a.name + '!', model: parts.join(' ') };
+        if (where) {
+          var under = /under/.test(where);
+          parts.push({ cue: under ? 'tree' : 'next', id: under ? null : where.replace(/^It's next to the (\w+)\.$/, '$1'), text: where, starter: under ? "It's under the…" : "It's next to the…" });
+        }
+        if (f.legs) parts.push({ cue: 'legs', text: FOUR_LEGS, starter: 'It has got…' }); else if (f.eyes) parts.push({ cue: 'eyes', text: BIG_EYES, starter: 'It has got…' });
+        return { kind: 'describe', target: id, prompt: 'Tell me about the ' + a.name + '!', model: parts.map(function (p) { return p.text; }).join(' '), parts: parts };
       });
-      picked.push({ kind: 'farm', target: null, prompt: 'Now tell me about the farm!', model: 'This is my farm. ' + ids.map(function (id) { return canSee(getAnimal(id)); }).join(' ') });
+      var farmParts = [{ cue: 'farm', text: 'This is my farm.', starter: 'This is my…' }].concat(ids.map(function (id) { return { cue: 'see', id: id, text: canSee(getAnimal(id)), starter: 'I can see a…' }; }));
+      picked.push({ kind: 'farm', target: null, prompt: 'Now tell me about the farm!', model: farmParts.map(function (p) { return p.text; }).join(' '), parts: farmParts });
       return picked;
     }
     // Levels 1 and 2: one "What can you see?" first, then a varied mix (no question kind twice in a row).
@@ -299,7 +316,8 @@
     canSee: canSee, getAnimal: getAnimal, getMission: getMission, shuffle: shuffle, mulberry32: mulberry32,
     buildMeetChallenge: buildMeetChallenge, buildRescueRounds: buildRescueRounds,
     FACTS: FACTS, NEAR: NEAR, sizeSentence: sizeSentence, describePosition: describePosition, buildTalkingQuestions: buildTalkingQuestions,
-    assignHidingSpots: assignHidingSpots, pick: pick
+    assignHidingSpots: assignHidingSpots, pick: pick,
+    COLOURS: COLOURS, colourSentence: colourSentence, NUMBERS: NUMBERS, countSentence: countSentence, CARE: CARE
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = API;

@@ -60,7 +60,7 @@ test('canSee() produces course-aligned sentences for every animal', () => {
   }
 });
 
-test('14 missions have ids 1-14 and missions 1-4 are ready (meet, rescue, littlefarm, talkingfarm)', () => {
+test('14 missions have ids 1-14 and all 14 are ready, each with its game', () => {
   assert.strictEqual(content.MISSIONS.length, 14);
   assert.deepStrictEqual(
     content.MISSIONS.map((m) => m.id),
@@ -84,16 +84,22 @@ test('14 missions have ids 1-14 and missions 1-4 are ready (meet, rescue, little
       { id: 1, game: 'meet' },
       { id: 2, game: 'rescue' },
       { id: 3, game: 'littlefarm' },
-      { id: 4, game: 'talkingfarm' }
+      { id: 4, game: 'talkingfarm' },
+      { id: 5, game: 'counting' },
+      { id: 6, game: 'rainbow' },
+      { id: 7, game: 'review' },
+      { id: 8, game: 'bigsmall' },
+      { id: 9, game: 'story' },
+      { id: 10, game: 'detective' },
+      { id: 11, game: 'favourite' },
+      { id: 12, game: 'caring' },
+      { id: 13, game: 'mystery' },
+      { id: 14, game: 'festival' }
     ]
   );
 
   const planned = content.MISSIONS.filter((m) => m.status === 'planned');
-  assert.strictEqual(planned.length, 10);
-  assert.deepStrictEqual(
-    planned.map((m) => m.id),
-    [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
-  );
+  assert.strictEqual(planned.length, 0);
 
   assert.strictEqual(content.getMission(0), null);
   assert.strictEqual(content.getMission(15), null);

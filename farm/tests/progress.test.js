@@ -101,7 +101,7 @@ test('home mode unlocks ready missions sequentially while class mode unlocks all
   assert.strictEqual(pHome.isUnlocked(1), true);
   assert.strictEqual(pHome.isUnlocked(2), false);
   assert.strictEqual(pHome.isUnlocked(3), false); // ready, but mission 2 is not done yet
-  assert.strictEqual(pHome.isUnlocked(5), false); // planned
+  assert.strictEqual(pHome.isUnlocked(5), false); // ready, but 1-4 are not done yet
 
   pHome.complete(1);
   assert.strictEqual(pHome.isUnlocked(1), true);
@@ -110,15 +110,17 @@ test('home mode unlocks ready missions sequentially while class mode unlocks all
   pHome.complete(2);
   pHome.complete(3);
   assert.strictEqual(pHome.isUnlocked(4), true);
-  assert.strictEqual(pHome.isUnlocked(5), false); // still planned
+  assert.strictEqual(pHome.isUnlocked(5), false); // mission 4 is not done yet
+  pHome.complete(4);
+  assert.strictEqual(pHome.isUnlocked(5), true);
 
   const pClass = createProgress(memoryStorage(), content.MISSIONS);
   pClass.setSetting('mode', 'class');
   assert.strictEqual(pClass.isUnlocked(1), true);
   assert.strictEqual(pClass.isUnlocked(2), true);
   assert.strictEqual(pClass.isUnlocked(4), true); // every ready mission is open in class mode
-  assert.strictEqual(pClass.isUnlocked(5), false); // planned stays locked even in class mode
-  assert.strictEqual(pClass.isUnlocked(14), false);
+  assert.strictEqual(pClass.isUnlocked(5), true);
+  assert.strictEqual(pClass.isUnlocked(14), true);
 
   // Verify 3-step sequential chain with a custom fixture
   const customMissions = [
@@ -145,13 +147,17 @@ test('current() returns the first unlocked incomplete ready mission or null when
   pHome.complete(3);
   assert.strictEqual(pHome.current(), 4);
   pHome.complete(4);
+  assert.strictEqual(pHome.current(), 5);
+  for (let id = 5; id <= 13; id++) pHome.complete(id);
+  assert.strictEqual(pHome.current(), 14);
+  pHome.complete(14);
   assert.strictEqual(pHome.current(), null);
 
   const pClass = createProgress(memoryStorage(), content.MISSIONS);
   pClass.setSetting('mode', 'class');
   pClass.complete(2);
   assert.strictEqual(pClass.current(), 1);
-  [1, 3, 4].forEach((id) => pClass.complete(id));
+  [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].forEach((id) => pClass.complete(id));
   assert.strictEqual(pClass.current(), null);
 });
 

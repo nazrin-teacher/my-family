@@ -43,7 +43,7 @@
     barn: ['barn', 'barn-open'], gate: ['gate', 'gate-open'],
     stable: ['stable'], henhouse: ['henhouse'], mud: ['mud'], field: ['field'], pond: ['pond'], bush: ['bush'],
     hay: ['hay'], tree: ['tree'], cart: ['cart'], flowers: ['flowers'], log: ['log'], tent: ['tent'],
-    rainbow: ['rainbow'], trough: ['trough']
+    rainbow: ['rainbow'], trough: ['trough'], brush: ['brush']
   };
   function piece(name, extraClass) {
     var files = PIECES[name] || [name];

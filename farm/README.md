@@ -158,7 +158,9 @@ By default, Pip speaks using the browser's built-in English Text-to-Speech (`spe
 
 ## Known Limitations
 
-- **Missions 1–4 playable in this release:** *Meet the Animals*, *The Great Animal Rescue*, *My Little Farm* and *My Talking Farm* (`status: 'ready'`). Missions 5–14 (including the numbers seven, eight, nine) appear on the adventure map as sleeping "coming soon" lanterns (`status: 'planned'`).
+- **All 14 missions are playable.** 1–4 (`meet`, `rescue`, `littlefarm`, `talkingfarm`) and 5–14 in `js/games/more.js`: Counting Meadow (seven, eight, nine), Rainbow Farm (colours), Little Farm Speaker (week 1 review), Big and Small, On the Farm (story), Story Detective, My Favourite Animal, Caring for Animals, The Mystery Barn, The Great Farm Festival (Farm Explorer certificate).
+- **Mission 4, level 3 has fading support:** first Pip says each sentence and the children repeat it (picture cards show what each sentence is about), then Pip only starts the sentences ("I can see a…"), and at the end only the picture cards remain.
+- **The brush picture** in Caring for Animals is a simple drawing made for this release; it is less detailed than the painted pictures.
 - **New sentences need a recording:** a line without a recording in `js/voice.js` is spoken by the browser's TTS voice (it may sound different).
 - **Browser TTS voice variation (fallback only):** Built-in English `speechSynthesis` voices depend on the operating system and browser (Chrome, Edge, and Safari generally provide clear UK/US English voices). If a device has no English TTS voice installed, the Grown-ups dialog displays a warning and Pip's lines remain visible in the speech bubble so an adult can read them aloud; adding `VOICE_FILES` recordings eliminates device differences.
 - **Synthesised animal sounds by default:** Until real audio files are registered in `EF.audio.SOUND_FILES`, animal sounds use lightweight Web Audio approximations.

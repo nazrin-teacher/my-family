@@ -797,3 +797,61 @@ html.mode-class .stage:has(.farm-area) .bubble, html.mode-class .stage:has(.talk
 
 /* Missions not made yet: dimmer than locked ones, so the four playable lanterns stand out. */
 .lantern.is-soon { opacity: .55; filter: saturate(.4); }
+
+/* Level 3 picture cues: one card per sentence; the current one is lifted, finished ones are calm. */
+.cue-row { position: absolute; z-index: 9; left: 560px; top: 165px; display: flex; gap: 16px; padding: 12px 16px; border-radius: 30px; background: #fff9e8d9; box-shadow: 0 6px 0 #b59d754d, 0 10px 24px #2e41321c; }
+.cue { width: 110px; height: 110px; border-radius: 24px; background: #ffffff; border: 4px solid #f2dfb0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 8px; transition: translate .2s ease, border-color .2s ease, opacity .2s ease; }
+.cue.on { border-color: #ffb300; translate: 0 -8px; box-shadow: 0 0 0 6px #ffe08a88; }
+.cue.done { opacity: .55; }
+.cue-pic { display: block; width: 86px; }
+.cue-next .cue-pic { width: 70px; }
+.cue-plus { width: auto; font: 900 36px/1 var(--display); color: #8a6a3a; }
+.cue-size { display: flex; align-items: flex-end; gap: 8px; }
+.cue-size i { display: block; border-radius: 50%; background: #66b99f; }
+.cue-size .big { width: 54px; height: 54px; } .cue-size .small { width: 26px; height: 26px; }
+.cue-colour { display: flex; gap: 8px; } .cue-colour i { display: block; width: 36px; height: 36px; border-radius: 50%; border: 3px solid #c9b48a; }
+.cue-num { font: 900 70px/1 var(--display); color: #6e5735; }
+.cue-eyes { display: flex; gap: 8px; } .cue-eyes i { display: block; width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle at 50% 55%, #2b2b2b 0 32%, #ffffff 34%); border: 3px solid #2b2b2b; }
+
+/* === Missions 5–14 === */
+.count-actor { z-index: 6; }
+.count-actor.counted > .sprite-wrap { filter: drop-shadow(0 0 10px #fff3a8) drop-shadow(0 10px 10px rgba(20,45,20,.28)); }
+.count-badge { position: absolute; left: 50%; top: -18px; translate: -50% 0; z-index: 3; min-width: 58px; height: 58px; padding: 0 8px; border-radius: 30px;
+  background: linear-gradient(150deg, #ffe676, #f5ae35); color: #5a3a12; font: 900 40px/58px var(--display); text-align: center; box-shadow: 0 5px 0 #b88130; animation: pop-in .35s ease-out; pointer-events: none; }
+.colourless > .sprite-wrap { filter: grayscale(1) brightness(1.15) contrast(.85) drop-shadow(0 10px 10px rgba(20,45,20,.28)); transition: filter .9s ease; }
+.painted > .sprite-wrap { transition: filter .9s ease; }
+.paint-row { position: absolute; z-index: 9; left: 450px; top: 118px; display: flex; gap: 20px; }
+.paint-pot { width: 110px; height: 100px; padding: 10px; border: 5px solid #fff3d2; border-radius: 30px 30px 40px 40px; background: linear-gradient(#d9e3ea, #9fb1bd); box-shadow: 0 7px 0 #6d7f8b, 0 12px 18px #20383030; }
+.paint-pot .paint { display: block; width: 100%; height: 100%; border-radius: 50%; border: 4px solid #00000022; box-shadow: inset 0 -6px 10px #00000026; }
+.paint-pot.tappable { cursor: pointer; }
+.paint-pot.wrong-pot { animation: rustle .45s ease-in-out; }
+.size-box { position: absolute; z-index: 2; border: 8px solid #b5803f; border-radius: 26px; padding: 0;
+  background: repeating-linear-gradient(90deg, #e8b46c 0 46px, #d59a52 46px 50px); box-shadow: inset 0 22px 0 #f1c98a, 0 10px 0 #8b5e2c, 0 18px 26px #28433940; }
+.size-box.tappable { cursor: pointer; }
+.actor.in-box { z-index: 3; }
+.mystery-barn { position: absolute; z-index: 3; left: 640px; top: 110px; width: 330px; padding: 0; border: 0; background: none; border-radius: 30px; }
+.pcard { position: absolute; z-index: 5; width: 340px; height: 250px; padding: 0; border: 8px solid #fff3d2; border-radius: 30px; overflow: hidden; background: #bfe6a6;
+  box-shadow: 0 9px 0 #b59d75, 0 18px 26px #28433940; }
+.pcard-bg { position: absolute; inset: 0; background: linear-gradient(#9fdcff 0 40%, #9ad36f 40%); }
+.pcard-item { position: absolute; display: block; }
+.pcard.picked { scale: 1.08; border-color: #ffd54a; box-shadow: 0 0 0 8px #ffe8907a, 0 9px 0 #b59d75; }
+.fav-card { z-index: 5; }
+.fav-frame { position: absolute; z-index: 4; left: 600px; top: 150px; width: 310px; height: 320px; border-radius: 34px;
+  border: 18px solid #e8b95a; background: radial-gradient(ellipse at 50% 40%, #fffdf0, #ffe7a8); box-shadow: inset 0 0 0 5px #fff1c4, 0 0 0 5px #a8762c, 0 18px 32px #28433955; }
+.care-tool { position: absolute; z-index: 9; top: 118px; width: 170px; height: 120px; padding: 10px; border: 5px solid #fff3d2; border-radius: 30px; background: #fff9e8; box-shadow: 0 7px 0 #b59d75, 0 12px 18px #20383030; display: flex; align-items: center; justify-content: center; }
+.care-tool .piece { width: 120px; }
+.care-heart { display: block; width: 64px; height: 64px; position: relative; rotate: -45deg; background: #ff5f8f; margin-top: 18px; }
+.care-heart::before, .care-heart::after { content: ""; position: absolute; width: 64px; height: 64px; border-radius: 50%; background: #ff5f8f; }
+.care-heart::before { top: -32px; left: 0; } .care-heart::after { left: 32px; top: 0; }
+.actor.sad > .sprite-wrap { filter: saturate(.45) brightness(.9) drop-shadow(0 10px 10px rgba(20,45,20,.28)); rotate: -4deg; transition: filter .6s ease, rotate .6s ease; }
+.actor.cared > .sprite-wrap { transition: filter .6s ease, rotate .6s ease; }
+.care-fx { position: absolute; z-index: 12; width: 120px; height: 120px; pointer-events: none; animation: sparkle-burst 1.4s ease-out forwards; font-size: 0; }
+.care-fx::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, #fff6b3 0 30%, #ffd86a66 50%, transparent 70%); }
+.care-fx-kind::before { background: radial-gradient(circle, #ff8fb3 0 30%, #ffb3cc66 50%, transparent 70%); }
+.parade-actor { z-index: 6; }
+.certificate { position: absolute; z-index: 15; left: 450px; top: 110px; width: 700px; height: 420px; border-radius: 50px; text-align: center;
+  border: 10px solid #e8b95a; background: radial-gradient(ellipse at 50% 20%, #fffef2, #ffeec4); box-shadow: inset 0 0 0 6px #fff6d8, 0 14px 0 #a8762c, 0 30px 60px #28433960; animation: pop-in .6s ease-out; }
+.cert-star { width: 150px; height: 150px; margin: 26px auto 0; filter: drop-shadow(0 0 22px #ffce66); animation: star-arrive 1.2s ease-out; }
+.cert-title { font: 900 86px/1.05 var(--display); color: #6f5538; margin-top: 10px; }
+.cert-pip { position: absolute; right: -40px; bottom: -40px; width: 170px; }
+.actor.in-box { pointer-events: none; }

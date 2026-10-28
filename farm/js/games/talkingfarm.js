@@ -110,6 +110,67 @@
         });
     }
 
+    /* ---------- Level 3 support that fades step by step ----------
+       'full'    : picture cards + Pip says each sentence, the children repeat it, then they say it all.
+       'starter' : picture cards + Pip starts each sentence ("I can see a…"), the children finish it.
+       'cards'   : picture cards only; the children describe alone (the light bulb still gives the answer). */
+    var SUPPORT = ['full', 'starter', 'starter', 'cards', 'cards', 'cards'];
+    var supportStep = 0;
+
+    function cueHTML(p) {
+      var A2 = EF.art;
+      switch (p.cue) {
+        case 'see': return '<span class="cue-pic">' + A2.animal(p.id) + '</span>';
+        case 'next': return '<span class="cue-pic cue-plus">+</span><span class="cue-pic">' + A2.animal(p.id) + '</span>';
+        case 'tree': return '<span class="cue-pic">' + A2.piece('tree') + '</span>';
+        case 'size': return '<span class="cue-size"><i class="big"></i><i class="small"></i></span>';
+        case 'colour': return '<span class="cue-colour"><i style="background:#1f1f1f"></i><i style="background:#ffffff"></i></span>';
+        case 'legs': return '<span class="cue-num">4</span>';
+        case 'eyes': return '<span class="cue-eyes"><i></i><i></i></span>';
+        case 'farm': return '<span class="cue-pic">' + A2.piece('barn') + '</span>';
+        default: return '';
+      }
+    }
+    function showCues(parts) {
+      var row = S.h('div', 'cue-row scene-item');
+      row.setAttribute('aria-hidden', 'true');
+      parts.forEach(function (p) { row.appendChild(S.h('span', 'cue cue-' + p.cue, cueHTML(p))); });
+      world.appendChild(row);
+      return row;
+    }
+    function markCue(row, i) {
+      Array.prototype.forEach.call(row.children, function (c, k) { c.classList.toggle('on', k === i); c.classList.toggle('done', k < i); });
+    }
+
+    function describe(q, nodes) {
+      var mode = SUPPORT[Math.min(supportStep++, SUPPORT.length - 1)];
+      var target = q.target && nodes[q.target];
+      Object.keys(nodes).forEach(function (k) { nodes[k].classList.toggle('dim', !!target && nodes[k] !== target); });
+      if (target) target.classList.add('glow');
+      var row = showCues(q.parts);
+      var steps = Promise.resolve();
+      if (mode === 'full') {
+        steps = run.say(q.prompt).then(function () { return run.say('Listen and say.'); }).then(function () {
+          return q.parts.reduce(function (p, part, i) {
+            return p.then(function () { markCue(row, i); return S.speakTurn(run, { repeat: true, model: part.text }); });
+          }, Promise.resolve());
+        }).then(function () { markCue(row, -1); return S.speakTurn(run, { prompt: 'Now all together!', model: q.model, supported: false }); });
+      } else if (mode === 'starter') {
+        steps = run.say(q.prompt).then(function () {
+          return q.parts.reduce(function (p, part, i) {
+            return p.then(function () { markCue(row, i); return S.speakTurn(run, { prompt: part.starter, model: part.text, supported: false }); });
+          }, Promise.resolve());
+        });
+      } else {
+        steps = S.speakTurn(run, { prompt: q.prompt, model: q.model, supported: false });
+      }
+      return steps.then(function () {
+        row.remove();
+        if (target) target.classList.remove('glow');
+        Object.keys(nodes).forEach(function (k) { nodes[k].classList.remove('dim'); });
+      });
+    }
+
     function playLevel(level) {
       var perScene = level.n === 3 ? 3 : 4;
       var scenes = [0, 1];
@@ -124,7 +185,7 @@
             return run.wait(500)
               .then(function () { return run.say(i === 0 && scene.own ? 'Look! It is your farm!' : C.PHRASES.lookAnimals); })
               .then(function () {
-                return qs.reduce(function (pp, q) { return pp.then(function () { return ask(level, q, nodes); }); }, Promise.resolve());
+                return qs.reduce(function (pp, q) { return pp.then(function () { return level.n === 3 ? describe(q, nodes) : ask(level, q, nodes); }); }, Promise.resolve());
               });
           });
         }, Promise.resolve());
