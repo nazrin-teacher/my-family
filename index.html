@@ -456,6 +456,22 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 .dssurp{padding:10px 18px}
 .galfig{height:210px;display:flex;align-items:flex-end;justify-content:center}.galfig svg{height:100%;width:auto}
 .dspbox .grow{flex-wrap:wrap}
+.unscreen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+.unscreen h1{margin:0;font:800 64px/1 var(--display);color:var(--purple)}
+.ungrid{display:grid;grid-template-columns:repeat(3,470px);gap:22px}
+.unbtn{height:190px;border:none;border-radius:32px;background:var(--white);box-shadow:0 8px 0 var(--c);display:flex;align-items:center;gap:20px;padding:16px 22px;text-align:left;border:5px solid var(--c);cursor:pointer}
+.unbtn:active{transform:translateY(6px);box-shadow:0 2px 0 var(--c)}
+.unic{width:140px;height:140px;flex:none;border-radius:24px;overflow:hidden;display:grid;place-items:center;background:#FFF8E6}
+.unic svg{width:118px;height:118px}.unic img{width:100%;height:100%;object-fit:cover}
+.untx{display:flex;flex-direction:column;gap:4px;min-width:0}
+.untx small{font:800 24px var(--body);color:var(--c);letter-spacing:.04em}
+.untx b{font:800 38px/1.05 var(--display);color:var(--ink)}
+.unsoon{font:700 20px var(--body);color:var(--muted)}
+.unbtn.soon{filter:grayscale(.75);opacity:.72;box-shadow:0 8px 0 #C9C6D8;border-color:#D8D5E4}
+.unbtn.shake{animation:unShake .4s}
+@keyframes unShake{20%{transform:translateX(-10px)}40%{transform:translateX(10px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+.unback{position:absolute;left:30px;bottom:24px;font-size:24px}
+.tpscreen{position:relative}
 </style>
 
 </head><body><div id="stage"><div id="board">
@@ -498,7 +514,7 @@ function nextClip(){const k=aq.shift();if(!k){const d=aDone;aDone=null;aEl=null;
   const p=a.play();if(p&&p.catch)p.catch(()=>{if(aEl===a)nextClip()})}
 function hush(){stopClips();try{speechSynthesis.cancel()}catch(e){}} /* classroom build only; the shared version has none */
 /* ---------- data ---------- */
-const COLV={pink:'var(--pink)',blue:'var(--blue)',purple:'var(--purple)',green:'var(--green)'};
+const COLV={pink:'var(--pink)',blue:'var(--blue)',purple:'var(--purple)',green:'var(--green)',orange:'var(--orange)'};
 const W=[
  {id:'mum',w:'mum',g:'she',c:'pink',act:'Wave like Mum!'},
  {id:'dad',w:'dad',g:'he',c:'blue',act:'Jump like Dad!'},
@@ -1169,6 +1185,34 @@ let ACTS=ACTS_FAMILY,cur=-1;
 const TOPICS={family:{name:'My Family',sub:'Family members',col:'pink',acts:()=>ACTS_FAMILY},body:{name:'My Body',sub:'Body parts',col:'purple',acts:()=>ACTS_BODY}};
 function setTopic(k){S.topic=TOPICS[k]?k:'family';ACTS=TOPICS[S.topic].acts();store()}
 /* first screen: choose what to learn today */
+/* ---- units of the book (Ready Steady 2A); only ready units open ---- */
+const UNIT_IC={
+ hello:'<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="#FFD54A"/><g stroke="#FFB300" stroke-width="7" stroke-linecap="round"><path d="M50 6v10M50 84v10M6 50h10M84 50h10M19 19l7 7M74 74l7 7M19 81l7-7M74 26l7-7"/></g><circle cx="40" cy="45" r="4" fill="#2F2D52"/><circle cx="60" cy="45" r="4" fill="#2F2D52"/><path d="M38 58q12 12 24 0" stroke="#2F2D52" stroke-width="5" fill="none" stroke-linecap="round"/></svg>',
+ school:'<svg viewBox="0 0 100 100"><g transform="rotate(-35 50 50)"><rect x="40" y="8" width="20" height="62" fill="#FFB300"/><rect x="40" y="8" width="20" height="10" rx="3" fill="#FF8FAB"/><path d="M40 70h20L50 92z" fill="#F6D2B5"/><path d="M46 84h8l-4 8z" fill="#2F2D52"/></g></svg>',
+ farm:'<svg viewBox="0 0 100 100"><path d="M14 44 50 16 86 44v44H14z" fill="#E5484D"/><path d="M14 44 50 16 86 44" stroke="#fff" stroke-width="5" fill="none"/><rect x="36" y="56" width="28" height="32" fill="#fff"/><path d="M36 56l28 32M64 56 36 88" stroke="#E5484D" stroke-width="4"/></svg>',
+ food:'<svg viewBox="0 0 100 100"><circle cx="50" cy="52" r="30" fill="#fff" stroke="#C9C6D8" stroke-width="4"/><circle cx="50" cy="52" r="18" fill="#EEF5FF"/><path d="M12 22v26M8 22v12q4 6 8 0V22M12 48v36" stroke="#8A879C" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M88 22q-8 10 0 30v32" stroke="#8A879C" stroke-width="5" stroke-linecap="round" fill="none"/></svg>',
+ hobby:'<svg viewBox="0 0 100 100"><circle cx="34" cy="62" r="22" fill="#3FB2E6"/><path d="M14 56q20 10 40 0M34 40v44" stroke="#fff" stroke-width="4" fill="none"/><g transform="rotate(35 70 40)"><rect x="66" y="10" width="9" height="44" rx="4" fill="#7A4A25"/><path d="M62 54h17l-3 22q-6 6-11 0z" fill="#FF5F92"/></g></svg>',
+ healthy:'<svg viewBox="0 0 100 100"><path d="M50 30q-26-14-34 12-6 30 20 44 8 4 14 0 6 4 14 0 26-14 20-44-8-26-34-12z" fill="#4CC48E"/><path d="M50 30q0-14 10-20" stroke="#7A4A25" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M54 18q14-8 22 2-12 8-22-2z" fill="#3BAA6B"/></svg>',
+ home:'<svg viewBox="0 0 100 100"><path d="M10 48 50 14l40 34" stroke="#FF8A3D" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 44v44h60V44L50 20z" fill="#FFB36B"/><rect x="42" y="60" width="16" height="28" rx="3" fill="#8C64DB"/><rect x="26" y="54" width="12" height="12" fill="#fff"/><rect x="62" y="54" width="12" height="12" fill="#fff"/></svg>',
+ seasons:'<svg viewBox="0 0 100 100"><circle cx="36" cy="40" r="20" fill="#FFD54A"/><g stroke="#FFB300" stroke-width="5" stroke-linecap="round"><path d="M36 8v8M36 64v8M4 40h8M60 40h8"/></g><g stroke="#3FB2E6" stroke-width="5" stroke-linecap="round"><path d="M70 52v40M52 72h36M57 59l26 26M83 59 57 85"/></g></svg>'};
+const UNITS=[
+ {n:0,t:'Hello Everybody',ic:'hello',col:'orange'},
+ {n:1,t:'At School',ic:'school',col:'blue'},
+ {n:2,t:'I Love My Family!',img:'cover',col:'pink',ready:1},
+ {n:3,t:'Farm Animals',ic:'farm',col:'green'},
+ {n:4,t:'The Restaurant',ic:'food',col:'purple'},
+ {n:5,t:'My Hobbies!',ic:'hobby',col:'blue'},
+ {n:6,t:'Be Healthy',ic:'healthy',col:'green'},
+ {n:7,t:'At Home',ic:'home',col:'orange'},
+ {n:8,t:'The Seasons!',ic:'seasons',col:'purple'}];
+function unitScreen(){clearTimers();hush();cur=-4;const a=$('#area');a.innerHTML='';setTitle('Ready Steady 2A','purple');$('#board').classList.remove('alt');paintStars();paintBar();
+  ['bPrev','bNext','bAgain','bTip'].forEach(id=>$('#'+id).classList.add('off'));
+  const v=h(`<div class="unscreen"><h1>Units</h1><div class="ungrid">${UNITS.map(u=>`<button class="unbtn ${u.ready?'':'soon'}" data-n="${u.n}" style="--c:${COLV[u.col]}">
+    <div class="unic">${u.img?`<img src="${IMG[u.img]}" alt="">`:UNIT_IC[u.ic]}</div>
+    <div class="untx"><small>${u.n?'UNIT '+u.n:'STARTER'}</small><b>${u.t}</b>${u.ready?'':'<span class="unsoon">Coming soon</span>'}</div></button>`).join('')}</div></div>`);
+  v.querySelectorAll('.unbtn').forEach(b=>b.onclick=()=>{const u=UNITS[+b.dataset.n];if(!u.ready){buzz();b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');return}ding();topicScreen()});
+  a.append(v)}
+
 function topicScreen(){clearTimers();hush();cur=-3;const a=$('#area');a.innerHTML='';setTitle('My Family','pink');$('#board').classList.remove('alt');paintStars();paintBar();
   ['bPrev','bNext','bAgain','bTip'].forEach(id=>$('#'+id).classList.add('off'));
   const v=h(`<div class="tpscreen"><h1>What shall we learn?</h1><div class="tprow">
@@ -1176,6 +1220,7 @@ function topicScreen(){clearTimers();hush();cur=-3;const a=$('#area');a.innerHTM
     <button class="tpbtn" data-k="body" style="--c:var(--purple);--s:#6E49B8"><div class="tpimg tpb">${photo('mum')}${photo('brother',{hgt:72})}</div><b>Body parts</b><small>eyes, nose, hair, tall, short…</small></button>
   </div></div>`);
   v.querySelectorAll('.tpbtn').forEach(b=>b.onclick=()=>{setTopic(b.dataset.k);go(-1);say(b.dataset.k==='body'?'Body parts!':'Family members!')});
+  const back=h(`<button class="pill unback">${ic('left')} Units</button>`);back.onclick=unitScreen;v.append(back);
   a.append(v)}
 function setTitle(t,col){const e=$('#title');e.textContent=t;e.style.color=col?COLV[col]:'var(--pink)'}
 function decor(){const cols=['var(--pink)','var(--blue)','var(--purple)','var(--green)','var(--yellow)'];const a=$('#area');
@@ -1637,14 +1682,14 @@ window.addEventListener('resize',fit);
 function soundIcon(){$('#bSound').innerHTML=ic(S.sound?'son':'soff')}
 function boot(){load();pickVoice();
   $('#bHome').innerHTML=ic('home');$('#bPrev').innerHTML=ic('left');$('#bNext').innerHTML=ic('right');$('#bAgain').innerHTML=ic('again');$('#bTip').innerHTML=ic('tip');$('#bFull').innerHTML=ic('full');soundIcon();paintStars();$('#bPick').innerHTML=ic('pick');$('#bPick').onclick=picker;$('#bCls').onclick=classScreen;
-  $('#bHome').onclick=()=>go(-1);$('#bPrev').onclick=()=>{if(cur>0)go(cur-1)};$('#bNext').onclick=()=>{if(cur>=0&&cur<ACTS.length-1)go(cur+1)};
+  $('#bHome').onclick=()=>{if(cur>=0)go(-1);else if(cur===-1)topicScreen();else if(cur!==-4)unitScreen()};$('#bPrev').onclick=()=>{if(cur>0)go(cur-1)};$('#bNext').onclick=()=>{if(cur>=0&&cur<ACTS.length-1)go(cur+1)};
   $('#bAgain').onclick=()=>{if(cur>=0)go(cur)};
   $('#bSound').onclick=()=>{S.sound=!S.sound;store();soundIcon();if(!S.sound)hush();if(cur===-1)go(-1)};
-  $('#bTip').onclick=()=>{if(cur<0){if(cur===-3)return;modal(`<h2>How to use</h2><ul><li>Choose a topic first: <b>Family members</b> or <b>Body parts</b>. "◀ Topics" on the menu goes back.</li><li>Tap a game, or press "Start" to open the first unfinished game.</li><li>Top bar: menu, previous/next game, ${ONE_CLASS?'':'class, '}name picker, stars, play again, sound, tips, full screen.</li><li>The orange "Next" button moves to the next round; the dots jump to any round.</li><li><b>Speaking step:</b> after a correct answer the "Your turn!" screen opens. The question is spoken, the class answers out loud ("Help" says the answer). The star comes when you press "We said it!".</li>${ONE_CLASS?'':'<li><b>Class:</b> the purple label (e.g. J6A) changes the class. Each class keeps its own stars.</li>'}<li><b>Star reward:</b> in the name picker, press "Star reward", tap the children who are behaving well, then "Star draw!". Each child's stars are counted on their bubble; New round clears them. After a normal pick, "Give a star" rewards that child directly.</li><li><b>Name picker:</b> the person icon picks a name and says it; everyone gets one turn per round. The "Name" button on the "Your turn!" screen also picks a name.</li><li><b>Settings</b> (last tile): classroom/home, speaking step, teams, classes, names and words to practise.</li><li>If the device has no English voice, sentences appear on screen for an adult to read aloud.</li><li>Stars and settings are saved on this device.</li></ul><div class="row"><button class="bigbtn" data-x>OK</button></div>`);return}
+  $('#bTip').onclick=()=>{if(cur<0){if(cur<=-3)return;modal(`<h2>How to use</h2><ul><li>Choose a unit first (Unit 2 is ready), then a topic: <b>Family members</b> or <b>Body parts</b>. "◀ Topics" and "◀ Units" go back; the home button goes up one level.</li><li>Tap a game, or press "Start" to open the first unfinished game.</li><li>Top bar: menu, previous/next game, ${ONE_CLASS?'':'class, '}name picker, stars, play again, sound, tips, full screen.</li><li>The orange "Next" button moves to the next round; the dots jump to any round.</li><li><b>Speaking step:</b> after a correct answer the "Your turn!" screen opens. The question is spoken, the class answers out loud ("Help" says the answer). The star comes when you press "We said it!".</li>${ONE_CLASS?'':'<li><b>Class:</b> the purple label (e.g. J6A) changes the class. Each class keeps its own stars.</li>'}<li><b>Star reward:</b> in the name picker, press "Star reward", tap the children who are behaving well, then "Star draw!". Each child's stars are counted on their bubble; New round clears them. After a normal pick, "Give a star" rewards that child directly.</li><li><b>Name picker:</b> the person icon picks a name and says it; everyone gets one turn per round. The "Name" button on the "Your turn!" screen also picks a name.</li><li><b>Settings</b> (last tile): classroom/home, speaking step, teams, classes, names and words to practise.</li><li>If the device has no English voice, sentences appear on screen for an adult to read aloud.</li><li>Stars and settings are saved on this device.</li></ul><div class="row"><button class="bigbtn" data-x>OK</button></div>`);return}
     const A=ACTS[cur];modal(`<h2>${A.name}</h2>${S.mode==='home'?'<p><b>At home:</b> these tips are written for the classroom; play them with your child. On the "Your turn!" screen, press "I said it!" when your child says the sentence.</p>':''}<ul>${A.tip.map(t=>`<li>${t}</li>`).join('')}</ul><div class="row"><button class="bigbtn" data-x>OK</button></div>`)};
   $('#bFull').onclick=toggleFull;
   document.addEventListener('fullscreenchange',fit);document.addEventListener('webkitfullscreenchange',fit);
-  setTopic(S.topic);fit();if(!ONE_CLASS&&S.mode==='class'&&!S.cls)classScreen();else topicScreen()}
+  setTopic(S.topic);fit();if(!ONE_CLASS&&S.mode==='class'&&!S.cls)classScreen();else unitScreen()}
 boot();
 </script>
 </body></html>

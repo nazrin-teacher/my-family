@@ -1,6 +1,7 @@
 # My Family for Teachers
 
-Interactive English games for young learners (ages 5–6). The first screen lets the teacher choose a topic:
+Interactive English games for young learners (ages 5–6), organised by the units of *Ready Steady 2A*.
+The first screen shows the units; **Unit 2 – I Love My Family!** is ready, the others are coming soon. Inside Unit 2 the teacher chooses a topic:
 
 - **Family members:** mum, dad, grandma, grandpa, sister, brother, baby brother, baby sister, uncle, aunt, cousin.
 - **Body parts:** face, eyes, ears, nose, mouth, hair, arms, body; tall, short, thin, fat, curly, straight.
