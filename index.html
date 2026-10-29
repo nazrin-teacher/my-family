@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="description" content="My Family: interactive English games for young learners (family words) with a speaking step, magic name picker and star rewards."><link rel="icon" href="favicon.svg" type="image/svg+xml"><style>[hidden]{display:none!important}</style><title>My Family for Teachers</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="description" content="English Corner: interactive English games for young learners (Ready Steady 2A units) with a speaking step, magic name picker and star rewards."><link rel="icon" href="favicon.svg" type="image/svg+xml"><style>[hidden]{display:none!important}</style><title>English Corner for Teachers</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap">
@@ -480,7 +480,7 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
     <button class="tb" id="bHome" aria-label="Menu" title="Menu"></button>
     <button class="tb" id="bPrev" aria-label="Previous game" title="Previous game"></button>
     <button class="tb" id="bNext" aria-label="Next game" title="Next game"></button>
-    <div id="title">My Family</div>
+    <div id="title">English Corner</div>
     <button class="clschip" id="bCls" aria-label="Class" title="Change class" hidden></button>
     <button class="tb" id="bPick" aria-label="Name picker" title="Name picker" hidden></button>
     <div id="stars" aria-label="Stars"><span id="sIcon"></span><span id="sNum">0</span></div>
@@ -1290,7 +1290,7 @@ function talk(o,done){
 /* ---------- class ---------- */
 function paintBar(){const c=$('#bCls'),p=$('#bPick');const on=S.mode==='class';
   c.hidden=ONE_CLASS||!on||!S.cls;c.innerHTML=S.cls?esc(S.cls):'';p.hidden=!on||!S.cls}
-function classScreen(){clearTimers();cur=-2;const a=$('#area');a.innerHTML='';setTitle('My Family','pink');$('#board').classList.remove('alt');
+function classScreen(){clearTimers();cur=-2;const a=$('#area');a.innerHTML='';setTitle('English Corner','pink');$('#board').classList.remove('alt');
   ['bPrev','bNext','bAgain','bTip'].forEach(id=>$('#'+id).classList.add('off'));$('#bCls').hidden=true;$('#bPick').hidden=true;
   const cols=[['var(--pink)','#D9467A'],['var(--blue)','#2A8FBD'],['var(--green)','#33A072'],['var(--purple)','#6E49B8'],['var(--orange)','#D96A24']];
   const v=h(`<div class="clsscreen${S.classes.length>3?' many':''}"><h1>Which class?</h1><div class="clsrow"></div><button class="homelink">Playing at home</button></div>`);

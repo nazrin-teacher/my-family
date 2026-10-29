@@ -1,9 +1,9 @@
-# My Family for Teachers
+# English Corner for Teachers
 
 Interactive English games for young learners (ages 5–6), organised by the units of *Ready Steady 2A*.
 The first screen shows the units; **Unit 2 – I Love My Family!** and **Unit 3 – Farm Animals** are ready, the others are coming soon.
 
-**Unit 3** opens *The Enchanted Farm* (folder [`farm/`](farm/), link: https://nazrin-teacher.github.io/my-family/farm/): four speaking missions with Pip the chick (Meet the Animals, The Great Animal Rescue, My Little Farm, My Talking Farm). In Classroom mode Pip calls one child at a time by name, using the class list from this site's Settings → Names; the microphone button appears only in Home mode.
+**Unit 3** opens *The Enchanted Farm* (folder [`farm/`](farm/), link: https://nazrin-teacher.github.io/english-corner/farm/): fourteen speaking missions with Pip the chick (from Meet the Animals to the Farm Festival). In Classroom mode Pip calls one child at a time by name, using the class list from this site's Settings → Names; the microphone button appears only in Home mode.
 
 **Classes:** Settings → *Load class lists* reads a class-lists file (`.json`) kept by the school. The site then asks "Which class?" when it opens (once per browser session); the name picker, star rewards and the farm's name turns use the chosen class. Names stay on that device only — they are never part of this public site. Inside Unit 2 the teacher chooses a topic:
 
@@ -52,6 +52,6 @@ Voice clips generated with the open-source Kokoro TTS model (Apache-2.0).
 
 ## Errol the Eagle · Lesson 10
 
-Interactive games for 5-year-olds (school things & colours): https://nazrin-teacher.github.io/my-family/errol/
+Interactive games for 5-year-olds (school things & colours): https://nazrin-teacher.github.io/english-corner/errol/
 
 Self-contained page in [`errol/index.html`](errol/index.html) (images embedded, music generated in the browser).
