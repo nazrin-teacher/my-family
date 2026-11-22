@@ -496,7 +496,7 @@ img{max-width:100%;-webkit-user-drag:none;user-select:none}
 </div></div>
 
 <script>
-const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp", "c_mum": "assets/c_mum.webp", "c_dad": "assets/c_dad.webp", "c_grandma": "assets/c_grandma.webp", "c_grandpa": "assets/c_grandpa.webp", "c_sister": "assets/c_sister.webp", "c_brother": "assets/c_brother.webp", "c_aunt": "assets/c_aunt.webp", "c_uncle": "assets/c_uncle.webp", "t_mum": "assets/t_mum.webp", "t_dad": "assets/t_dad.webp", "t_grandma": "assets/t_grandma.webp", "t_grandpa": "assets/t_grandpa.webp", "t_sister": "assets/t_sister.webp", "t_brother": "assets/t_brother.webp", "t_aunt": "assets/t_aunt.webp", "t_uncle": "assets/t_uncle.webp", "m_mum": "assets/m_mum.webp", "m_dad": "assets/m_dad.webp", "m_grandma": "assets/m_grandma.webp", "m_grandpa": "assets/m_grandpa.webp", "m_sister": "assets/m_sister.webp", "m_brother": "assets/m_brother.webp", "m_aunt": "assets/m_aunt.webp", "m_uncle": "assets/m_uncle.webp", "t_paint": "assets/t_paint.webp", "t_design": "assets/t_design.webp", "farm": "assets/farm.webp"};
+const IMG={"cover": "assets/cover.webp", "mum": "assets/mum.webp", "dad": "assets/dad.webp", "grandma": "assets/grandma.webp", "grandpa": "assets/grandpa.webp", "sister": "assets/sister.webp", "brother": "assets/brother.webp", "babybrother": "assets/babybrother.webp", "babysister": "assets/babysister.webp", "uncle": "assets/uncle.webp", "aunt": "assets/aunt.webp", "cousin": "assets/cousin.webp", "whois": "assets/whois.webp", "c_mum": "assets/c_mum.webp", "c_dad": "assets/c_dad.webp", "c_grandma": "assets/c_grandma.webp", "c_grandpa": "assets/c_grandpa.webp", "c_sister": "assets/c_sister.webp", "c_brother": "assets/c_brother.webp", "c_aunt": "assets/c_aunt.webp", "c_uncle": "assets/c_uncle.webp", "t_mum": "assets/t_mum.webp", "t_dad": "assets/t_dad.webp", "t_grandma": "assets/t_grandma.webp", "t_grandpa": "assets/t_grandpa.webp", "t_sister": "assets/t_sister.webp", "t_brother": "assets/t_brother.webp", "t_aunt": "assets/t_aunt.webp", "t_uncle": "assets/t_uncle.webp", "m_mum": "assets/m_mum.webp", "m_dad": "assets/m_dad.webp", "m_grandma": "assets/m_grandma.webp", "m_grandpa": "assets/m_grandpa.webp", "m_sister": "assets/m_sister.webp", "m_brother": "assets/m_brother.webp", "m_aunt": "assets/m_aunt.webp", "m_uncle": "assets/m_uncle.webp", "t_paint": "assets/t_paint.webp", "t_design": "assets/t_design.webp", "farm": "assets/farm.webp", "restaurant": "assets/restaurant.webp"};
 const ONE_BUILD=true; /* true: version for any teacher (one name list) until a class-lists file is loaded */
 let ONE_CLASS=ONE_BUILD;
 const SKEY=ONE_BUILD?'myfamily-teacher':'myfamily';
@@ -1202,12 +1202,14 @@ const UNIT_IC={
  seasons:'<svg viewBox="0 0 100 100"><circle cx="36" cy="40" r="20" fill="#FFD54A"/><g stroke="#FFB300" stroke-width="5" stroke-linecap="round"><path d="M36 8v8M36 64v8M4 40h8M60 40h8"/></g><g stroke="#3FB2E6" stroke-width="5" stroke-linecap="round"><path d="M70 52v40M52 72h36M57 59l26 26M83 59 57 85"/></g></svg>'};
 /* Unit 3 is a separate game (The Enchanted Farm) in the site's farm/ folder. */
 const FARM_URL="farm/";
+/* Unit 4 is a separate game (Momo's Little Restaurant) in the restaurant/ folder. */
+const REST_URL="restaurant/";
 const UNITS=[
  {n:0,t:'Hello Everybody',ic:'hello',col:'orange'},
  {n:1,t:'At School',ic:'school',col:'blue'},
  {n:2,t:'I Love My Family!',img:'cover',col:'pink',ready:1},
  {n:3,t:'Farm Animals',img:'farm',col:'green',ready:1,href:FARM_URL},
- {n:4,t:'The Restaurant',ic:'food',col:'purple'},
+ {n:4,t:'The Restaurant',img:'restaurant',col:'purple',ready:1,href:REST_URL},
  {n:5,t:'My Hobbies!',ic:'hobby',col:'blue'},
  {n:6,t:'Be Healthy',ic:'healthy',col:'green'},
  {n:7,t:'At Home',ic:'home',col:'orange'},
