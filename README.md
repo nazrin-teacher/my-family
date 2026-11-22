@@ -48,7 +48,7 @@ Names, stars and settings are saved only in the browser of the device you use (l
 Works offline too: download the folder and open `index.html` in Chrome or Edge.
 
 ## Credits
-Voice clips generated with the open-source Kokoro TTS model (Apache-2.0).
+Voice clips generated with the open-source Kokoro TTS model (Apache-2.0), voice "Bella" (af_bella) across the whole site; every clip was checked with two speech recognisers.
 
 ---
 
